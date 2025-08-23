@@ -1,0 +1,13 @@
+Title: This is a Test Project
+----
+Intro: This was awesome
+----
+Text:
+----
+Year: 2020
+----
+Category: Editorial
+----
+Client: 
+----
+Credit: blabla
