@@ -1,0 +1,18 @@
+.project-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 5rem;
+}
+
+.project-text {
+    color: var(--primary-900)
+}
+
+.project-gallery ul {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.project-gallery li {
+    list-style: none;
+}

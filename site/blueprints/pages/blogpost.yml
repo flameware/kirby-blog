@@ -1,0 +1,6 @@
+title: Post
+
+fields:
+  blocks:
+    type: blocks
+    pretty: true

@@ -53,3 +53,7 @@ Icon
 # ---------------
 
 /site/config/.license
+
+# Modules
+# ---------------
+/vendor
