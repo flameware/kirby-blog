@@ -1,6 +1,21 @@
 title: Projects
 
 sections:
-  projects:
+  drafts:
+    type: pages
+    template: project
+    info: "{{ page.category }}"
+    status: drafts
+    image:
+      ratio: 1/1
+      cover: true
+
+  published:
     type: pages
     layout: cards
+    template: project
+    info: "{{ page.category }}"
+    status: published
+    image:
+      ratio: 1/1
+      cover: true

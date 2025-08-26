@@ -1,5 +1,10 @@
 title: Site
 
 sections:
-  pages:
+  unlisted:
     type: pages
+    status: unlisted
+
+  listed:
+    type: pages
+    status: listed

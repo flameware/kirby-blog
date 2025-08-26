@@ -1,5 +1,13 @@
 title: Blog
 
 sections:
-  projects:
+  drafts:
     type: pages
+    template: blogpost
+    status: drafts
+
+  published:
+    type: pages
+    layout: cards
+    template: blogpost
+    status: published
