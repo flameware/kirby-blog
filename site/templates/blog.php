@@ -6,7 +6,11 @@
             <?php foreach ($page->children()->listed() as $blogpost) { ?>
             <li>
                 <a href="<?= $blogpost->url() ?>" class="contrast">
-                    <?= $blogpost->title() ?>
+                    <?php foreach ($blogpost->blocks()->toBlocks() as $block) { ?>
+                        <?php if ($block->type() === "heading"): ?>
+                            <?= $block ?>
+                        <?php endif ?>
+                    <?php } ?>
                 </a>
             </li>
             <?php } ?>  

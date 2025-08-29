@@ -1,5 +1,6 @@
     <footer>
-        <a href="#">Test Footer</a>
+        <p>©Seongki Sohn</p>
     </footer>
+</div>
 </body>
 </html>
