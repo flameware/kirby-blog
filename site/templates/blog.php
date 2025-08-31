@@ -8,7 +8,7 @@
                 <a href="<?= $blogpost->url() ?>" class="contrast">
                     <?php foreach ($blogpost->blocks()->toBlocks() as $block) { ?>
                         <?php if ($block->type() === "heading"): ?>
-                            <?= $block ?>
+                            <?= $block->content()->text() ?>
                         <?php endif ?>
                     <?php } ?>
                 </a>

@@ -15,10 +15,10 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="<?= $page->uri() === 'projects' ? 'projects-container' : 'container' ?>">
         <nav class="mainnav">
             <ul>
-                <li><a href="<?= $site->url() ?>"><?= $site->title() ?></a></li>
+                <li><a href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a></li>
             </ul>
             <ul class="submenu">
                 <?php foreach ($site->children()->listed() as $item) { ?>

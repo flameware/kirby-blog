@@ -4,3 +4,7 @@ fields:
   blocks:
     type: blocks
     pretty: true
+  date:
+    type: date
+    time: false
+    default: now

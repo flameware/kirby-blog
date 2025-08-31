@@ -1,5 +1,0 @@
-Uuid: rjksai2fmtacxxtw
-
-----
-
-Template: blocks/image

@@ -5,17 +5,20 @@
   --text-font: 'Gowun Batang', serif;
 
   --header-font-size: 2.488rem;
-  --color-white: hsl(0,100%,100%);
-  --color-black: hsl(0, 0%, 0%);
+  --color-background: hsl(0, 0%, 94%);
+  --color-highlight: hsl(165,25%,75%);
+  --color-textcolor: hsl(0, 16%, 4%);
+
 
 }
 
+/* 공통영역 */
 html {
     font-size: clamp(16px, 2vw, 22px);
 }
 
 body {
-    background: var(--color-white);
+    background: var(--color-background);
     font-family: var(--text-font);
     line-height: 2.0;
     font-weight: 400;
@@ -27,24 +30,51 @@ body {
 }
 
 h1 {
-    font-size: 2.986rem;
+    font-size: 2.027rem;
     line-height: 1.4;
 }
 h2 {
-    font-size: 2.488rem;
+    font-size: 1.802rem;
     line-height: 1.4;
 }
 
+h3 {
+    font-size: 1.602rem;
+    line-height: 1.4;
+}
+
+a {
+    color: var(--color-textcolor);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--color-textcolor);
+
+}
+
+a:hover {
+    color: var(--color-textcolor);
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: .5em;
+    text-underline-offset: -.25em;
+}
+
+
 .container {
-    max-width: 674px;
+    width: 46.7vw;
     padding: 5.6vw 0 0 0;
 
 }
 
 .mainnav {
-    width: 674px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    font-size: 1.25rem;
+    line-height: 1.4;
 }
 
 .mainnav ul {
@@ -53,25 +83,20 @@ h2 {
 
 }
 
+
 .submenu {
     display: flex;
     flex-direction: row;
     gap: 32px;
 }
 
-.projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 3rem;
-    list-style: none;
-    padding: 0;
+hr {
+    border: none;
+    border-top: .1em solid var(--color-highlight);
 }
 
-.projects li {
-    list-style: none;
-}
 
-.projects img {
-    width: 100%;
+footer {
+    padding: 200px 0 0 0;
+
 }

@@ -1,7 +1,6 @@
 <?php snippet('header') ?>
 
-    <main class="main">
-        <h1><?= $page->title() ?></h1>
+        <main class="main">
         <ul class="projects">
             <?php foreach ($page->children()->listed() as $project) { ?>
             <li>
