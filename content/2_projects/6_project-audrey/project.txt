@@ -1,0 +1,37 @@
+Title: Project Audrey
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Project Audrey\n\n[GO TO MICROSITE](https://gallery-audrey.now.sh/).\n\nI've tried several pixel simulation projects from the very beginning of my coding studies. After some study projects of [Three.js](https://threejs.org/), I wanted to summarize what i've done into one project.</br>\nAs the result, I built a virtual gallery into web browser. Audience can navigate the gallery by both swiping gesture and arrow key input. I choose Audrey Hepburn's photo taken by Yousuf Karsh as original image for its superior image quality."
+        },
+        "id": "f4ca6f5e-ca45-4c2c-ae6e-507c93349057",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://8neqwn8hmynuo016
+- file://nvm0gqxage1g9pcf
+- file://sowlwadh9qiqhua2
+- file://p4vg3xy77bzkvayu
+
+----
+
+Date: 2017-09-12
+
+----
+
+Tags: 
+
+----
+
+Uuid: x4aa4grfs5t6xct3

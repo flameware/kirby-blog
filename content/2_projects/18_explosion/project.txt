@@ -1,0 +1,32 @@
+Title: Explosion!
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Explosion!\nTried to mimic fireworks in simplified manner."
+        },
+        "id": "741ce70c-68ce-40c3-82da-e7446009c2cf",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery: - file://kvltmfumhulv8itf
+
+----
+
+Date: 2013-03-01
+
+----
+
+Tags: 
+
+----
+
+Uuid: vugzqfofsiy8juv8

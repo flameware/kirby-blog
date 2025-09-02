@@ -1,18 +1,12 @@
-.project-layout {
+.project-gallery {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 5rem;
-}
-
-.project-text {
-    color: var(--primary-900)
-}
-
-.project-gallery ul {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-}
-
-.project-gallery li {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 3rem;
     list-style: none;
+    padding: 80px 0 80px 0;
+}
+
+.project-gallery img {
+    width: 100%;
 }

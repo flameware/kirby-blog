@@ -1,0 +1,39 @@
+Title: Lissajous Curve
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Lissajous Curve\n\nObjects moving along their own Lissajous curve path. + If some of them are close enough each other, draw a line between them.\n(I used 4 lissajous objects to make these images)\nIf you have interests in Lissajous curve, please visit [this wiki page](https://en.wikipedia.org/wiki/Lissajous_curve)."
+        },
+        "id": "e15a6a96-1f03-49aa-87f1-fe7e0986a6fc",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://sph2fgjlkhuefhhw
+- file://kk3fxvd6exi6rcp2
+- file://t9f8mmzsodffqjig
+- file://4iv5i13hlrv9otvh
+- file://4zzmtibsxhobugil
+- file://6er230l2u2dsplvd
+
+----
+
+Date: 2014-10-31
+
+----
+
+Tags: 
+
+----
+
+Uuid: s3w8jxmc5cel59zv

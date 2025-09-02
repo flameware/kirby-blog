@@ -1,0 +1,35 @@
+Title: Three Spheres
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Three Spheres\n3 Spheres: Source, Target & Difference"
+        },
+        "id": "96974e49-11fa-4d48-9cf9-5f3882855605",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://ks7ih7h4ccat2baa
+- file://pjbeykd5acnyowis
+
+----
+
+Date: 2015-04-15
+
+----
+
+Tags: 
+
+----
+
+Uuid: hflcybkjtcdjkst7

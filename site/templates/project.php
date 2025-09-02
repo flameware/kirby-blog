@@ -1,40 +1,21 @@
 <?php snippet('header') ?>
 
     <main class="main">
-        <article>
-        <h1><?= $page->title() ?></h1>
-        <div class="project-layout">
-            <div class="project-info">
-                <?php if ($page->text()->isNotEmpty()) { ?>
-                    <p class="project-text">
-                         <?= $page->text() ?>
-                    </p>
-                <?php } ?>
-                <dl>
-                    <dt>Year</dt>
-                    <dd><?= $page->year() ?></dd>
-                    
-                    <?php if ($page->category()->isNotEmpty()) { ?>
-                    <dt>Category</dt>
-                    <dd><?= $page->category() ?></dd>
-                    <?php } ?>
-
-                </dl>
-            </div>
-            <div class="project-gallery">
-            <ul>
-                <?php foreach ($page->images() as $image) { ?>
-                    <li>
-                        <a href="<?= $image->url() ?>">
-                            <?= $image->resize(1200,1200) ?>
-                        </a>
-                </li>
-                <?php } ?>
-                </ul>
-            </div>
+        <p class="project-date"><?= $page->date() ?></p>
+        <ul class="tags">
+            <?php foreach ($page->tags()->split() as $category): ?>
+            <li><?= $category ?></li>
+            <?php endforeach ?>
+        </ul> 
+        <?= $page->blocks()->toBlocks() ?>
+        <div class="project-gallery">
+        <?php foreach( $page->images() as $image) { ?>
+            <a href="<?= $image->url() ?>" target="_blank">
+                <?= $image ?>
+            </a>
+        <?php } ?>
         </div>
-        </article>
-
+   
     </main>
 
 <?php snippet('footer') ?>

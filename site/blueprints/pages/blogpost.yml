@@ -8,3 +8,6 @@ fields:
     type: date
     time: false
     default: now
+  tags:
+    label: tags
+    type: tags

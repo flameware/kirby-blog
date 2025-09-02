@@ -1,0 +1,39 @@
+Title: Black and Whites
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Black, White, Sine & Cosine\nPlaying with simple trigonometrics - Black, White & Sine / Cosine.\n\nI've seen similar projects all over the web. \n\nSo this will be another sample of this kind of idea."
+        },
+        "id": "2d2f82fb-7583-4bf5-9410-2b95d6acaf37",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://ugzvhjbnopjhu7fe
+- file://nvflpwkbypzn7chb
+- file://8ntwb0rlzfcyjxjw
+- file://sgrfwdhelgtemimq
+- file://ak34rhfyu2g9gfrv
+- file://brs8r3tvxtbwrbbr
+
+----
+
+Date: 2021-04-06
+
+----
+
+Tags: 
+
+----
+
+Uuid: t6v6l4zjwi8vj1il

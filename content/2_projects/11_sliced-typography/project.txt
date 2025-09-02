@@ -1,0 +1,37 @@
+Title: Sliced Typography
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Sliced Typography\n- Text 1: TEST CASE\n- Text 2: Chicken & Beer in Korean.\n\nInspired from a work of [Synoptic Office](http://www.synopticoffice.com/project.php?projectid=1&selectedcol=1)"
+        },
+        "id": "581f2782-88e8-4470-81d3-53d8bec50cf2",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://774gpg8dx1fzkarx
+- file://rmtn71yfkztujbmm
+- file://f5g4dkokrcunf7ga
+- file://vxzs6vkw8grajvm5
+
+----
+
+Date: 2014-08-02
+
+----
+
+Tags: 
+
+----
+
+Uuid: ufvxwh6eaykvt6p5

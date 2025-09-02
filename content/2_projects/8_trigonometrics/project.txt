@@ -1,0 +1,38 @@
+Title: Trigonometrics
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Trigonometrics\nVisualizing differences between sine graph and cosine graph."
+        },
+        "id": "2237feea-a637-493b-b5e7-d6bf79e58322",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://4ccrmi1z8fyxvaqv
+- file://jicqegxekq0zvm6h
+- file://kwtveopybwtdwio3
+- file://oxgsw6xc97lljtly
+- file://zunotcdaypyxovcu
+
+----
+
+Date: 2015-10-11
+
+----
+
+Tags: Processing, Gif
+
+----
+
+Uuid: htodsrzdpqobc73z

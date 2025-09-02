@@ -1,0 +1,6 @@
+title: About
+
+fields:
+  blocks:
+    type: blocks
+    pretty: true

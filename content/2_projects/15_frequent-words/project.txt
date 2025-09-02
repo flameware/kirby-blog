@@ -1,0 +1,39 @@
+Title: Frequent Words
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Frequent Words\n\nBook cover design from 5 most used words in each book.\nIt's quite interesting that most used words in a book shows the character of original text.\nI used RiWordNet from [RiTa plugin](http://rednoise.org/rita/) and [WordNet](https://wordnet.princeton.edu/) to analyse original text and picked 5 most used words(nouns) from them.\n\nOriginal texts are from [Project Gutenberg](https://www.gutenberg.org).\nPlease note that more frequently used but meaningless words (such as he, it, me, who, and so on) have been excluded."
+        },
+        "id": "270f9bab-0057-47c4-8e57-c826c240b53e",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://zttefo8w6pyt1h0l
+- file://4enh9rv9yqau5ttq
+- file://hhpihlsmsin2crdq
+- file://ewztnpbah5n2ev0y
+- file://ygmqnmfvpchlwicx
+- file://hemmtnzuvrdbi8ew
+
+----
+
+Date: 2016-07-12
+
+----
+
+Tags: 
+
+----
+
+Uuid: ipxy6hxv7t0j6q1i

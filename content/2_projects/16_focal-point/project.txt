@@ -1,0 +1,37 @@
+Title: Focal Point
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Focal Point\nHaving fun with [Geomerative](http://www.ricardmarxer.com/geomerative/) library by Ricard Marxer.\n\n1. Convert each alphabet character's outline with points array\n2. Then draw lines from one focal point to each points in the array"
+        },
+        "id": "d1882dd7-ebd7-4f8d-b58c-88e36a58d285",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://p2ga596e5t4rvkn2
+- file://fh88ue1biv4yvxgl
+- file://slfgqjmpqlotjfzd
+- file://xkwmsjkzf26myo4r
+
+----
+
+Date: 2015-07-12
+
+----
+
+Tags: 
+
+----
+
+Uuid: aqk2e2uocfttzj7o

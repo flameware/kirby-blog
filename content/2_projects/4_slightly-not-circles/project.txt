@@ -1,0 +1,38 @@
+Title: Slightly Not Circles
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Slightly Not Circles\n\nThere's no \"Same\" shapes."
+        },
+        "id": "6731b63c-fad5-401c-8869-cdc77364330d",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://hkt93jqct3f8v7yt
+- file://zltgh2jbf2ylerke
+- file://fjgm3fqwydfkho7h
+- file://mzn8ybayaz1qoahi
+- file://wnyktzhhqyvdhjmc
+
+----
+
+Date: 2016-01-05
+
+----
+
+Tags: 
+
+----
+
+Uuid: litx43vy8qabggy7

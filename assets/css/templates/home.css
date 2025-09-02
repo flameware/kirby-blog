@@ -1,3 +1,7 @@
+.home-intro {
+    padding: 80px 0 80px 0;
+}
+
 .home-bloglist {
     list-style: none;
     padding: 80px 0 80px 0;
@@ -14,11 +18,29 @@
     color: var(--color-black)
 }
 
-.blog-item {
+.home-blog-item {
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: baseline;
+    position: relative;
+}
+
+.home-blog-item a {
+    display: flex;
+    align-items: baseline;
+    flex: 1;
+}
+
+.home-blog-item a::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px dotted var(--color-textcolor);
+    margin: 0 8px;
+}
+
+.home-blog-item a p {
+    margin: 0;
 }
 
 

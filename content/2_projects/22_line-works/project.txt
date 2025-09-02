@@ -1,0 +1,35 @@
+Title: Line Works
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Line Works\nSimple scribble with code."
+        },
+        "id": "6606b009-c6d0-4798-9d4c-1cd63ff3f468",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://bof8bohhltu4lene
+- file://7o9w4qslaq1fzgau
+
+----
+
+Date: 2021-03-08
+
+----
+
+Tags: 
+
+----
+
+Uuid: 6qzv6gxtiwatm524

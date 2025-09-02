@@ -1,0 +1,52 @@
+Title: Braille for Us
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### Braille For Us\n\n[GO TO MICROSITE](https://braille2020.now.sh/).\nWe can see braille everyday, near our daily life. Braille is written on soda can, on elevator buttons, and so on.\n\nOne day in 2018, a simple idea just arrived on my head.\n\nHow can we 'simulate' difficulties and problems that visually-handicapped people have.\n\n[A prototype](https://braille20180405.massivevoid.now.sh/) I made at that time was more focused on 'uncomfortable' feeling. But the technologies I used are outdated & not so well working in modern browsers. \nSo I decided to re-written it with modern techs with simpler technical approach.\n\nYou can navigate each text using your finger (on mobile) or mouse (on desktop).\nJust try. You'll know what I mean."
+        },
+        "id": "d8b0ccb4-f675-41ed-a1a8-2609fa2d0f3e",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://youtu.be/AGWPEujOfrc",
+            "video": [],
+            "poster": [],
+            "caption": "",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "44c0ff88-dc24-4373-9352-65104b59e657",
+        "isHidden": false,
+        "type": "video"
+    }
+]
+
+----
+
+Gallery:
+
+- file://wnosqedfvnjd4kdl
+- file://ekotpbgdok6oqg9v
+
+----
+
+Date: 2020-02-28
+
+----
+
+Tags: 
+
+----
+
+Uuid: 80mset5twylv1m0c

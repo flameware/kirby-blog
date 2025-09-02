@@ -1,0 +1,32 @@
+Title: Seoul Bus
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "## Seoul Bus\n\n[GO TO MICROSITE](https://seoul-bus.now.sh/).\nSmall project to show the most crowded bus stops in Seoul city. </br> I used passenger data of April 2017 from Seoul Gov. homepage."
+        },
+        "id": "1e1a3aeb-ec7e-4c49-85f2-556c27bbe689",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery: - file://gqgt3s1jlk5gfw5x
+
+----
+
+Date: 2017-09-23
+
+----
+
+Tags: 
+
+----
+
+Uuid: iyrbnecajj87pfpc
