@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Moon\n\nDraw a line between two points on a same circle.</br>\nDraw a line between two points on a same circle.</br>\nDraw a line between two points on a same circle.</br>\nDraw a line between two points on a same circle.</br>\nDraw a line between two points on a same circle.</br>\n...</br>\nI Drew a line between two points on a same circle 20000 times. </br>\nEasy.</br>"
+            "text": "### Moon\n\n같은 원 위의 두 점 사이에 선을 그리기.\n같은 원 위의 두 점 사이에 선을 그리기.\n같은 원 위의 두 점 사이에 선을 그리기.\n같은 원 위의 두 점 사이에 선을 그리기.\n같은 원 위의 두 점 사이에 선을 그리기.\n...</br>\n같은 원 위의 두 점 사이에 선을 20000번 그렸습니다."
         },
         "id": "ed1695ca-2289-4aca-a161-6cb5fc9d3a6b",
         "isHidden": false,

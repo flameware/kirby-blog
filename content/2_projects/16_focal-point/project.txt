@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Focal Point\nHaving fun with [Geomerative](http://www.ricardmarxer.com/geomerative/) library by Ricard Marxer.\n\n1. Convert each alphabet character's outline with points array\n2. Then draw lines from one focal point to each points in the array"
+            "text": "### Focal Point\nRicard Marxer의 [Geomerative](http://www.ricardmarxer.com/geomerative/) 라이브러리를 테스트해보았습니다.\n\n1. 각 알파벳 문자의 윤곽을 점의 집합로 변환\n2. 임의의(지정한) 초점에서 집합에 포함된 윤곽의 각 점까지 선 그리기"
         },
         "id": "d1882dd7-ebd7-4f8d-b58c-88e36a58d285",
         "isHidden": false,

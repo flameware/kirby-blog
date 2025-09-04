@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Slightly Not Circles\n\nThere's no \"Same\" shapes."
+            "text": "### Slightly Not Circles\n\n코드를 이용해서 완전한 원을 그리는건 비교적 쉽습니다.\n완전하지 않은 원을, 어떻게하면 덜 인위적으로/자연스럽게 그릴 수 있을까 테스트해 보았습니다.\n\n\"같은\" 모양은 없습니다."
         },
         "id": "6731b63c-fad5-401c-8869-cdc77364330d",
         "isHidden": false,

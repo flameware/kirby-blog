@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Lissajous Curve\n\nObjects moving along their own Lissajous curve path. + If some of them are close enough each other, draw a line between them.\n(I used 4 lissajous objects to make these images)\nIf you have interests in Lissajous curve, please visit [this wiki page](https://en.wikipedia.org/wiki/Lissajous_curve)."
+            "text": "### Lissajous Curve\n\n임의의 객체들을 리사주 곡선 경로를 따라 움직이고,\n각 객체들이 서로 충분히 가까워지면 그 사이에 선을 그립니다.\n(이 이미지들을 만들기 위해 4개의 리사주 객체를 사용했습니다)\n리사주 곡선에 관심이 있다면 [이 위키 페이지](https://en.wikipedia.org/wiki/Lissajous_curve)를 방문해주세요."
         },
         "id": "e15a6a96-1f03-49aa-87f1-fe7e0986a6fc",
         "isHidden": false,

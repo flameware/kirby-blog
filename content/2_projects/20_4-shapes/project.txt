@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### 4 Shapes\nRandomly placed & rotated figures with randomly assinged colour.\nI used colours from [here](http://www.colourlovers.com/palette/416765/quiet_morning) & [here](http://www.colourlovers.com/palette/301154/Influenza)."
+            "text": "### 4 Shapes\n\n랜덤으로 배치,회전한 도형(삼각형, 사분원)에 랜덤으로 색을 입혔습니다.\n색상은 [여기](http://www.colourlovers.com/palette/416765/quiet_morning)와 [여기](http://www.colourlovers.com/palette/301154/Influenza)를 참고해서 사용했습니다."
         },
         "id": "d00264e6-7512-4697-9759-fe3dec7eb4bd",
         "isHidden": false,
@@ -30,7 +30,7 @@ Date: 2015-01-25
 
 ----
 
-Tags: 
+Tags: Processing, Geometric
 
 ----
 

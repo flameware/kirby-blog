@@ -1,12 +1,12 @@
 <?php snippet('header') ?>
     <main class="main">
         <?= $page->blocks()->toBlocks() ?>
-        <?= $page->date() ?>
+        <p class="date">작성: <?= $page->date() ?></p>
         <ul class="tags">
             <?php foreach ($page->tags()->split() as $category): ?>
             <li><?= $category ?></li>
             <?php endforeach ?>
-        </ul>       
+        </ul>
 
     </main>
 <?php snippet('footer') ?>

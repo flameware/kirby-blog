@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Black, White, Sine & Cosine\nPlaying with simple trigonometrics - Black, White & Sine / Cosine.\n\nI've seen similar projects all over the web. \n\nSo this will be another sample of this kind of idea."
+            "text": "### Black, White, Sine & Cosine\n간단한 삼각함수 테스트 - 검은색, 흰색 그리고 사인/코사인.\n웹을 돌아다니다 보면 (인스타그램에서도) 비슷한 프로젝트들을 볼 수 있었는데, 그 연장선으로 테스트해 보았습니다.\n\n이 프로젝트도 이런 종류 표현의 하나의 샘플이 되지 않을까 싶네요."
         },
         "id": "2d2f82fb-7583-4bf5-9410-2b95d6acaf37",
         "isHidden": false,
@@ -32,7 +32,7 @@ Date: 2021-04-06
 
 ----
 
-Tags: 
+Tags: Trigonometry
 
 ----
 

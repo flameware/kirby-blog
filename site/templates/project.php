@@ -1,12 +1,7 @@
 <?php snippet('header') ?>
 
     <main class="main">
-        <p class="project-date"><?= $page->date() ?></p>
-        <ul class="tags">
-            <?php foreach ($page->tags()->split() as $category): ?>
-            <li><?= $category ?></li>
-            <?php endforeach ?>
-        </ul> 
+
         <?= $page->blocks()->toBlocks() ?>
         <div class="project-gallery">
         <?php foreach( $page->images() as $image) { ?>
@@ -15,6 +10,11 @@
             </a>
         <?php } ?>
         </div>
+        <ul class="tags">
+            <?php foreach ($page->tags()->split() as $category): ?>
+            <li><?= $category ?></li>
+            <?php endforeach ?>
+        </ul> 
    
     </main>
 

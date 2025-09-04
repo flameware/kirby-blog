@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Fibonacci Sequence\nDraw cocentric squares and circles. Each figures' size comply with the Fibonacci sequence. (1,1,2,3,5,8,13,...,987)"
+            "text": "### Fibonacci Sequence\n중심점을 공유하는 사각형과 원을 그립니다. 각 도형의 크기는 피보나치 수열을 따릅니다. (1,1,2,3,5,8,13,...,987)"
         },
         "id": "a864fcea-d657-45f0-bf18-f80321c0b7be",
         "isHidden": false,

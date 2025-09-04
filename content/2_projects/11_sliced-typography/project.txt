@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Sliced Typography\n- Text 1: TEST CASE\n- Text 2: Chicken & Beer in Korean.\n\nInspired from a work of [Synoptic Office](http://www.synopticoffice.com/project.php?projectid=1&selectedcol=1)"
+            "text": "### Sliced Typography\n- 텍스트 1: TEST CASE\n- 텍스트 2: 치킨과 맥주\n\n[Synoptic Office](http://www.synopticoffice.com/project.php?projectid=1&selectedcol=1)의 작품에서 영감을 받았습니다"
         },
         "id": "581f2782-88e8-4470-81d3-53d8bec50cf2",
         "isHidden": false,

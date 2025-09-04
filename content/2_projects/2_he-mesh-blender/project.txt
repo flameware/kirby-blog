@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### HE_Mesh & Blender\n\nTesting with [HE_Mesh](https://github.com/wblut/HE_Mesh) library with [Blender](http://www.blender.org/)."
+            "text": "### HE_Mesh & Blender\n\n[HE_Mesh](https://github.com/wblut/HE_Mesh) 라이브러리를 이용해서 변형/만들어낸 형태를 \n[Blender](http://www.blender.org/)로 재질 입혀서 렌더링했습니다."
         },
         "id": "8ba82cac-4bf4-45f7-9256-1e27084ac853",
         "isHidden": false,

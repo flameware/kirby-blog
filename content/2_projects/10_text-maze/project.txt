@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Text Maze\n\nDraw slant line segments to fill entire canvas. If a segment is on the character area, rotate it an angle of 90 degrees.\n- 1st text: TEST\n- 2nd text: Chicken & Beer in Korean.\n\nI used colours from [here](http://www.colourlovers.com/palette/90734/Newly_Risen_Moon)."
+            "text": "### Text Maze\n\n전체 캔버스를 채우기 위해 비스듬한 선을 그립니다. \n선이 원본 이미지와 비교했을 때, 문자의 영역에 있으면 90도 회전시킵니다.\n- 첫 번째 텍스트: TEST\n- 두 번째 텍스트: 치킨과 맥주\n\n여기서 색상을 사용했습니다: [here](http://www.colourlovers.com/palette/90734/Newly_Risen_Moon)."
         },
         "id": "143af666-336b-49dc-8fed-3fe395f638c1",
         "isHidden": false,

@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Trigonometrics\nVisualizing differences between sine graph and cosine graph."
+            "text": "### Trigonometrics\n사인 그래프와 코사인 그래프 사이의 차이를 시각화하기."
         },
         "id": "2237feea-a637-493b-b5e7-d6bf79e58322",
         "isHidden": false,

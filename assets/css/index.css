@@ -4,7 +4,7 @@
   /* Font */
   --text-font: 'Gowun Batang', serif;
   --color-background: hsl(0, 0%, 94%);
-  --color-highlight: hsl(11,95%,55%);
+  --color-highlight: hsl(67,100%,50%);
   --color-textcolor: hsl(138, 12%, 21%);
   --color-secondary: hsl(48, 29%, 83%);
 
@@ -45,7 +45,7 @@ h3 {
 }
 
 ::selection {
-    color: white;
+    color: var(--color-textcolor);
     background: var(--color-highlight);
 }
 
@@ -94,6 +94,20 @@ a:hover {
     display: flex;
     flex-direction: row;
     gap: 32px;
+}
+
+.tags {
+    color: white;
+    list-style: none;
+    padding: 0;
+    font-size: 0.79rem;
+}
+
+.tags li {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background-color: var(--color-textcolor);
+    border-radius: 1rem;
 }
 
 hr {

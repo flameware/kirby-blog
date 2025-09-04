@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Project Audrey\n\n[GO TO MICROSITE](https://gallery-audrey.now.sh/).\n\nI've tried several pixel simulation projects from the very beginning of my coding studies. After some study projects of [Three.js](https://threejs.org/), I wanted to summarize what i've done into one project.</br>\nAs the result, I built a virtual gallery into web browser. Audience can navigate the gallery by both swiping gesture and arrow key input. I choose Audrey Hepburn's photo taken by Yousuf Karsh as original image for its superior image quality."
+            "text": "### Project Audrey\n\n[마이크로사이트로 이동](https://gallery-audrey.now.sh/).\n\n코딩 공부를 시작할 때부터 여러 픽셀 시뮬레이션 프로젝트를 시도해왔습니다. \n[Three.js](https://threejs.org/)를 공부한 후, \n제가 한 것들을 하나의 프로젝트로 요약해서 전시하면 어떨까라는 생각을 했고 웹에 가상 갤러리를 구축했습니다. \n\n스와이프 제스처와 화살표 키 입력 모두로 갤러리를 탐색할 수 있습니다. \nYousuf Karsh가 찍은 오드리 헵번의 사진을 원본 이미지로 선택했습니다."
         },
         "id": "f4ca6f5e-ca45-4c2c-ae6e-507c93349057",
         "isHidden": false,

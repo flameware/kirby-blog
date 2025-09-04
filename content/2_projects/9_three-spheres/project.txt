@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Three Spheres\n3 Spheres: Source, Target & Difference"
+            "text": "### Three Spheres\n3개의 구체: 기준, 목표 그리고 그 차이"
         },
         "id": "96974e49-11fa-4d48-9cf9-5f3882855605",
         "isHidden": false,

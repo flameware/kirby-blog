@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Remember Sewol\nRemember Sewol, April 16, 2014."
+            "text": "### Remember Sewol\n2014년 4월 16일, 세월호를 기억합니다."
         },
         "id": "9a428b63-ecdb-41bb-9537-8c3b4b93b8ac",
         "isHidden": false,

@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Line Works\nSimple scribble with code."
+            "text": "### Line Works\n코드로 하는 간단한 낙서."
         },
         "id": "6606b009-c6d0-4798-9d4c-1cd63ff3f468",
         "isHidden": false,

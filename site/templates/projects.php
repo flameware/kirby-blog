@@ -1,5 +1,4 @@
 <?php snippet('header') ?>
-
         <main class="main">
         <ul class="projects">
             <?php foreach ($page->children()->listed() as $project) { ?>

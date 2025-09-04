@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Braille For Us\n\n[GO TO MICROSITE](https://braille2020.now.sh/).\nWe can see braille everyday, near our daily life. Braille is written on soda can, on elevator buttons, and so on.\n\nOne day in 2018, a simple idea just arrived on my head.\n\nHow can we 'simulate' difficulties and problems that visually-handicapped people have.\n\n[A prototype](https://braille20180405.massivevoid.now.sh/) I made at that time was more focused on 'uncomfortable' feeling. But the technologies I used are outdated & not so well working in modern browsers. \nSo I decided to re-written it with modern techs with simpler technical approach.\n\nYou can navigate each text using your finger (on mobile) or mouse (on desktop).\nJust try. You'll know what I mean."
+            "text": "### Braille For Us\n\n[마이크로사이트로 이동](https://braille2020.now.sh/).\n\n우리는 일상생활에서 매일 점자를 볼 수 있습니다. 점자는 음료수 캔, 엘리베이터 버튼 등에 쓰여 있습니다.\n어느 날, 간단한 아이디어가 머릿속에 떠올랐습니다.\n시각 장애인이 겪는 어려움과 문제를 어떻게 조금이라도 '시뮬레이션'할 수 있을까?\n손 끝으로 글자 하나씩 읽어나가는 느낌을 재현해보려고 이 프로젝트를 시작했습니다.\n\n손가락(모바일)이나 마우스(데스크톱)를 사용해서 각 텍스트를 탐색할 수 있습니다.\n한번 시도해보세요."
         },
         "id": "d8b0ccb4-f675-41ed-a1a8-2609fa2d0f3e",
         "isHidden": false,

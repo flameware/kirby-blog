@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### 안녕하세요. 손성기입니다.\n\nMASSIVE VOID is an archive for works and experiments of Seongki Sohn. Seongki Sohn is a designer rooted in Industrial Design, works and lives in Seoul, Korea. Currently he is working as UX Designer at Naver Financial.\n\nMost works on this website are made with Processing language and web technologies."
+            "text": "### 안녕하세요. 손성기입니다.\n\n#### 짧은 버전\nMassive Void는 손성기의 글과 개인작업을 모은 공간입니다.\nUX디자이너/프로덕트디자이너로 일하고 있습니다.\n헤비메탈과 건축, F1과 NBA, 그 밖의 다양한 것에 관심이 있습니다.\n\n\n#### 긴 버전\n- ㅇㅇㅇㅇ\n- ㅇㅇㅇㅇ\n- ㅇㅇㅇㅇㅇ\n- ㅇㅇㅇㅇ"
         },
         "id": "681f3bd0-72ac-41bf-97e3-9eb4ebb33932",
         "isHidden": false,

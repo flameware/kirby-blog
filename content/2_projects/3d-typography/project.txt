@@ -1,0 +1,37 @@
+Title: 3D Typography
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "text": "### 3D Typography\n\n라이노에서 3D 텍스트를 만든 다음, hemesh 라이브러리를 사용하여 모델(obj 파일)을 프로세싱으로 가져왔습니다.\n그 뒤 라이브러리를 사용하여 3D 모델을 수정하고 키샷으로 렌더링했습니다.\n[Jan Vantomme의 작품](http://vormplus.be/blog/article/cloudswimmers-alphabet-the-process)에서 영감을 받았습니다(일부 작품은 단순 복사).\n\n사용된 라이브러리:\n- [HE_Mesh](http://hemesh.wblut.com/)\n- [PeasyCam](http://mrfeinberg.com/peasycam/)"
+        },
+        "id": "7cf8e786-6e00-42d8-9d86-68306dff7e24",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Gallery:
+
+- file://ek06zbrbxjb4tqso
+- file://r8gxjcpwgxztij1h
+- file://wfmisexa6nd6jqit
+- file://hndc2cw1zrpwwd1r
+
+----
+
+Date: 2014-08-13
+
+----
+
+Tags: 
+
+----
+
+Uuid: 0iqeldu20s5xkmas

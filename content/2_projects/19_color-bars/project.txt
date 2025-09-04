@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Color Bars\n\nSimple gradient test with two colors."
+            "text": "### Color Bars\n\n두 가지 색상으로 만든 간단한 그라데이션 테스트."
         },
         "id": "3dfd8f32-5815-44c0-a8ac-c96d90dd131b",
         "isHidden": false,

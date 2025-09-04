@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Explosion!\nTried to mimic fireworks in simplified manner."
+            "text": "### Explosion!\n프로세싱을 처음 익힐 무렵, 폭죽이 터지는 장면을 보고\n요소를 단순화하고, 랜덤요소를 섞어서 어떻게 그릴 수 있을까 테스트해보았습니다."
         },
         "id": "741ce70c-68ce-40c3-82da-e7446009c2cf",
         "isHidden": false,

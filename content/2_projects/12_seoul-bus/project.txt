@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "## Seoul Bus\n\n[GO TO MICROSITE](https://seoul-bus.now.sh/).\nSmall project to show the most crowded bus stops in Seoul city. </br> I used passenger data of April 2017 from Seoul Gov. homepage."
+            "text": "## Seoul Bus\n\n[마이크로사이트로 이동](https://seoul-bus.now.sh/).\n\n서울시에서 가장 붐비는 버스 정류장을 보여주는 작은 프로젝트입니다.\n서울시 홈페이지에서 2017년 4월 승객 데이터를 사용했습니다."
         },
         "id": "1e1a3aeb-ec7e-4c49-85f2-556c27bbe689",
         "isHidden": false,

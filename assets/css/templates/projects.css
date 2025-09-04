@@ -36,6 +36,14 @@
 .projects a {
     text-decoration: none;
 }
+.projects a:hover {
+    color: var(--color-textcolor);
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: .5em;
+    text-underline-offset: -.25em;
+}
 
 .projects img {
     width: 100%;

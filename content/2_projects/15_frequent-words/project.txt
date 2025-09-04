@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Frequent Words\n\nBook cover design from 5 most used words in each book.\nIt's quite interesting that most used words in a book shows the character of original text.\nI used RiWordNet from [RiTa plugin](http://rednoise.org/rita/) and [WordNet](https://wordnet.princeton.edu/) to analyse original text and picked 5 most used words(nouns) from them.\n\nOriginal texts are from [Project Gutenberg](https://www.gutenberg.org).\nPlease note that more frequently used but meaningless words (such as he, it, me, who, and so on) have been excluded."
+            "text": "### Frequent Words\n\n각 책에서 가장 많이 사용된 5개 단어로만 북커버 디자인을 하면 어떨까 라는 아이디어로 시작했습니다.\n프로젝트를 해 보니 한 책에서 가장 많이 사용된 단어들이 책 전체의 특성을 보여준다는 것이 꽤 흥미로웠습니다.\n\n[RiTa 플러그인](http://rednoise.org/rita/)의 RiWordNet과 [WordNet](https://wordnet.princeton.edu/)을 사용해서 원문을 분석하고 \n그 중에서 가장 많이 사용된 5개 단어(명사)를 선택했습니다.\n\n원문은 [Project Gutenberg](https://www.gutenberg.org)에서 가져왔습니다.\n더 자주 사용되지만 의미 없는 단어들(예: he, it, me, who 등)은 숫자를 셀 때 제외하였습니다."
         },
         "id": "270f9bab-0057-47c4-8e57-c826c240b53e",
         "isHidden": false,
