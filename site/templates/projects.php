@@ -1,4 +1,4 @@
-<?php snippet('header') ?>
+<?php snippet('header', data: ['title'=>'Projects | Massive Void | 손성기']) ?>
         <main class="main">
         <ul class="projects">
             <?php foreach ($page->children()->listed() as $project) { ?>
