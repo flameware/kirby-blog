@@ -1,4 +1,5 @@
 .projects-container {
+    box-sizing: border-box;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -41,10 +42,52 @@
     text-decoration: underline;
     text-decoration-color: var(--color-highlight);
     text-decoration-skip-ink: none;
-    text-decoration-thickness: .5em;
-    text-underline-offset: -.25em;
+    text-decoration-thickness: 1em;
+    text-underline-offset: -1em;
 }
 
 .projects img {
     width: 100%;
+}
+
+
+/* 미디어 쿼리 */
+
+/* Mobile phones (portrait) */
+@media (max-width: 480px) {
+/* Styles for small phones */
+.projects-container {
+    width: 100vw;
+    padding: 20px;
+}
+
+.projects-container .mainnav{
+    width: 100%;
+    padding: 0 20px;
+
+}
+
+}
+
+
+/* Mobile phones (landscape) and small tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+/* Styles for larger phones in landscape */
+}
+
+/* Common mobile-first approach */
+@media (min-width: 320px) {
+/* Base mobile styles (smallest phones) */
+}
+
+@media (min-width: 375px) {
+/* iPhone SE, iPhone 12/13/14 mini */
+}
+
+@media (min-width: 414px) {
+/* iPhone 6/7/8 Plus, iPhone 11 Pro Max */
+}
+
+@media (min-width: 430px) {
+/* iPhone 14 Pro Max and similar large phones */
 }

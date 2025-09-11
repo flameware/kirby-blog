@@ -8,6 +8,10 @@
   --color-textcolor: hsl(138, 12%, 21%);
   --color-secondary: hsl(48, 29%, 83%);
 
+  /* Spacing */
+  --big-gap-desktop: 80px;
+  --big-gap-mobile: 24px;
+
 
 }
 
@@ -33,6 +37,7 @@ h1 {
     font-size: 2.027rem;
     line-height: 1.4;
 }
+
 h2 {
     font-size: 1.802rem;
     line-height: 1.4;
@@ -64,12 +69,13 @@ a:hover {
     text-decoration: underline;
     text-decoration-color: var(--color-highlight);
     text-decoration-skip-ink: none;
-    text-decoration-thickness: .5em;
-    text-underline-offset: -.25em;
+    text-decoration-thickness: 1em;
+    text-underline-offset: -1em;
 }
 
 
 .container {
+    box-sizing: border-box;
     width: 46.7vw;
     padding: 5.6vw 0 0 0;
 
@@ -119,4 +125,59 @@ hr {
 .main-footer {
     padding: 5vw 0 5vw 0;
 
+}
+
+/* 미디어 쿼리 */
+
+/* Mobile phones (portrait) */
+@media (max-width: 480px) {
+/* Styles for small phones */
+.container {
+    width: 100vw;
+    padding: 20px;
+}
+
+.submenu{
+    display: none;
+
+}
+
+h1 {
+    font-size: 1.476rem;
+    line-height: 1.4;
+}
+h2 {
+    font-size: 1.383rem;
+    line-height: 1.4;
+}
+
+h3 {
+    font-size: 1.296rem;
+    line-height: 1.4;
+    padding: 0;
+}
+
+}
+
+
+/* Mobile phones (landscape) and small tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+/* Styles for larger phones in landscape */
+}
+
+/* Common mobile-first approach */
+@media (min-width: 320px) {
+/* Base mobile styles (smallest phones) */
+}
+
+@media (min-width: 375px) {
+/* iPhone SE, iPhone 12/13/14 mini */
+}
+
+@media (min-width: 414px) {
+/* iPhone 6/7/8 Plus, iPhone 11 Pro Max */
+}
+
+@media (min-width: 430px) {
+/* iPhone 14 Pro Max and similar large phones */
 }

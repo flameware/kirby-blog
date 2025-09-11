@@ -8,12 +8,12 @@ main a {
 }
 
 .blog-heading {
-    padding: 80px 0 80px 0;
+    padding: var(--big-gap-desktop) 0 var(--big-gap-desktop) 0;
 }
 
 .date {
     font-size: 0.889rem;
-    padding: 80px 0 0 0;
+    padding: var(--big-gap-desktop) 0 0 0;
 }
 
 figure {
@@ -28,4 +28,45 @@ figure iframe {
 
 figcaption {
     font-size: 0.889rem;
+}
+
+
+/* 미디어 쿼리 */
+
+/* Mobile phones (portrait) */
+@media (max-width: 480px) {
+/* Styles for small phones */
+
+.blog-heading {
+    padding: var(--big-gap-mobile) 0 var(--big-gap-mobile) 0;
+}
+
+.date {
+    font-size: 0.889rem;
+    padding: var(--big-gap-mobile) 0 0 0;
+}
+
+}
+
+
+/* Mobile phones (landscape) and small tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+/* Styles for larger phones in landscape */
+}
+
+/* Common mobile-first approach */
+@media (min-width: 320px) {
+/* Base mobile styles (smallest phones) */
+}
+
+@media (min-width: 375px) {
+/* iPhone SE, iPhone 12/13/14 mini */
+}
+
+@media (min-width: 414px) {
+/* iPhone 6/7/8 Plus, iPhone 11 Pro Max */
+}
+
+@media (min-width: 430px) {
+/* iPhone 14 Pro Max and similar large phones */
 }
