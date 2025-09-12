@@ -57,3 +57,7 @@ Icon
 # Modules
 # ---------------
 /vendor
+
+# Security
+# ---------------
+*.pem
