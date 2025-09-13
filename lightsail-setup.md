@@ -162,7 +162,11 @@ echo "4. Configure your domain DNS"
 4. **Configure SSL with Let's Encrypt:**
    ```bash
    sudo apt install certbot python3-certbot-apache
-   sudo certbot --apache -d your-domain.com
+   sudo certbot --apache -d massivevoid.com
    ```
 
 This script sets up everything needed for Kirby CMS with proper security and performance configurations.
+
+sudo sed -i 's/ServerName your-domain.com/ServerName massivevoid.com/' /etc/apache2/sites-available/kirby.conf
+
+sudo sed -i 's/ServerName your-domain.com/ServerName massivevoid.com/' /etc/apache2/sites-available/kirby-le-ssl.conf
