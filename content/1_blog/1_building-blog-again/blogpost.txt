@@ -24,7 +24,7 @@ Blocks:
     },
     {
         "content": {
-            "text": "### 첫 번째 시도: Astro + Github Pages\n헷갈리거나 막히는 부분은 다 Claude Code에 맡긴다고 치고\n찾아낸 첫 옵션이 [Astro](https://astro.build/)를 이용하는 거였다.\nAstro는 정적인 (컨텐츠 소비용) 웹사이트를 만드는데 최적화된 프레임웍이고,\n새로운것을 시도해 본다는 차원에서 선택했었다.\n\n(Next.js + Vercel을 쓰는것도 좋은 선택이었지만 \n왠지 블로그주소에 vercel.app 이 붙는게 좀 꺼려지기도 했고.)\n\n무엇보다도 Github Pages로 공짜 호스팅이 된다는게 가장 큰 매력포인트중에\n하나였다.\n블로그가 github에 있다는것도 뭔가 간지나지 않나."
+            "text": "### 첫 번째 시도: Astro + Github Pages\n헷갈리거나 막히는 부분은 다 Claude Code에 맡긴다고 치고\n찾아낸 첫 옵션이 [Astro](https://astro.build/)를 이용하는 거였다.\nAstro는 정적인 (컨텐츠 소비용) 웹사이트를 만드는데 최적화된 프레임웍이고,\n새로운것을 시도해 본다는 차원에서 선택했었다.\n\n(Next.js + Vercel을 쓰는것도 좋은 선택이었지만 \n왠지 블로그주소에 vercel.app 이 붙는게 좀 꺼려지기도 했고.)\n\n무엇보다도 Github Pages로 공짜 호스팅이 된다는게 \n가장 큰 매력포인트중에 하나였다.\n블로그가 github에 있다는것도 뭔가 간지나지 않나."
         },
         "id": "a1d1fed1-41a5-4e61-b5ad-3229c7bbd6e5",
         "isHidden": false,
