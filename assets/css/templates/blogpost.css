@@ -9,11 +9,13 @@ main a {
 
 .blog-heading {
     padding: var(--big-gap-desktop) 0 var(--big-gap-desktop) 0;
+    margin: 0;
 }
 
 .date {
     font-size: 0.889rem;
     padding: var(--big-gap-desktop) 0 0 0;
+    margin: 0;
 }
 
 figure {
@@ -24,6 +26,10 @@ figure {
 figure iframe {
     width: 100%;
     height: 26.3vw;
+}
+
+figure img {
+    width: 100%;
 }
 
 figcaption {
@@ -38,12 +44,17 @@ figcaption {
 /* Styles for small phones */
 
 .blog-heading {
-    padding: var(--big-gap-mobile) 0 var(--big-gap-mobile) 0;
+    padding: 0 0 var(--big-gap-mobile) 0;
 }
 
 .date {
     font-size: 0.889rem;
     padding: var(--big-gap-mobile) 0 0 0;
+}
+
+figure iframe {
+    width: 100%;
+    height: 56.25vw;
 }
 
 }

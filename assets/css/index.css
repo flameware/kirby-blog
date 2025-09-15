@@ -2,7 +2,7 @@
   /* Colors to be updated */
 
   /* Font */
-  --text-font: 'Gowun Dodum', serif;
+  --text-font: 'Gowun Batang', serif;
   --color-background: hsl(0, 0%, 96%);
   --color-highlight: hsl(67,100%,50%);
   --color-textcolor: hsl(138, 12%, 21%);
@@ -10,7 +10,7 @@
 
   /* Spacing */
   --big-gap-desktop: 80px;
-  --big-gap-mobile: 24px;
+  --big-gap-mobile: 40px;
 
 
 }
@@ -23,30 +23,37 @@ html {
 body {
     background: var(--color-background);
     font-family: var(--text-font);
-    line-height: 2.0;
+    line-height: 1.8;
     font-weight: 400;
     font-style: normal;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--color-textcolor)
+    color: var(--color-textcolor);
+    margin: 0;
 }
 
 h1 {
     font-size: 2.027rem;
+    font-weight: 700;
     line-height: 1.4;
+    margin: 0;
 }
 
 h2 {
     font-size: 1.802rem;
+    font-weight: 700;
     line-height: 1.4;
+    margin: 0;
 }
 
 h3 {
     font-size: 1.602rem;
+    font-weight: 700;
     line-height: 1.4;
-    padding: 3rem 0 0 0;
+    padding: var(--big-gap-desktop) 0 0 0;
+    margin: 0;
 }
 
 ::selection {
@@ -127,6 +134,13 @@ hr {
 
 }
 
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+}
+
 /* 미디어 쿼리 */
 
 /* Mobile phones (portrait) */
@@ -154,7 +168,12 @@ h2 {
 h3 {
     font-size: 1.296rem;
     line-height: 1.4;
-    padding: 0;
+    padding: var(--big-gap-mobile) 0 0 0;
+    margin: 0;
+}
+
+.footer-menu {
+    visibility: visible;
 }
 
 }
