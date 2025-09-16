@@ -22,7 +22,8 @@
     grid-column-gap: 1rem;
     grid-row-gap: 3rem;
     list-style: none;
-    padding: 80px 4vw;
+    padding: var(--big-gap-desktop) 4vw;
+    margin: 0;
 }
 
 .projects figure {
@@ -65,6 +66,19 @@
     width: 100%;
     padding: 0 20px;
 
+}
+
+.projects-container footer{
+    width: 100%;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 3rem;
+    list-style: none;
+    padding: var(--big-gap-mobile) 0;
 }
 
 }

@@ -8,7 +8,7 @@
 }
 
 .home-bloglist li {
-    padding-bottom: 1.78rem;
+    padding-bottom: 1.6rem;
 }
 
 
@@ -74,7 +74,7 @@
 @media (max-width: 480px) {
 /* Styles for small phones */
 .home-intro {
-    padding: var(--big-gap-mobile) 0 var(--big-gap-mobile) 0;
+    padding: 0 0 var(--big-gap-mobile) 0;
 }
 
 .home-bloglist {
