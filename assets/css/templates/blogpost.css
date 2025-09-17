@@ -1,10 +1,9 @@
 main a {
-    color: var(--color-textcolor);
-    text-decoration: underline;
-    text-decoration-color: var(--color-highlight);
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: .2em;
-    text-underline-offset: -.25em;
+    color: var(--color-link);
+}
+
+main a:visited {
+    color: var(--color-link)
 }
 
 .blog-heading {
@@ -16,6 +15,12 @@ main a {
     font-size: 0.889rem;
     padding: var(--big-gap-desktop) 0 0 0;
     margin: 0;
+}
+
+blockquote {
+    padding: 10px 10px 10px var(--big-gap-desktop);
+    margin: 0;
+    border-left: solid var(--color-secondary);
 }
 
 figure {
@@ -51,6 +56,11 @@ figcaption {
 .date {
     font-size: 0.889rem;
     padding: var(--big-gap-mobile) 0 0 0;
+}
+
+blockquote {
+    padding: 4px 4px 4px var(--big-gap-mobile);
+    margin: 0;
 }
 
 figure iframe {

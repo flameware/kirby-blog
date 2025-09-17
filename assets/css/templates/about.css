@@ -1,8 +1,8 @@
 main a {
-    color: var(--color-textcolor);
-    text-decoration: underline;
-    text-decoration-color: var(--color-highlight);
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: .2em;
-    text-underline-offset: -.25em;
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+main a:visited {
+    color: var(--color-link)
 }
