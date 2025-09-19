@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "49ca5370165721d6eb3a7750be1d4faa",
+    "content-hash": "527f92326bf63eb7d96d8875158318aa",
     "packages": [
         {
             "name": "christian-riesen/base32",
@@ -596,6 +596,183 @@
                 "source": "https://github.com/michelf/php-smartypants/tree/1.8.1"
             },
             "time": "2016-12-13T01:01:17+00:00"
+        },
+        {
+            "name": "mzur/kirby-flash",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mzur/kirby-flash.git",
+                "reference": "298df11e3adc8d872db8cd48ef3736c3cbdb6c6e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mzur/kirby-flash/zipball/298df11e3adc8d872db8cd48ef3736c3cbdb6c6e",
+                "reference": "298df11e3adc8d872db8cd48ef3736c3cbdb6c6e",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2"
+            },
+            "require-dev": {
+                "getkirby/cms": "^3.0",
+                "mzur/kirby-defuse-session": "^1.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "kirby-plugin",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Jevets\\Kirby\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Jamesson",
+                    "email": "steve@evendev.com"
+                },
+                {
+                    "name": "Martin Zurowietz",
+                    "email": "martin@the-inspired-ones.de"
+                }
+            ],
+            "description": "Stores data in the session for the next request. Data is removed after the next page load.",
+            "keywords": [
+                "flash",
+                "kirby",
+                "session"
+            ],
+            "support": {
+                "issues": "https://github.com/mzur/kirby-flash/issues",
+                "source": "https://github.com/mzur/kirby-flash/tree/v2.2.0"
+            },
+            "time": "2023-01-05T18:59:28+00:00"
+        },
+        {
+            "name": "mzur/kirby-form",
+            "version": "v3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mzur/kirby-form.git",
+                "reference": "8dc211b321375dbf77c43e1287e9fe0be2762ec0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mzur/kirby-form/zipball/8dc211b321375dbf77c43e1287e9fe0be2762ec0",
+                "reference": "8dc211b321375dbf77c43e1287e9fe0be2762ec0",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2",
+                "mzur/kirby-flash": "^2.0"
+            },
+            "require-dev": {
+                "getkirby/cms": "^3.0",
+                "mzur/kirby-defuse-session": "^1.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "kirby-plugin",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Jevets\\Kirby\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Jamesson",
+                    "email": "steve@evendev.com"
+                },
+                {
+                    "name": "Martin Zurowietz",
+                    "email": "martin@the-inspired-ones.de"
+                }
+            ],
+            "description": "A form helper for Kirby-based websites, using the Post/Redirect/Get pattern.",
+            "keywords": [
+                "form",
+                "kirby"
+            ],
+            "support": {
+                "issues": "https://github.com/mzur/kirby-form/issues",
+                "source": "https://github.com/mzur/kirby-form/tree/v3.3.0"
+            },
+            "time": "2023-02-19T09:51:38+00:00"
+        },
+        {
+            "name": "mzur/kirby-uniform",
+            "version": "v5.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mzur/kirby-uniform.git",
+                "reference": "bb8e634357024d2281d4c553c50664764822d4c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mzur/kirby-uniform/zipball/bb8e634357024d2281d4c553c50664764822d4c6",
+                "reference": "bb8e634357024d2281d4c553c50664764822d4c6",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2",
+                "mzur/kirby-form": "^3.0"
+            },
+            "require-dev": {
+                "getkirby/cms": "^3.5 || ^4.0 || 5.0.0-rc.1",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "kirby-plugin",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Uniform\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Zurowietz",
+                    "email": "martin@the-inspired-ones.de"
+                }
+            ],
+            "description": "A versatile Kirby plugin to handle web form actions.",
+            "keywords": [
+                "form",
+                "kirby"
+            ],
+            "support": {
+                "docs": "http://kirby-uniform.readthedocs.io",
+                "issues": "https://github.com/mzur/kirby-uniform/issues",
+                "source": "https://github.com/mzur/kirby-uniform"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/drmzur",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/mzur",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-09-12T12:32:36+00:00"
         },
         {
             "name": "phpmailer/phpmailer",

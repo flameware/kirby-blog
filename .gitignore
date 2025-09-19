@@ -58,6 +58,7 @@ Icon
 # Modules
 # ---------------
 /vendor
+/site/plugins/
 
 # Security
 # ---------------
