@@ -7,9 +7,6 @@ main a:visited {
     color: var(--color-link)
 }
 
-main h2 {
-    padding: var(--big-gap-desktop) 0 0 0;
-}
 
 
 .project-gallery {
@@ -45,9 +42,6 @@ figcaption {
 /* Mobile phones (portrait) */
 @media (max-width: 480px) {
 /* Styles for small phones */
-main h2 {
-    padding: var(--big-gap-mobile) 0 0 0;
-}
 
 
 }
