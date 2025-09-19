@@ -23,7 +23,7 @@ Blocks:
     },
     {
         "content": {
-            "text": "#### 연락처\n작업물 관련이나 어떤것이든 궁금한것, 저에게 연락이 필요하시면 [여기](mailto:flameware@gmail.com)로 메일주세요."
+            "text": "#### 연락처\n어떤것이든 궁금한것이 있으시거나, 저에게 연락이 필요하시면 [여기](mailto:flameware@gmail.com)로 메일주세요"
         },
         "id": "ad7af50e-64e1-47a9-9887-d27393ae1863",
         "isHidden": false,
