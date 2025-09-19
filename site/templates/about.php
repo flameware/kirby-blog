@@ -4,7 +4,7 @@
 <main class="main">
         <?= $page->blocks()->toBlocks() ?>
 
-
+<!--
 <hr>
 <p class="form-intro">연락이 필요하시면 아래에 이메일주소와 이름, 메시지를 남겨주세요.</p>
 
@@ -27,6 +27,7 @@
 <?php else: ?>
     <?php snippet('uniform/errors', ['form' => $form]) ?>
 <?php endif; ?>
+-->
 
     </main>
 
