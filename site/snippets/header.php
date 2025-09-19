@@ -16,6 +16,33 @@
     <?= css(url: 'assets/css/index.css') ?>
     <?= css(url: '@auto') ?>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const submenu = document.querySelector('.submenu');
+
+            if (mobileToggle && submenu) {
+                mobileToggle.addEventListener('click', function() {
+                    mobileToggle.classList.toggle('active');
+                    submenu.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (!event.target.closest('.mainnav')) {
+                        mobileToggle.classList.remove('active');
+                        submenu.classList.remove('active');
+                    }
+                });
+
+                submenu.addEventListener('click', function(event) {
+                    if (event.target.tagName === 'A') {
+                        mobileToggle.classList.remove('active');
+                        submenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 
 </head>
 <body>
@@ -24,9 +51,14 @@
             <ul>
                 <li><a href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a></li>
             </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <ul class="submenu">
                 <?php foreach ($site->children()->listed() as $item) { ?>
                 <li><a href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
-                <?php } ?>    
+                <?php } ?>
             </ul>
         </nav>
