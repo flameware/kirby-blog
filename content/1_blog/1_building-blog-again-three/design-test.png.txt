@@ -1,0 +1,5 @@
+Uuid: meaip5synstvk0m3
+
+----
+
+Template: blocks/image

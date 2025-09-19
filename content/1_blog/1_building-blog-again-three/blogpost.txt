@@ -1,0 +1,128 @@
+Title: Building Blog Again Three
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "level": "h2",
+            "text": "블로그를 또 새로 만들기 (마지막)"
+        },
+        "id": "30e0b9f8-b4a3-4c04-b3bb-a4edfe06c8b4",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "### 대략의 계획\n시작하기 전에 마음속에 몇 가지 요구사항은 갖고 있었다.\n- 서체는 Serif 한글 서체 중에서 선택하자 -> 결론적으로 지금은 [고운 바탕](https://fonts.google.com/specimen/Gowun+Batang)을 사용.\n- 블로그 뿐 아니라, 기존에 갖고있던/운영하던 홈페이지 도메인을 이용하자.\n- 기존 홈페이지에는 작업물만 모아뒀는데, 이걸 그냥 블로그+작업물 저장소 개념으로 확장하는 것으로 결정했다. 자연스럽게 기존에 호스팅을 위해 이용하던 [blot.im](https://blot.im)은 해지하기로. (blot은 좋은 서비스니 가볍게 뭘 만들 필요가 있는분들은 확인해 보세요)"
+        },
+        "id": "edb97f73-e0fe-4fdf-b784-c0afd526baf5",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "### 시각적, 구조적 concept\n그... 결과물에 잘 안들어날수도 있는데 개인적으로 [David Chipperfield](https://davidchipperfield.com/) 건축물들의 파사드에 나타나는 패턴을 무척 좋아한다.\n그 느낌을 내고 싶었다. 특히 projects 공간에서.\n아래는 시작전에 꼴라주해본것.\n(누구신고 싶으시다면 용산 아모레퍼시픽 본사 설계한 건축가입니다)"
+        },
+        "id": "65218622-5cf7-4567-91e0-080615e9fa4e",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://tkuh97whtdvtmyij"
+            ],
+            "src": "",
+            "alt": "David Chipperfield의 건축",
+            "caption": "David Chipperfield의 건축 사례",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "f9ab0aac-3129-45b5-bac3-84cdb7bfd9f8",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 시안 테스트\n(디자인 다 해놓고 손가는대로 개발... Title 호버했을 때 뭐 이것저것 넣어볼까도 했는데 구찮았다.)"
+        },
+        "id": "2e2bae44-9476-4c6e-b924-931bc4038186",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://meaip5synstvk0m3"
+            ],
+            "src": "",
+            "alt": "디자인 시안 테스트",
+            "caption": "디자인 테스트",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "066bc90f-2ec0-4a8d-b805-12933be16a8f",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 개발\n다른 최근 개인플젝은 거의 claude code를 이용해서 기술스택만 지정해주고 zero base부터 쌓아올리는 식으로 작성했는데, 사실 복잡한 것도 아니고 프롬프트 깎을 시간에 css랑 구조템플릿만 건드리면 되어서 그냥 매뉴얼로 개발했다.\n물론 하다가 공식문서에 없는 내용이나 생각외로 꼬이는 부분은 claude code의 도움을 많이 받았다."
+        },
+        "id": "248e6c81-92f8-4ff8-b7a6-d4ac1a883f5f",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://goeiz2wvdyww6xsh"
+            ],
+            "src": "",
+            "alt": "development tool",
+            "caption": "개발환경( 이라고 해봤자 VS Code + Claude Code)",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "64606aef-bec4-45fd-9bc0-55ff30c2eef5",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 배포 환경\nClaude가 활약한 부분이 바로 여기.\n배포를 어디다가 어떻게 할까 고민을 많이 했는데, (좋은 경험은 아니지만) 예전에 AWS Lightsail로 홈페이지 호스팅했던 경험이 있던터라, 비용절감겸 해서 다시 lightsail에 LAMP스택으로 진행하기로 했다.\n다만 여기서 헤맸던게, AWS가 기본적으로 제공하는 LAMP스택으로 했을 때 꼬이는 부분이 더 많았고, OS only 옵션으로 ubuntu만 깔린 인스턴스 만들고, 초기 환경설정에 필요한 shell script를 claude를 통해서 작성하고, 돌렸다. (물론 이것도 한큐에 통과하지는 않았지만 stack overflow나 구글에서 헤메는 거에 비할바는 아니다)"
+        },
+        "id": "c041a4aa-72f5-4325-a8f2-d3ac7c77510b",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "### 업데이트 구조\nGithub actions 써서 자동화하는 경우들이 많던데, 지금은 약간은 귀찮지만 git으로 여기서 푸시하고 저기서 풀 하는 형태로 수동으로 관리하고 있다. 당장은 할만한데, 또 몇 주 지나면 어떻게 될지 모르겠다.\n\n여기까지가 여태까지의 여정.\n이젠 만들었으니 잘 채워넣을 일만 남았다."
+        },
+        "id": "faab4c17-6809-4478-ad69-fd9583a39306",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Date: 2025-09-20
+
+----
+
+Tags: blog, development, kirby cms, blot.im
+
+----
+
+Uuid: mrvbnz7xua8nxduh
