@@ -1,0 +1,172 @@
+Title: Drummer - Eloy Casagrande
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "level": "h2",
+            "text": "Drummer - Eloy Casagrande"
+        },
+        "id": "c89bae92-1288-4647-a696-871841d07d86",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "신동 - 신동(神童, child prodigy)은 기술적으로 특정 분야에서 성인 전문가 수준의 의미 있는 작업을 만들어내는 10세 미만의 어린이를 말한다. 이 용어는 특정 분야에서 비범한 재능을 가진 젊은 사람들을 설명하는 데 더 넓게 적용되기도 한다.",
+            "citation": "Wikipedia"
+        },
+        "id": "deb27cf7-7e1a-43cc-a3ff-8b8543ad5a26",
+        "isHidden": false,
+        "type": "quote"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://wy0pdrlawcs1qrrh"
+            ],
+            "src": "",
+            "alt": "Eloy casagrande",
+            "caption": "",
+            "link": "https://en.wikipedia.org/wiki/Eloy_Casagrande",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "5b4dac49-2040-49a0-952c-a910cf8a363b",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 두 번째 드러머, 엘로이 카사그란데\n요즘은 많은 것들이 그렇듯, 처음 알게된건 유튜브 알고리즘의 덕분이었다. 브라질의 근본 메탈밴드 Sepultura의 드러머라니. 그런 것 치고는 구독자가 10만도 안 되었고, 밴드도 창립자인 카발레라형제가 떠난지도 오래됐고, 그 정도 경력의 밴드 중에서는 내 취향 밖이라고 생각하던 터라 사실 큰 기대 안하고 영상을 눌렀다. 메탈리카 드럼커버는 웬만하면 (프로라면) 라스보다는 잘 칠거라고 생각은 했지만, 경천동지가 이런것일까.\n지금도 영상보면서 놀라는거지만 에너지가 어마어마하다. 드럼이 걱정될 정도. 그때부터 지금까지 쭉 follow하고 있는 아티스트다."
+        },
+        "id": "179ddb12-8218-4cf9-b7d9-de5bd9741d30",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://youtu.be/JVVUx2hJ5-o?si=0Yr6s6DOZodAdVE7",
+            "video": [],
+            "poster": [],
+            "caption": "메탈리카 Battery 커버",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "b98dd4b2-d34a-4842-944d-2568de211856",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "text": "### 영재 또는 신동\n이른바 신동들이 어른들의 욕심이나 지나친 기대로 어긋난 경우, 또는 너무 지나치게 부풀려져서 잘 안된경우들이 많이 회자되어서 그렇지 보통 다들 잘 자라서(?) 기대받던 대로 성공하면서 사는 것 같다.\n이 양반도 그런 경우라고 보여진다. 무려 모던드러머 페스티벌에 14살때 나가서 한 연주를 아래에서 확인해보자."
+        },
+        "id": "a5de03f7-5b2d-4610-b105-fb7985160758",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://www.youtube.com/watch?v=RvhYcBGsTLA",
+            "video": [],
+            "poster": [],
+            "caption": "Drumeo에서 14살때 했던 드럼솔로를 다시 연주하는 엘로이. 제목은 pure 낚시다.",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "e568ae75-4b5f-4f92-8181-34ee3f2a7f8e",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "text": "### 프로뮤지션. 변방의 드러머에서 대기업으로.\nSepultura의 드러머가 된 것이 만 스무살때였고, 지금은 대기업(?) Slipknot에 발탁되어서 많은 멤버가 50줄에 접어든 밴드에 새로운 에너지를 불어넣고 있다. 이건 나만 하는 소리라기 보다는 최근 슬립낫 영상들 댓글에 공통적으로 달리는 것들.\n이제 30대 중반. ‘거장’취급받는 메탈드러머들 중에서는 아직도 많이 젊은 축이라, 앞으로 계속 지켜볼 수 있다는게 행복한 아티스트다."
+        },
+        "id": "192ed8e2-1e94-4b2b-9e0b-9a3617f0f60b",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://www.youtube.com/watch?v=ApVRxISe_Bw",
+            "video": [],
+            "poster": [],
+            "caption": "2020년에 올린 커버영상",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "82407968-d41b-423f-a6ab-95c14e0c78d5",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://www.youtube.com/watch?v=9eUnngKapGk",
+            "video": [],
+            "poster": [],
+            "caption": "2025년. 이제는 슬립낫의 일원으로 한 라이브영상이다.",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "63c7654a-acf3-4d30-b6ae-845fb5343781",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "text": "### 다재 다능\n워낙 힘과 에너지에 대해서만 칭찬한 것 같은데, 정확성과 그루브함도 갖추고 있고, 테크닉적인 면에서도 흠잡을데가 없는 것 같다. 아버지가 좋아하는 아티스트라며 Phil Collins를 커버한 영상. 잔잔한거같은데 3분 10초정도부터 fill in은 들을때 마다 어케했냐 싶다.\n공식 유튜브채널이나, Drumeo 채널가면 출연분 많으니 관심있으신분들은 츄라이츄라이."
+        },
+        "id": "72a5e929-711b-4798-b848-167195852a20",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://www.youtube.com/watch?v=gax35QKkiag",
+            "video": [],
+            "poster": [],
+            "caption": "",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "4c0162ee-a631-4dd0-917c-e99dfee9b6cc",
+        "isHidden": false,
+        "type": "video"
+    }
+]
+
+----
+
+Date: 2025-09-23
+
+----
+
+Tags: 
+
+----
+
+Uuid: f9xn3zjtgcglant3
