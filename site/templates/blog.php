@@ -1,7 +1,7 @@
 <?php snippet('header', ['title'=>'Blog | Massive Void | 손성기']) ?>
     <main class="main">
         <ul class="bloglist">
-            <?php $blog = page(id: 'blog')->children()->listed()->limit(5);
+            <?php $blog = page(id: 'blog')->children()->listed();
             foreach ($blog as $blogpost):
             ?>
             <li class="blog-item">
