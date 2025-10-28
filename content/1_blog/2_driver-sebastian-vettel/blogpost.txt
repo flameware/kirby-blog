@@ -1,0 +1,104 @@
+Title: Driver - Sebastian Vettel-01
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "level": "h2",
+            "text": "Driver - Sebastian Vettel (1)"
+        },
+        "id": "a0ad1a2d-7b41-408f-b979-811b04692199",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "### F1의 첫 기억\nFormula 1이 뭔지는 중학교 무렵에 처음 접했던 것 같다. 아마 게임잡지였나.. 무슨 맥락인지는 기억나지는 않지만 돌아가신 아일톤 세나 선생에 대해 쓴 내용을 봤던 것 같다. 그때만 해도 일본식 표현인 ‘머신’이니, 차 한대 값이 얼마니 그런글도 당연히 부록처럼 따라 들어왔고. (이건 기회되면 정정할 일이 있겠지만 영국아재들 다 ‘car’라고 한다. ‘Race car’...)\n\n### 두 번째 기억\n2007년에 운 좋게도 도쿄에서 인턴을 할 기회가 있었다. 그 때 묵었던 회사 기숙사에서 무료함을 달래기 위해서 랩탑에 DMB(일본명칭이 기억이 안나네) 붙여서 심야 방송을 보았는데, 일요일 밤이면 하는 F1을 우연히 보게 되었다. 당시 후지TV에서는 키미 라이코넨, (슈마허는 잠시 은퇴한 상태였고) McLaren의 슈퍼루키 루이스 해밀턴과 2회 챔피언 페르난도 알론소를 크게 다루고 있었던걸로 기억한다.\n\n### 세 번째 기억\n취업하고 난 뒤에 2011년쯤이었던거 같다. 블로그를 둘러 보다가 F1을 다루는 글을 보게 되었고, 시간과 에너지에 여유가 있던 때다 보니 처음엔 불법 스트리밍으로, 그 다음부터는 Star TV에서 해주던 Sky 중계를 보게 되었다.\n\n### 지배자 세바스티안 베텔\n돌이켜보면 2010시즌 챔피언이 되는 과정은 굉장히 힘들고 드라마틱했지만, 2011년 당시 셉 베텔의 포스는 어마어마했다. 4년간의 지배에 제대로 시동을 거는 시점이었고, 지금의 막스 베르스타펜이 뿜는 포스와 비슷한, 아니면 어쩌면 더한 포스를 뿜어내고 있었다. 젊고 압도적인 실력의 ‘최연소 드라이버 챔피언’에게 관심을 갖게된건 당연한 결과였다. 퀄리파잉 Q3. 다른 모든 드라이버들이 달린 뒤에 유유히 0.6 ~ 1초 가까이 당기면서 폴 포지션을 따가는 모습을 지겹도록 볼 수 있었다."
+        },
+        "id": "6025e693-88cb-4208-9170-8dbefd2f1359",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://8t5kanrnss5hljbp"
+            ],
+            "src": "",
+            "alt": "2011년의 Seb Vettel",
+            "caption": "올드팬들은 기억할거다. 해밀턴 강점기 전에 저 악마의 손가락이 있었다.",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "9f26886d-5e56-4f8f-b6bf-76d6e95e1149",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 2008년의 퍼포먼스\n최연소 그랑프리 우승 기록이 지금이야 막스가 갖고있지만, 한 동안은 이 양반이 갖고있었다. 시점이 시점이다보니 라이브로 보지는 못했지만, 개인적으로 베텔의 퍼포먼스 중 가장 강렬한 기억으로 남아있는게 2008년 이탈리아 GP. 역사와 전통의 Monza에서 Ferrri가 아닌 다른 하나의 이탈리아 팀 Toro Rosso가 처음으로 우승하는 역사를 자신의 손으로 써내려갔다. 심지어 내 기억이 맞다면 레드불도 그랑프리 우승을 거두기 전이다. 물론, 이때는 토로로소와 레드불이 거진 같은 차였다는게 지금의 레드불/VCARB 관계와는 다르긴 하지만. F1이 그렇지만, 이 기막힌 스토리텔링은 한참이 흐른 뒤에 피에르 가슬리에 의해 한 번 더 반복된다."
+        },
+        "id": "6dcc2e00-51df-4be9-be47-ddc3118d226b",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://youtu.be/2QH9qfj_Jag?si=Xg-1D6jzqv_60f-m",
+            "video": [],
+            "poster": [],
+            "caption": "빗 속의 Monza 우승",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "5c8dcd20-fa93-42d8-a65c-301d8100c9e9",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://youtu.be/-h_avMzSHew?si=3Qd8568x2sYnMNAC",
+            "video": [],
+            "poster": [],
+            "caption": "팬들이 꼽은 최고의 이탈리아 GP로도 남음",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "312e76b6-ca76-46b7-b565-0b750e9e39d5",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "text": "### 아쉬움\n4년간의 지배기간도 끝이 나고, Ferrari에서 우승하려던 목표도 이루지 못한 채 결국은 Aston Martin에서 애매하게 커리어를 마무리지었지만 챔피언으로서의 포스와, 챔피언십을 가져간 드라이버 특유의 인성질, 그리고 평상시 사람좋고 농담좋아하는 모습과의 갭 때문에 아직까지 내 마음속에서는 가장 좋아하는 드라이버이다.\n다른 에피소드/이야기는 또 다음 기회에."
+        },
+        "id": "4843c62c-806b-421e-bbc7-95ecf3bb0319",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Date: 2025-10-16
+
+----
+
+Tags: Formula 1, F1, Sebastian Vettel, Red Bull
+
+----
+
+Uuid: t9m9ldnvxpu01ekh
