@@ -1,0 +1,5 @@
+Uuid: 3wtune8lsoqg0ulp
+
+----
+
+Template: blocks/image

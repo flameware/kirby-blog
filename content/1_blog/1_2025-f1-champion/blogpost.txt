@@ -1,0 +1,87 @@
+Title: 2025 f1 champion
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "level": "h2",
+            "text": "2025년 마지막 레이스를 앞두고 F1 챔피언 전망(?) 희망(?)"
+        },
+        "id": "57475231-2900-4a6f-a7bb-d9d6fcb0e091",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "### 이번 주말이면 2025 f1 시즌도 끝난다.\n무난한 피아스트리 우세의 분위기가 노리스로 넘어가더니 어어하는 순간 다시 또르스타펜이 치고올라온 상황.\n\n현재 드라이버 챔피언십 포인트 순위를 보자면..\n- 1위: 408점, 란도 노리스 (매클래런)\n- 2위: 396점, 막스 베르스타펜 (레드불)\n- 3위: 392점, 오스카 피아스트리 (매클래런)\n- 4위: 309점, 조지 러셀 (메르세데스)\n...\n\n#### 경우의 수를 보아도 노리스가 포디엄에만 오르면 다른 순위는 어떻게 되어도 챔피언이 확정되는 상황. 심지어 도박사들 베팅도 노리스에 몰려있다.\n\n이렇게만 보면 노리스가 무척 우세해 보이고, 베르스타펜도 역전의 챔피언이니만큼 유리해 보이지만"
+        },
+        "id": "624203b4-d88d-4802-9f86-ba0c26bf2077",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "### 2010년으로 돌아가보자.\n다음은 퍼플렉시티한테 조사시킨 2010년 마지막 그랑프리를 앞둔 시점의 드라이버 챔피언십 순위와 상황이다.\n\n2010년 F1 시즌 마지막 그랑프리(아부다비 GP)를 앞두고 드라이버 챔피언십 포인트 상황:\n\n#### 주요 타이틀 경쟁자 포인트\n1위: 246점, 페르난도 알론소 (페라리)\n2위: 238점, 마크 웨버 (레드불)\n3위: 231점, 세바스찬 베텔 (레드불)\n4위: 222점, 루이스 해밀턴 (매클래런)\n...\n(해밀턴까지도 챔피언이 될 수 있는 가능성이 살아있던 상황. 이게 지금과는 다른 것 같다)\n\n#### 우승 시나리오\n알론소는 4위 이내로 들어오면 자력 우승이었고, 나머지 드라이버들은 우승 또는 상위권 입상과 알론소의 부진이 필요한 상황.\n베텔은 마지막 레이스를 앞두고 3위였지만, 우승하면 조건에 따라 대역전이 가능한 구조.\n\n그런데 그게 정말 일어났습니다."
+        },
+        "id": "35201112-4bc2-4c5e-b157-2cd976a5ea5e",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://youtu.be/z34G8Qv4ZiM?si=KkG0e3k7cJHu8VL0",
+            "video": [],
+            "poster": [],
+            "caption": "유튜브 가서 보셔요",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "154268f5-4450-4ee6-9f4d-e3f4bfbdec31",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://tcw6dsw929hfoxbz"
+            ],
+            "src": "",
+            "alt": "",
+            "caption": "오스카 피아스트리",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "a7231cd5-618e-410f-a324-f88c3a842183",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 피아스트리, 마크 웨버의 한을 씻어다오 \n(뭔가 논리는 이상하지만 넘어갑시다)"
+        },
+        "id": "7e1afc77-b0ec-4072-83fc-d272ff1bfc9c",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Date: 2025-12-03
+
+----
+
+Tags: formula 1, f1, piastri, vettel
+
+----
+
+Uuid: pcgdbl7liswqtwsk

@@ -1,0 +1,5 @@
+Uuid: bpg6wv3czexrom0w
+
+----
+
+Template: blocks/image
