@@ -3,9 +3,9 @@
 
   /* Font */
   --text-font: 'Gowun Batang', serif;
-  --color-background: hsl(0, 0%, 96%);
+  --color-background: hsl(0, 0%, 100%);
   --color-highlight: hsl(67,100%,50%);
-  --color-textcolor: hsl(138, 12%, 21%);
+  --color-textcolor: hsl(0, 0%, 30.59%);
   --color-secondary: hsl(48, 29%, 83%);
   --color-link: hsl(11,95%,55%);
 
