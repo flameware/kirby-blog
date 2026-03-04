@@ -43,7 +43,7 @@
             }
         });
     </script>
-
+    <?php snippet("seo/head"); ?>
 </head>
 <body>
     <div class="<?= $page->uri() === "projects"
@@ -51,7 +51,7 @@
       : "container" ?>">
         <nav class="mainnav">
             <ul>
-                <li><a rel="canonical" href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a></li>
+                <li><a href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
                 <span class="hamburger-line"></span>
@@ -60,7 +60,7 @@
             </button>
             <ul class="submenu">
                 <?php foreach ($site->children()->listed() as $item) { ?>
-                <li><a rel="canonical" href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
+                <li><a href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
                 <?php } ?>
             </ul>
         </nav>

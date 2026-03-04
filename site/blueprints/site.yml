@@ -11,3 +11,9 @@ sections:
 
   redirects:
     extends: plugin-redirects
+
+tabs:
+  content:
+    fields:
+      # your fields
+  seo: seo/site

@@ -19,3 +19,8 @@ columns:
       files:
         type: files
 
+tabs:
+  content:
+    fields:
+      # your fields
+  seo: seo/page
