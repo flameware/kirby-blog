@@ -8,6 +8,5 @@
         </ul>
     </footer>
 </div>
-<?php snippet("seo/schemas"); ?>
 </body>
 </html>
