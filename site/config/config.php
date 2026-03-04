@@ -12,7 +12,10 @@ return [
                     ->index()
                     ->filterBy("intendedTemplate", "not in", ["error"]);
                 $content = snippet("sitemap", ["pages" => $pages], true);
-                return new \Kirby\Cms\Response($content, "application/xml");
+                return new \Kirby\Cms\Response(
+                    trim($content),
+                    "application/xml",
+                );
             },
         ],
     ],
