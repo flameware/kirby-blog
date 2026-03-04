@@ -4,8 +4,90 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "087b9bca1070f57331214664afb410ff",
+    "content-hash": "056095a2a7f46f2a9ec01a9fad991efa",
     "packages": [
+        {
+            "name": "bnomei/kirby3-redirects",
+            "version": "5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bnomei/kirby3-redirects.git",
+                "reference": "1c150c22231e02707e66f4247069df57b957c3a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bnomei/kirby3-redirects/zipball/1c150c22231e02707e66f4247069df57b957c3a4",
+                "reference": "1c150c22231e02707e66f4247069df57b957c3a4",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2",
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "getkirby/cms": "^5.0.0-alpha.4",
+                "larastan/larastan": "^v3.0.0",
+                "laravel/pint": "^1.13",
+                "pestphp/pest": "^v3.5.1",
+                "spatie/ray": "^1.39"
+            },
+            "suggest": {
+                "bnomei/kirby3-feed": "Add Atom/JSON/RSS feeds or XML-Sitemap to your Kirby site.",
+                "bnomei/kirby3-monolog": "Logging for Kirby with Monolog, ideal if you want to start tracking the hooks",
+                "bnomei/kirby3-robots-txt": "Automatic robots.txt. Detects and adds XML-Sitemaps from plugins.",
+                "bnomei/kirby3-security-headers": "CSP headers to make the the web a saver place. Sensible defaults with zero configuration."
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": "tests/kirby"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bnomei\\": "classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Meilick",
+                    "email": "b@bnomei.com"
+                }
+            ],
+            "description": "Setup performant HTTP Status Code Redirects from within the Kirby Panel",
+            "homepage": "https://github.com/bnomei/kirby3-redirects",
+            "keywords": [
+                "301",
+                "302",
+                "307",
+                "308",
+                "attack",
+                "defense",
+                "dos",
+                "firewall",
+                "hack",
+                "header",
+                "kirby",
+                "kirby-cms",
+                "kirby-plugin",
+                "kirby5",
+                "performance",
+                "placeholder",
+                "protection",
+                "redirect",
+                "redirects",
+                "regex",
+                "shield",
+                "status-codes"
+            ],
+            "support": {
+                "issues": "https://github.com/bnomei/kirby3-redirects/issues",
+                "source": "https://github.com/bnomei/kirby3-redirects/tree/v5.1.0"
+            },
+            "time": "2025-08-22T19:07:54+00:00"
+        },
         {
             "name": "christian-riesen/base32",
             "version": "1.6.0",
@@ -899,6 +981,79 @@
             "time": "2024-09-11T13:17:53+00:00"
         },
         {
+            "name": "spatie/schema-org",
+            "version": "3.23.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/schema-org.git",
+                "reference": "a8dc1b6fcdd06afc1ab084c3ead9b7a4c3d7a35d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/schema-org/zipball/a8dc1b6fcdd06afc1ab084c3ead9b7a4c3d7a35d",
+                "reference": "a8dc1b6fcdd06afc1ab084c3ead9b7a4c3d7a35d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.6",
+                "graham-campbell/analyzer": "^4.2",
+                "illuminate/collections": "^8.62.0",
+                "league/flysystem": "^2.3.0 || ^3.0",
+                "pestphp/pest": "^1.21",
+                "symfony/console": "^5.3.7 || 6.0",
+                "twig/twig": "^3.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\SchemaOrg\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev.gummibeer@gmail.com",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A fluent builder Schema.org types and ld+json generator",
+            "homepage": "https://github.com/spatie/schema-org",
+            "keywords": [
+                "schema-org",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/schema-org/issues",
+                "source": "https://github.com/spatie/schema-org/tree/3.23.1"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-31T14:54:12+00:00"
+        },
+        {
             "name": "symfony/deprecation-contracts",
             "version": "v3.6.0",
             "source": {
@@ -1380,6 +1535,63 @@
                 }
             ],
             "time": "2025-12-04T18:11:45+00:00"
+        },
+        {
+            "name": "tobimori/kirby-seo",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tobimori/kirby-seo.git",
+                "reference": "a06eb676f699797fdd04a515149559ffd4746be7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tobimori/kirby-seo/zipball/a06eb676f699797fdd04a515149559ffd4746be7",
+                "reference": "a06eb676f699797fdd04a515149559ffd4746be7",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2.1",
+                "php": ">=8.1.0",
+                "spatie/schema-org": "^3.14"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.48",
+                "getkirby/cli": "^1.2",
+                "getkirby/cms": "^4.0"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": false
+            },
+            "autoload": {
+                "psr-4": {
+                    "tobimori\\Seo\\": "classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Möritz",
+                    "email": "tobias@moeritz.io"
+                }
+            ],
+            "description": "The ultimate Kirby SEO toolkit",
+            "homepage": "https://github.com/tobimori/kirby-seo#readme",
+            "support": {
+                "issues": "https://github.com/tobimori/kirby-seo/issues",
+                "source": "https://github.com/tobimori/kirby-seo/tree/1.1.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/tobimori",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-04-10T09:49:19+00:00"
         }
     ],
     "packages-dev": [

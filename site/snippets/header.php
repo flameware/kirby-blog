@@ -13,8 +13,8 @@
     @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
     </style> -->
 
-    <?= css(url: 'assets/css/index.css') ?>
-    <?= css(url: '@auto') ?>
+    <?= css(url: "assets/css/index.css") ?>
+    <?= css(url: "@auto") ?>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -46,10 +46,12 @@
 
 </head>
 <body>
-    <div class="<?= $page->uri() === 'projects' ? 'projects-container' : 'container' ?>">
+    <div class="<?= $page->uri() === "projects"
+      ? "projects-container"
+      : "container" ?>">
         <nav class="mainnav">
             <ul>
-                <li><a href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a></li>
+                <li><a rel="canonical" href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
                 <span class="hamburger-line"></span>
@@ -58,7 +60,7 @@
             </button>
             <ul class="submenu">
                 <?php foreach ($site->children()->listed() as $item) { ?>
-                <li><a href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
+                <li><a rel="canonical" href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
                 <?php } ?>
             </ul>
         </nav>

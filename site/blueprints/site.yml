@@ -8,3 +8,6 @@ sections:
   listed:
     type: pages
     status: listed
+
+  redirects:
+    extends: plugin-redirects
