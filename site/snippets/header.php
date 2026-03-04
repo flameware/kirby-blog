@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow" />
     <title><?= $title ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
@@ -43,7 +44,7 @@
             }
         });
     </script>
-    <?php snippet("seo/head"); ?>
+
 </head>
 <body>
     <div class="<?= $page->uri() === "projects"
@@ -51,7 +52,7 @@
       : "container" ?>">
         <nav class="mainnav">
             <ul>
-                <li><a href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a></li>
+                <li><a rel="canonical" href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
                 <span class="hamburger-line"></span>
@@ -60,7 +61,7 @@
             </button>
             <ul class="submenu">
                 <?php foreach ($site->children()->listed() as $item) { ?>
-                <li><a href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
+                <li><a rel="canonical" href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
                 <?php } ?>
             </ul>
         </nav>
