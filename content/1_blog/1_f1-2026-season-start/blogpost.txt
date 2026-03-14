@@ -1,0 +1,178 @@
+Title: F1 2026 시즌 시작
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "level": "h2",
+            "text": "F1 2026 시즌 시작"
+        },
+        "id": "d33f3785-6e24-42cc-aaea-811206dc11cc",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "## 그.. 벌써 첫 레이스는 했네요.\n조지 러셀이 호주에서 첫 승을 챙겨가고, 안토넬리도 스타트는 허덕댔지만 깡성능으로 2위. 시즌 오프너부터 원투피니시라니 파워유닛 바꾼해의 메르세데스는 강하다는게 또 한 번 증명되었다. 이거 브런 GP까지 합치면 벌써 세 번째인가. 브래클리팀은 강하다!(근데 왜 혼다는.. ㅠ)"
+        },
+        "id": "0a8eb7b0-8462-4a2a-b803-a9b94989eeab",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://lxd0kdgebw22f3vl"
+            ],
+            "src": "",
+            "alt": "",
+            "caption": "조금 더 자신감있게 했어도 좋았을 텐데..",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "883e9298-45f8-428d-8cea-38fd3b1f6de5",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "러셀은 그 엄혹한 윌리엄스 2군시기 거치고 겨우겨우 메르세데스 올라왔더니 레드불에 치이고 매클래런에 치이고 하더니만 이제서야 위닝카에 타게되었다는 느낌. 안토넬리가 얼마나 제어/경쟁이 될건지가 사실 관전포인트라고 보이고..\n\n러셀의 경력을 되새겨보자니 새삼 경의 위대함이 느껴집니다. 데뷔 2년차에 드라이버 챔피언십 우승이지 아마.. 막스도 이거보단 많이 느리다."
+        },
+        "id": "055e1d09-bab5-4123-b86e-c38a0fc80265",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://sghgqpwe7ssxxmw0"
+            ],
+            "src": "",
+            "alt": "",
+            "caption": "로티서리, 또는 마카레나 윙이라고 불리는 그것",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "1eb0011d-d9c5-4e67-be5c-ca646a7c1cae",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "한동안 고통받았던 페라리는 신박한 윙을 들고나왔는데, 서킷 특성이나 운빨에 따라서는 우승을 노려볼 수 있을만한 패키지로 보인다. 개인적으로는 르클레르를 좀 더 응원하지만 경이 포디엄부터 오르기를 간절히 기원. 베텔처럼 씁쓸하게 퇴장하는 모습을 더는 보고싶지 않다.\n\n뜬금없이 부산가서 봤던 루이스 해밀턴 호텔이 떠오르네요. 여긴 LOUIS... ㅋㅋㅋ"
+        },
+        "id": "72f40bd7-86f6-4f0b-b7bc-322d70b2809f",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://icyzmt4n6lmeubdo"
+            ],
+            "src": "",
+            "alt": "",
+            "caption": "아 살짝만 밟았다구요",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "73fddf03-8732-484b-9ea0-0093f9ca7fa4",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "매클래런의 2025년은 한 번의 럭키샷으로 끝날 것인가. 란도는 나쁘진 않았지만 작년과 비교하면 음... 스러웠고, 피아스트리는 그리드로 올라오다가 사고가 나버렸는데 설명만 보면 새 파워유닛들의 세팅이슈인듯. 막스가 Q1에서 갖다박은것도 비슷한 느낌이었고."
+        },
+        "id": "80f741e5-1105-431c-bc10-590f0fd5782e",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://cu36aexkuxb9qxnk"
+            ],
+            "src": "",
+            "alt": "",
+            "caption": "불이야",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "1e28f6ef-3232-40af-97d0-20f2a4aa9ba7",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "레드불은 막스가 P20->P6라는 차력쇼를 한 번 더 선보였지만, 개막전부터 엔진블로우가 나는 참사가 났다. 포드 뱃지 단 저 엔진 괜찮은건가."
+        },
+        "id": "1e634589-d700-49f0-8d5e-87d03f2d193f",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "나머지 팀들은... 짧게 써볼까.\n\n- 아우디: 정말 준비 잘 했다. 킥 사우버 마무리까지도 좀 허접해서 반신반의했는데 자체 엔진이라는거 생각하면 제대로 칼 간듯.\n- 윌리엄스: 차 무게부터 줄여야 하는데 오래걸릴듯..\n- 알핀: 엔진을 바꿔도 왜 그 모양이냐.. Gasly=10 은 올해도 유효.\n- 하스: 페라리가 좋으면 하스도 좋다.\n- 캐딜락: 알 이즈 웰. 알 이즈 웰.\n- 애스턴 마틴: 이게 과연 혼다만의 잘못일까?"
+        },
+        "id": "46d8eee6-2694-4626-9fc6-e57aa4b9478d",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "애스턴 마틴 얘기하다보니 생각난건데 F1 공식채널에서 Tech Talk해주는 샘 콜린스가 자기 채널에 혼다 F1엔진의 여정을 다룬 영상을 최근에 올렸다. 이건 조금이라도 관심있는 분들이라면 꼭 보시길."
+        },
+        "id": "3b97a325-a757-4468-a427-36378179fcb7",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://youtu.be/3T3k6aaCi_c?si=N8ey431M522tr2qY",
+            "video": [],
+            "poster": [],
+            "caption": "혼다의 눈물나는 엔진 개발기",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "1889c3e6-7263-4a05-8913-235d28f49f85",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "text": "## 라운드 2 - 상하이 전망\n내기억엔 여기도 틸케가 설계한 서킷인데, 아아주 예전에 게임에서 달려본 기억으로는 그래도 아부다비정도의 막장느낌은 아니고, 섹터 1의 구부러지는 (上자 코너 돌아나오는)부분이 꽤나 재밌었고, 추월도 많이 일어나는 부분으로 기억한다.\n\n(틸케서킷 답게) 직선구간이 꽤나 긴데 이 구간동안 배터리 차징과 직선빨의 밸런스 맞추는게 관건일듯. 마카레나 윙이 첫 선을 보일지도 모른다는데 재밌을거같다."
+        },
+        "id": "9278d10a-23e1-4077-bc80-e3e55dc0fc01",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Date: 2026-03-13
+
+----
+
+Tags: formula 1, f1, f1 2026
+
+----
+
+Uuid: bwmxpavv48t5t1nu
