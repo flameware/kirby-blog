@@ -1,0 +1,126 @@
+Title: F1 2026 - Round 3를 마친 시점 리뷰
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "level": "h2",
+            "text": "F1 2026 - Round 3를 마친 시점 리뷰"
+        },
+        "id": "43a19d51-dde3-465e-b9e8-774f3a9cdcf7",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "### 어째 계속 F1 얘기다\n- 이러려고 블로그를 판건 아닌데.. 요새 쓸만한게 별로 없다보니 뭐.."
+        },
+        "id": "17b047a3-cf68-462b-8200-74332b3273df",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "image": [],
+            "src": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2026-03/260329-Kimi-Antonelli-vl-1157a-54a9f9.jpg",
+            "alt": "Kimi Antonelli",
+            "caption": "2연승한 키미 안토넬리 (출처 - NBC)",
+            "link": "https://www.nbcnews.com/sports/formula-1/kimi-antonelli-becomes-youngest-formula-1-championship-rcna265687",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "63e12333-ce9b-45a7-a224-5b6f8be65d1e",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### Grande Kimi Grande\n- 상하이+스즈카 2연속 우승.\n- 스즈카는 세이프티카 도움을 받긴 했지만 스포츠라는게 운빨도 중요해서요.\n- 호들갑 떨고싶진 않지만 클린에어에서 간격 벌리고 치고나가는게 예사롭지 않다.\n- 아 이탈리아 사람들 얘 페라리에 앉히려고 환장하겠다 싶다.\n- 갠적으로는 챔피언십 확정짓는 경기 인터뷰를 라이코넨이 하면 좋을 거 같은데 그럴 일 없는 양반이지.."
+        },
+        "id": "41fd057a-aa0a-43e6-8634-d670d409be1a",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": [],
+        "id": "32fe1fda-35b8-4025-a0c0-8e6d2eb39918",
+        "isHidden": false,
+        "type": "line"
+    },
+    {
+        "content": {
+            "location": "web",
+            "image": [],
+            "src": "https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2026/03/28143506/max-verstappen-f1-paddock-suzuka-2026-planetf1-1320x742.jpg",
+            "alt": "",
+            "caption": "Max Verstappen",
+            "link": "https://www.planetf1.com/news/max-verstappen-f1-2026-rules-future-doubt-beyond-frustration",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "59a0e5d7-ef95-48c9-966a-07f96c9b5309",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 막스야 아오 그만 좀 징징대라\n- 인정. 레이스에 신경 쓸 거 많아지고, 랩마다 타이어랑 연료 사용량 관리하는것도 안그래도 빡센데 배터리 충전까지 관리하랴 노고가 많으십니다. 차도 안나가고 거지같다 그죠?\n- 근데 이런거 좋아하면 레알못이니 어쩌니 하는건 선 넘었다.\n- 막스에 유독 호의적인(동정적인) 여론이 많은 건, 아무래도 F1에 대한 접근성이 높아진게 넷플릭스의 분노의질주 + 쿠팡플레이의 정식 한국어 중계/해설 덕이라고 생각되고, 그 기간 동안 가장 압도적인 퍼포먼스를 낸게 막스였기 때문이 아닐까.\n- F1은 원래 그런 스포츠다. 개인적으로는 차의 비중이 90%, 드라이버의 비중이 10% 정도 된다고 생각한다.\n- 10% 라니 너무 짜게 준거 아니냐라고 생각하실수도 있지만, 그 차 한대 만들어내려고 달라붙는 엔지니어들 숫자와 자본을 생각하면 드라이버의 비중이 결코 낮지 않다는걸 이해하실거다.\n- 그래서, 똥차를 주면 보통 대라신선이 와도 못이긴다.\n- 누구든 그랬다. 챔피언들 다 데려와도 똥차타던 시기에는 우승 한 번이나 포디엄이 전부다.\n- 규정이 바뀌면 누가 해석을 잘했냐/허점을 잘 찾냐에 따라 기존의 순위따위는 까맣게 잊게 된다. 꽤 된 얘기긴 하지만 아직도 기억이 선명한게, V8에서 V6 Hybrid로 옮겨지자 마자 악마같던 퍼포먼스를 내던 레드불과 베텔은 저 멀리 뒤쳐지고, 그자리를 메르세데스/해밀턴이 차지했다."
+        },
+        "id": "7363f951-f2a2-4a74-a210-14b763a5264c",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "image": [],
+            "src": "https://www.racefans.net/wp-content/uploads/2009/03/racefansdotnet-24-03-06-12-23-56-1-3.jpg",
+            "alt": "",
+            "caption": "Brawn GP BGP-001",
+            "link": "https://www.racefans.net/2009/03/06/brawn-gp-tests-its-2009-f1-car/",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "3bc2fde7-2162-4149-a33c-06b06b1d82a6",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "- 좀 더 올라가면 Brawn GP의 사례가 있다. 저 순백의 BGP-001의 자태를 보라. \n- 샤시가 왜 하얗냐고? 스폰서가 없다 = 아무도 이 팀에 기대 안했다는 얘기다. \n- 더블 덱 디퓨저라는 규정의 구멍을 찾아냈고, Brawn GP는 2009년 챔피언카가 되었고, 촉망받는 드라이버였지만 그 전 까지는 우승 한 번 해본게 다인 젠슨 버튼은 챔피언이 되었다.\n- 막스의 최근 퍼포먼스는 물론 대단했다고 생각하지만, 그 자신의 ’포스’ 자체가 베텔강점기나 경의 강점기를 크게 능가할 만큼이었나?\n- 베텔이나 해밀턴이나 챔피언하던 시기에는 Q3에서 남들 다 돌고나서 혼자 마지막에서 전 섹터 퍼플찍고 -0.4 ~ -0.6 씩 찍는게 저 둘의 퍼포먼스였다.\n- 그래서 결론적으로 지금 unhappy 대놓고 띄우는건 징징대는거 + 정치적 발언 그 이상도 이하도 아니라고 생각."
+        },
+        "id": "b60f5545-d977-49b1-948f-9e59df341773",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": [],
+        "id": "c2eae6a6-4e69-4f64-b794-b188508ec732",
+        "isHidden": false,
+        "type": "line"
+    },
+    {
+        "content": {
+            "text": "### 아 그래서 슈퍼클리핑 좋아하시냐구요\n- 규정 바꾸고 나면 안정화되는데 시간이 좀 걸립니다.\n- 예전에도 라디오 제한하고 막 이상한 짓거릴들 했는데, 좋아지겠죠."
+        },
+        "id": "ba5d419e-2320-405a-9bd2-462bb0bf3229",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Date: 2026-04-01
+
+----
+
+Tags: Formula 1, F1, Kimi, Antonelli, Max, Verstappen
+
+----
+
+Uuid: uahgof6fdzet7c26
