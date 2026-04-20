@@ -12,7 +12,7 @@ main a:visited {
 }
 
 .date {
-    font-size: 0.889rem;
+    font-size: var(--text-sm);
     padding: var(--big-gap-desktop) 0 0 0;
     margin: 0;
 }
@@ -38,7 +38,7 @@ figure img {
 }
 
 figcaption {
-    font-size: 0.889rem;
+    font-size: var(--text-sm);
     text-align: center;
 }
 
@@ -54,7 +54,6 @@ figcaption {
 }
 
 .date {
-    font-size: 0.889rem;
     padding: var(--big-gap-mobile) 0 0 0;
 }
 

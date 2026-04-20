@@ -4,72 +4,76 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Kirby CMS Plainkit** - a minimal starter project for the Kirby content management system. Kirby is a file-based CMS that uses plain text files for content storage and PHP templates for rendering.
+**Massive Void** — a personal blog by 손성기 (Seongki Sohn), built on **Kirby CMS 5** (Plainkit base). Topics covered include UX/product design, heavy metal, F1, NBA, architecture, and personal projects. Content is written in Korean.
 
 ## Architecture
 
 ### Core Structure
 
--   **kirby/**: Contains the Kirby CMS core framework (version 5.0.4)
--   **site/**: Your project-specific files
-    -   `templates/`: PHP template files for rendering pages
-    -   `blueprints/`: YAML configuration files defining content structure
-    -   `snippets/`: Reusable template components
--   **content/**: Content files (plain text files with frontmatter)
--   **media/**: Generated thumbnails and processed images
--   **index.php**: Application entry point that bootstraps Kirby
+- **kirby/**: Kirby CMS core framework (v5.0.4)
+- **site/**: Project-specific files
+  - `templates/`: PHP templates (one per page type)
+  - `blueprints/`: YAML files defining content fields and Panel UI
+  - `snippets/`: Reusable template components (`header.php`, `footer.php`, `blocks/heading.php`, `sitemap.php`)
+  - `plugins/`: Third-party Kirby plugins
+- **content/**: Flat-file content (YAML frontmatter + Kirby Blocks JSON)
+- **assets/**: CSS and static assets (`favicon.svg`)
+- **media/**: Auto-generated thumbnails/processed images (do not edit)
+- **index.php**: Application entry point
 
-### Content Management
+### Page Types / Templates
 
--   Content is stored in plain text files with YAML frontmatter
--   Each page/content item has a corresponding blueprint YAML file defining its fields
--   Templates in `site/templates/` render the content using PHP
--   Blueprint files in `site/blueprints/` define the admin panel structure
+| Template | URL | Blueprint |
+|---|---|---|
+| `home.php` | `/` | — |
+| `blog.php` | `/blog` | `blog.yml` |
+| `blogpost.php` | `/blog/*` | `blogpost.yml` |
+| `projects.php` | `/projects` | `projects.yml` |
+| `project.php` | `/projects/*` | `project.yml` |
+| `about.php` | `/about` | `about.yml` |
+
+### Content Structure
+
+- **Blog posts** (`content/1_blog/N_slug/blogpost.txt`): Fields are `Title`, `Blocks` (Kirby block editor JSON), `Date`, `Tags`
+- **Projects** (`content/2_projects/N_slug/project.txt`): Image-based project pages
+- Content folders are prefixed with numbers to control sort order and visibility (`1_` = listed)
+- `.png.txt` / `.jpg.txt` sidecar files store Kirby image metadata
+
+### CSS Architecture
+
+- `assets/css/index.css`: Global styles, CSS custom properties (design tokens), nav, shared components
+- `assets/css/templates/*.css`: Per-template stylesheets (auto-loaded via `css("@auto")` in header)
+- Responsive: desktop at `46.7vw` container width; mobile breakpoint at `480px` with hamburger nav
+- Font: **Gowun Batang** (Korean serif) from Google Fonts
+- Design tokens: `--color-background`, `--color-highlight` (yellow), `--color-textcolor`, `--color-secondary`, `--color-link` (orange)
+
+### Plugins
+
+- **kirby-uniform** (`mzur/kirby-uniform ^5.6`): Form handling with spam guards
+- **kirby3-redirects** (`bnomei/kirby3-redirects ^5.1`): URL redirect management via Panel
+- **kirby-form** / **kirby-flash**: Additional form/flash utilities
 
 ## Development Commands
 
-### Local Development Server
-
 ```bash
-composer start
-# Starts PHP development server on localhost:8000
-```
-
-### PHP Requirements
-
--   PHP 8.1, 8.2, 8.3, or 8.4
--   Required extensions: SimpleXML, ctype, curl, dom, filter, hash, iconv, json, libxml, mbstring, openssl
-
-### Composer Commands
-
-```bash
-composer install    # Install dependencies
+composer start       # PHP dev server at localhost:8000
+composer install     # Install dependencies
 composer update      # Update dependencies
 ```
 
-## File Organization
+PHP requirement: `~8.2 || ~8.3 || ~8.4 || ~8.5`
 
-### Templates
+Dev dependency: `laravel/pint` (PHP code formatter)
 
--   `site/templates/default.php`: Default page template
--   Templates correspond to page types and render content using Kirby's template API
+## Key Patterns
 
-### Blueprints
+- **Blocks-based content**: Blog posts use the Kirby block editor. Templates render with `$page->blocks()->toBlocks()`. Custom block snippets live in `site/snippets/blocks/`.
+- **Auto CSS loading**: `css("@auto")` in `header.php` loads a template-matching CSS file automatically (e.g. `blogpost.php` → `assets/css/templates/blogpost.css`).
+- **Navigation**: Built dynamically from `$site->children()->listed()`. Mobile hamburger menu toggled via vanilla JS in `header.php`.
+- **Content listing**: Home page shows 5 latest blog posts and 4 latest projects via `->children()->listed()->limit(N)`.
+- **Tags**: Stored as comma-separated strings, split with `->tags()->split()`.
+- **Sitemap**: Available via `site/snippets/sitemap.php`.
 
--   `site/blueprints/site.yml`: Site-level configuration
--   `site/blueprints/pages/default.yml`: Default page blueprint with fields definition
--   Blueprints define the admin panel interface and available fields
+## Panel
 
-### Content API
-
--   Access page content via `$page->title()`, `$page->text()`, etc.
--   Kirby provides extensive template helpers and content methods
--   File-based content system with automatic routing
-
-## Key Concepts
-
--   **File-based CMS**: No database required, content stored in text files
--   **Template-driven**: PHP templates with Kirby's template API
--   **Blueprint configuration**: YAML files define content structure and admin interface
--   **Auto-routing**: URL structure matches content folder structure
--   **Panel**: Web-based admin interface for content editing (accessible at `/panel`)
+Admin interface at `/panel` — manage pages, drafts, redirects, and uploads.
