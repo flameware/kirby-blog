@@ -1,0 +1,272 @@
+Title: Claude Design 첫 느낌
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "level": "h2",
+            "text": "Claude Design 첫 느낌"
+        },
+        "id": "a56ed086-f375-4c35-af80-7288aeadee64",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "Opus 4.7이랑 같이 나온다고 소문만 무성했던 Claude Design이 주말새 오픈했다.\nClaude Code를 쓰는 입장에서 (지금까지) 디자인을 뽑아낼 때 가장 많이 썼던 방식은 \n\n1. Figma plugin을 이용해서 HTML+CSS로 디자인부터 뽑아낸 뒤\n2. 이걸 Figma로 컨버팅해서 수정\n이었는데, 불편한점들도 꽤 있고 디자인에 친화적인 워크플로우는 아니었던 터라 나온다니 기대하고 있었다"
+        },
+        "id": "3ac8c671-4b8b-4066-8f09-9e18772e25c7",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": [],
+        "id": "47dc93b9-86fe-42b9-b3e5-51bacc3216ed",
+        "isHidden": false,
+        "type": "line"
+    },
+    {
+        "content": {
+            "text": "### Claude Design의 구성"
+        },
+        "id": "8f1c138d-8d23-43d3-93a7-cbb492c84182",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://ammci8hbht7cusgg"
+            ],
+            "src": "",
+            "alt": "Claude Design",
+            "caption": "Claude Design",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "64eb6472-11b1-4337-8a83-9ed5549663d5",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "뭐 서비스 홈페이지가면 더 잘나올테니 대략적으로만 훑어보면 왼쪽엔 크게 Prototype, Slide deck, From template, Other의 4가지 탭이 보이고 오른쪽 작업공간에는 Recent, Your Designs, Examples, Design Systems로 구성되어 있다."
+        },
+        "id": "11d997f1-2928-4921-ad9e-82a7b4567750",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://0jmmpnsppxyicvax"
+            ],
+            "src": "",
+            "alt": "Claude Design - Example page",
+            "caption": "Example 페이지",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "2db25ab6-c0b3-4e63-9a71-0b399cbbcd32",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "놀랐던건 Examples의 사례의 충실함인데, 이정도 퀄리티만 꾸준히-일관되게 뽑아낼 수 있다면 사람 뽑는것보다 이거쓰는게 나을거 같다.\n\n(디자인시스템이 뜯어볼게 많을 것 같은데 좀 더 테스트해보고 따로 정리해보는게 좋을 것 같다)"
+        },
+        "id": "b0d3fb87-0b9b-40e9-9029-d1c7796fface",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://gomjleasnpheae7m"
+            ],
+            "src": "",
+            "alt": "Claude Design - New project page",
+            "caption": "New Project",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "5621d798-9c9f-4e89-90bb-1fe7548e5992",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "새 프로젝트를 시작하면 이런 느낌이다."
+        },
+        "id": "8de4956a-3ac3-42ad-aaaa-f03c16eb182c",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": [],
+        "id": "0d3036d4-e481-423a-a398-c0744a6eaba0",
+        "isHidden": false,
+        "type": "line"
+    },
+    {
+        "content": {
+            "text": "### Test Drive - Deep work planner\n여기서도 잠깐 소개했지만,  Deep work planner라는 Time blocker앱을 만들어서 쓰고 있다. Electron을 써서 Web app을 데스크탑에서 돌릴수 있게 만든건데, 크게 복잡할 것 없는 구성이고, 개인용도라 디자인도 크게 신경 안쓰고 쓰고 있던 터라 테스트용도로 적합하다고 생각했다."
+        },
+        "id": "ceb97918-fe4a-4704-8b11-abfbde0f92f2",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://vpvfcb5d80lgnrgl"
+            ],
+            "src": "",
+            "alt": "Deep work planner screenshot",
+            "caption": "Deep work planner - before",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "af856a53-a5e1-4cdc-a826-194fb85df49c",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "Prototype 프로젝트로 시작했고, 구조에 대해서만 우선 테스트해보고 싶어서 wireframe을 선택하고는, 스크린샷과 prd.md파일을 첨부하고 다음과 같이 프롬프트를 줬다."
+        },
+        "id": "07288d4f-69a6-4489-bcc9-61b835a0e7f5",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "I made this \"Deep work planner\" app for macOS before with claude code. I attached the prd and two key screenshots. Overall, I'm quite good with the design, but it feels little bit off. Can you make some structural redesign suggestions for this app? Make some wireframes for me.",
+            "citation": ""
+        },
+        "id": "f13d105c-5ea2-4e47-a90d-966002441404",
+        "isHidden": false,
+        "type": "quote"
+    },
+    {
+        "content": {
+            "text": "결과는 이렇게 HTML형태로 작성되고, 4가지 정도 option을 만들어줘서 선택할 수 있었다. 나쁘지 않아 보이니 이대로 해보기로 결정. Codebase를 불러왔으면 좋았겠지만, 아직 pro plan이라 토큰쓰는게 세상에서 제일 무섭다. 러프하지만 시키는대로 handoff해보자."
+        },
+        "id": "7b671092-f8a6-4a35-9432-4cd76f5615c2",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://ecqo12kk4ipwtknl"
+            ],
+            "src": "",
+            "alt": "Claude Design output",
+            "caption": "결과물",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "bb9ece98-82dc-4ac7-8468-09d85a11231d",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://nnipuijhalzuvuj9"
+            ],
+            "src": "",
+            "alt": "Claude Code prompting",
+            "caption": "Claude Code로 옮기기",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "a21b22c8-586e-4cb9-8123-23f66ae5be7c",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://lzonckwtkk9tyaop"
+            ],
+            "src": "",
+            "alt": "Claude Code - thinking",
+            "caption": "열심히 일하는 Claude",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "ce94eac6-6728-4d08-995d-c08bc4b528b6",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://ok2aeiiunc0ezdvj"
+            ],
+            "src": "",
+            "alt": "Deep work planner screenshot - After",
+            "caption": "Deep work planner - After",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "8ba18fd0-0361-4a45-a326-8d84fbb948d6",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "Prompt 자체를 Claude가 제공한걸 썼고, 결과물을 스크린샷 형태로 첨부한 다음에 작업을 시켰다. 알아서 수정하고, 이게 결과물. \n\n중간에 다른작업(네이티브 포팅시도..)하면서 컬러시스템이 좀 무너져서 어색한 부분이 있긴한데, 기대보다 나쁘진 않다. 다듬어나가면 될 것 같고, 컬러도 시켜서 뽑아봐야겠다."
+        },
+        "id": "549e9b1b-c00d-4bc9-bf95-3c116d196e81",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": [],
+        "id": "8d49d91e-6cf3-4e32-8aa3-9a0bca54bc95",
+        "isHidden": false,
+        "type": "line"
+    },
+    {
+        "content": {
+            "text": "### 느낌을 요약하자면\n\n아직 제공하는 기능의 10%도 제대로 안 써본 것 같지만 처음 나온 프로덕트라는 걸 감안하면, 꽤나 흥미롭고 잘 만든 제품이다.\n\n\"그래서 디자이너 다 짜르면 되나요?\"라고 하면 아직이겠지만, 코딩툴들이 개발자들한테 불러온 변화가 그대로 디자이너들에게 찾아올거라는 생각.. (더 많아진 업무량, 직접 작업하기보다는 리뷰/관리하기, 주니어보다는 시니어에게 기회가 몰리는 등등..)\n\n나 역시도 이 변화에서 자유롭지 못하다는게 무섭기도 하고, 기대되기도 하고. 상반된 생각이 든다."
+        },
+        "id": "850c6c02-52c3-473d-943d-8a43bcbc387e",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Date: 2026-04-20
+
+----
+
+Tags: Claude, Anthropic, Claude Code, Claude Design, AI Design
+
+----
+
+Uuid: stjmtdhvlycthvmf

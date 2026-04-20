@@ -1,0 +1,5 @@
+Uuid: vpvfcb5d80lgnrgl
+
+----
+
+Template: blocks/image
