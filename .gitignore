@@ -15,7 +15,7 @@ Icon
 # ---------------
 
 /media/*
-!/media/index.html
+/media/index.html
 
 # Lock files
 # ---------------
