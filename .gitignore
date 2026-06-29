@@ -5,18 +5,6 @@ Icon
 .DS_Store
 /.claude
 
-# Kirby CMS Core
-# ---------------
-
-/kirby/*
-/kirby_old/*
-
-# Temporary files
-# ---------------
-
-/media/*
-/media/index.html
-
 # Lock files
 # ---------------
 
@@ -29,38 +17,22 @@ Icon
 /.vscode
 /.idea
 
-# -------------SECURITY-------------
-# NEVER publish these files via Git!
-# -------------SECURITY-------------
 
-# Cache Files
-# ---------------
+# 런타임 / 생성물 (서버가 자동 생성)
+/media
+/site/cache
+/site/sessions
+/site/logs
 
-/site/cache/*
-!/site/cache/index.html
+# Panel 계정 (비밀번호 해시 포함 — 절대 원격 저장소에 올리지 않음)
+/site/accounts
 
-# Accounts
-# ---------------
+# 환경설정 / 비밀값
+/.env
 
-/site/accounts/*
-!/site/accounts/index.html
-
-# Sessions
-# ---------------
-
-/site/sessions/*
-!/site/sessions/index.html
-
-# License
-# ---------------
-
-/site/config/.license
-
-# Modules
-# ---------------
+# Composer 산출물 (각 환경에서 composer install로 생성)
+/kirby
 /vendor
-/site/plugins/
-
 # Security
 # ---------------
 *.pem
