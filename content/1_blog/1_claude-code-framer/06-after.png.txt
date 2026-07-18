@@ -1,0 +1,5 @@
+Uuid: kqtsjpgdhmugpm4c
+
+----
+
+Template: blocks/image

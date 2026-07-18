@@ -1,0 +1,5 @@
+Uuid: tvxkhqmupc33vwww
+
+----
+
+Template: blocks/image

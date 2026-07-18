@@ -1,0 +1,5 @@
+Uuid: zcpbukntow70rgfx
+
+----
+
+Template: blocks/image

@@ -1,0 +1,223 @@
+Title:
+
+Claude Code를 사용해서 Framer 작업하기
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "level": "h2",
+            "text": "Claude Code를 사용해서 Framer 작업하기"
+        },
+        "id": "d09d3eaf-6dc0-486b-a194-95e4780d8af8",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "### 들어가며\n저번 글 쓴지도 오래됐는데, 그 동안 푹 쉬고 있었다. 책도 읽고, 공부도 하고, 월드컵도 보고, ... 암튼.\n\nFramer 3.0이 런칭된지도 한 달정도 지난것 같은데, 대충 아 agent 들어왔구나 정도로만 생각하고 있다가 지난주에 런칭 비디오를 시간내서 볼 수 있었다."
+        },
+        "id": "18dec3ba-d17c-49c4-a5b2-548f597a18d2",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://youtu.be/j4WW4bwWhPk?si=YrVZ2SLD1WgBD3ZO",
+            "video": [],
+            "poster": [],
+            "caption": "Framer 3.0 런칭 비디오",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "0c3f26e3-94d0-4b8e-bd62-e2fd9a2a663e",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "text": "데모에서 가장 눈에 띈 부분은 “딸깍”해서 새 디자인이 나온다 라기 보다는 실제 프로젝트, 특히 cms파트를 중심으로 단순반복작업을 어떻게 효율화할 것인지였고, 특히나 claude code나 codex같이 외부 agent를 연동하는걸 보고 써봐야겠다고 생각했다.\n\n처음 테스트한건 디자인이라기보다는 localization인데, 기존 [포트폴리오](https://www.sohnseongki.com)에 프로젝트 하나 추가하면서 전체 구성을 조금 손보고 업데이트한 상태였다. 다만 영문화는 기존의 경험으로는 꽤나 짜친 경험이었기에 손을 못대고 있었는데, Claude code X Framer 조합으로 프롬프트 한방으로 거의 해결.\n여기까지 효능감을 조금 얻은 상태에서, 부분을 업데이트해본 흐름을 여기 정리해보고자 한다."
+        },
+        "id": "f0397402-e99b-4521-a451-b75785d897cd",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "### 문제영역 - 푸터\n이전 버전에서도 연락처 영역을 따로 잡아두긴 했었는데 email 말고는 보여줄게 없어서 이번에는 단순하게 footer에 뭉뚱그려서 email, linkedin, instagram 링크를 나열해뒀다. 다만 재미없다는게 문제."
+        },
+        "id": "7843ffb3-199c-49ff-8984-d662daa39d52",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://tvxkhqmupc33vwww"
+            ],
+            "src": "",
+            "alt": "기존 footer 디자인",
+            "caption": "기존 footer 디자인",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "cbafb58b-8437-4a21-a977-23dbd463b6d0",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 그래서\n기존 Footer 컴퍼넌트를 살펴보고 디자인을 제안해달라고 요청했다. 새 Design page를 만들어서 거기다가 디자인하라는 요청과 함께."
+        },
+        "id": "fbe221be-d436-46a1-9506-4721a90e167b",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://zhuh3gfg5d7bpkyh"
+            ],
+            "src": "",
+            "alt": "",
+            "caption": "Claude Code에 요청한 내용",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "a80a8b54-b5a3-43ca-b527-020f8e08dea7",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://hwevdj6ntxtiaufg"
+            ],
+            "src": "",
+            "alt": "Claude's response after work",
+            "caption": "일 끝났다는 대답",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "e16ee00a-e02c-4070-8dd8-d67bf7704eca",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 중간결과물\n세 가지 방향을 보여줬는데, 아무래도 무난한 첫번째를 골랐다. 더 진행하기 전에 breakpoint 따라서 tablet, phone환경에서의 디자인도 정리해달라고 요청."
+        },
+        "id": "eb4204fe-cf9b-4d93-b396-4830bedfa66e",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://ltsst10cslilj8sz"
+            ],
+            "src": "",
+            "alt": "Framer's workspace screenshot",
+            "caption": "Design page에 정리된 세 가지 방향의 시안들",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "0ccf8070-7a6a-4bf5-b832-d23ddf33c6c9",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 최종\n실제 Footer 컴퍼넌트를 만들어서 사이트에 적용되었다. 마지막으로 localization 번역도 정리해달라고 요청했고, 역시나 빠르게 완료."
+        },
+        "id": "00a1a517-cf39-4842-ab10-87783e190214",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://xtd56gdd91vizl4y"
+            ],
+            "src": "",
+            "alt": "",
+            "caption": "작업완료 이후의 Claude code 대답",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "07127356-420c-4702-8dcf-58cfa72a5bc6",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://kqtsjpgdhmugpm4c"
+            ],
+            "src": "",
+            "alt": "after screenshot",
+            "caption": "변경된 안이 적용된 포트폴리오 사이트의 스크린샷",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "93517690-0e2a-4bca-b318-ac79dbba396a",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### 비용 & 소감\n이 정도 작업에 요 정도 비용이 소모되었다. 주말인데 사용량이 남아있어서 sonnet이 아닌 opus를 선택한 상태라는걸 감안해주셨으면 좋겠다.\n사용량 많이 나오면 max플랜 지를 생각으로 살고있는데, 슬렁슬렁 하다보니 pro로도 큰 불편은 없는 중."
+        },
+        "id": "e7fc586e-7e6e-477c-9cfa-c1eebb2f177b",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://zcpbukntow70rgfx"
+            ],
+            "src": "",
+            "alt": "cost for this job",
+            "caption": "현재 세션의 사용량을 확인해주세요",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "f9bbaa37-1fe9-4c57-b137-47b48a71c32f",
+        "isHidden": false,
+        "type": "image"
+    }
+]
+
+----
+
+Date: 2026-07-19
+
+----
+
+Tags: claude, claude code, framer, design, design x ai
+
+----
+
+Uuid: blbvbuhnpv7fibik

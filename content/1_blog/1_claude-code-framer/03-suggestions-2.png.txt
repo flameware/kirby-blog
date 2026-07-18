@@ -1,0 +1,5 @@
+Uuid: ltsst10cslilj8sz
+
+----
+
+Template: blocks/image
