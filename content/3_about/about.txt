@@ -28,6 +28,14 @@ Blocks:
         "id": "ad7af50e-64e1-47a9-9887-d27393ae1863",
         "isHidden": false,
         "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "#### 방문 기록에 대해\n이 블로그는 어떤 글이 읽히는지 알기 위해 GoatCounter로 페이지 조회수를 집계합니다.\n쿠키를 사용하지 않으며, 개인을 식별할 수 있는 정보는 저장하지 않습니다."
+        },
+        "id": "408bf383-253e-4b81-a2a4-ad630edcc89d",
+        "isHidden": false,
+        "type": "markdown"
     }
 ]
 

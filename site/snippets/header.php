@@ -49,6 +49,11 @@
         });
     </script>
 
+    <?php if ($goatcounter = option("analytics.goatcounter")): ?>
+    <script data-goatcounter="https://<?= $goatcounter ?>.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+    <?php endif; ?>
+
 </head>
 <body>
     <div class="<?= $page->uri() === "projects"
