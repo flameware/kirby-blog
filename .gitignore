@@ -39,8 +39,11 @@ Icon
 /site/plugins/*
 # Security
 # ---------------
+# 저장소가 public이므로 서버 구축·배포 절차 문서는 공개하지 않는다
+# (bare repo 경로, post-receive 훅, sudo 권한 스크립트, 웹 루트 경로 포함)
 *.pem
 lightsail-setup.md
+kirby-deploy-sync-manual.md
 
 
 ./claude
