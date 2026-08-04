@@ -33,6 +33,10 @@ Icon
 # Composer 산출물 (각 환경에서 composer install로 생성)
 /kirby
 /vendor
+# └ getkirby/composer-installer가 site/plugins에 푸는 kirby-plugin 패키지들
+#   (uniform / form / flash / redirects — 서버 post-receive의 composer install이 재생성)
+#   ※ 직접 만든 플러그인을 여기 두면 무시되니, 그때는 !/site/plugins/<이름> 을 아래에 추가할 것
+/site/plugins/*
 # Security
 # ---------------
 *.pem
