@@ -82,11 +82,11 @@ Admin interface at `/panel` — manage pages, drafts, redirects, and uploads.
 
 ### Issue tracker
 
-Issues and specs live as local markdown files under `.scratch/<feature-slug>/`. See `docs/agents/issue-tracker.md`.
+Issues and specs live as GitHub issues on `flameware/kirby-blog`, managed via the `gh` CLI. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
-The five canonical triage roles, used verbatim as `Status:` values in issue files. See `docs/agents/triage-labels.md`.
+The five canonical triage roles, used verbatim as GitHub label names. See `docs/agents/triage-labels.md`.
 
 ### Domain docs
 
