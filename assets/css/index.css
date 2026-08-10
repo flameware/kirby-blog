@@ -168,6 +168,22 @@ a:hover {
     border-radius: 1rem;
 }
 
+/* 이전/다음 내비게이션 (blogpost, project 공용) */
+.postnav {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--big-gap-desktop) 0 0 0;
+}
+
+.postnav a {
+    color: var(--color-link);
+}
+
+/* 이전 링크가 없어도 다음 링크는 오른쪽에 고정 */
+.postnav-next {
+    margin-left: auto;
+}
+
 hr {
     border: none;
     border-top: .1em dashed var(--color-secondary);
@@ -264,6 +280,10 @@ h3 {
 
 .footer-menu {
     visibility: visible;
+}
+
+.postnav {
+    padding: var(--big-gap-mobile) 0 0 0;
 }
 
 }

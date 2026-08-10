@@ -7,6 +7,7 @@
             <li><?= $category ?></li>
             <?php endforeach ?>
         </ul>
+        <?php snippet('postnav') ?>
 
     </main>
 <?php snippet('footer') ?>
