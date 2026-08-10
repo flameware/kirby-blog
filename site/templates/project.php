@@ -13,8 +13,9 @@
             <?php foreach ($page->tags()->split() as $category): ?>
             <li><?= $category ?></li>
             <?php endforeach ?>
-        </ul> 
-   
+        </ul>
+        <?php snippet('postnav') ?>
+
     </main>
 
 <?php snippet('footer') ?>
