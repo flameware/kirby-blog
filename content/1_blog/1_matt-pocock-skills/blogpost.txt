@@ -1,0 +1,137 @@
+Title: Matt Pocock의 Skill 및 Workflow 후기
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "level": "h2",
+            "text": "Matt Pocock의 Skill 및 Workflow 후기"
+        },
+        "id": "80ff8bbd-e9bc-4fe4-bb0b-0d051ebf7e23",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "### 시간에 따라 LLM을 이용한 작업방식의 변화\nVibe Coding도 하는 방법이 계속 바뀌고 있다. 여기서 소개할 스킬들도 그 변화들 중 하나, 그리고 지금 시점에서 유효한 스킬이라고 짚어두고 가자.\n\nVibe Coding이라는 말이 이제 나오던 작년 초중반(..)만 해도 작업방식은 “딸깍”에 가까웠다고 생각한다. “기깔나는 홈페이지 만들어줘. 애플스타일로” 같은 귀차니즘 프롬프트도 실제로 사용하는 사람들도 있었고 (그래놓고는 맘에 안든다고..). 이 때는 그래서 잘 구성된, 길고 디테일한 프롬프트를 잘 써야지 결과물도 잘 나왔다.\n\n근데 프롬프트를 좀 써봤다면 아시겠지만, 이게 귀찮고 힘들다. 프롬프트만으로는 사람도 생각을 정리하기 힘드니 그 후로는 이제 PRD와 spec을 작성해서 집어넣기 시작하고, 작업을 정리하기 편하게 Todo list 개념도 도입이 되었던 걸로 기억.\n\n가장 마지막(?)은 Plan 모드를 사용하라는 거였는데, 또 요즘은 그것도 쓸 필요 없이 Auto-mode 돌리라고 가이드를 하고 어쩌고..\n\n암튼 이렇게 자주/빠르게 바뀌고 있다."
+        },
+        "id": "eed1fa3b-acb4-43e5-abeb-1c3662f8c25f",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://youtu.be/M6mYodf0dJM?si=aktlqtkK_wu_aJ54",
+            "video": [],
+            "poster": [],
+            "caption": "최신영상들도 있지만 우선 이거면 \"개념잡기\"는 가능",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "87e708e0-26b8-4ffc-9282-9df59d745f01",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "text": "### Matt Pocock의 스킬들\n이 아저씨 영상은 유튜브에서 알고리즘이 추천해줘서 봤고, 이미 그 시점에도 github 저장소 스타가 20만개가 넘어갔었다. 컨셉 자체는 “그러면 SW 개발 및 유지보수 사이클에서 유용한 작업방식은 무얼까?”라는 관점에서 만들어진 skill들이라고 이야기하면 - 좀 뭉뚱그렸지만 - 이해하기 편할 것 같다.\n이 양반이 만든 굉장히 다양한 스킬들이 있는데, 각자 강점과 적용하면 좋은 상황들이 나뉜다. 많으니까 오늘은 내가 최근 자주쓰고, 효용을 느꼈던 것들 위주로."
+        },
+        "id": "c1b7fb43-0c4c-452d-b8f2-0bd80cd32dcf",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://lrt9gly5tg8cx9gt"
+            ],
+            "src": "",
+            "alt": "Matt Pocock's Skills for LLM",
+            "caption": "스킬의 홈페이지.  설치법 및 사용법을 자세히 설명합니다. (이미지 누르면 이동합니다)",
+            "link": "https://www.aihero.dev/skills",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "cef09cd8-9603-47e0-a79c-35c2d02c4f0a",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "### /grill-with-docs, /grill-me\n이름만 봐도 느낌이 오지 않는가. 둘이 다른 스킬이긴 한데 뭐 저장소 셋업하고 결정결과를 문서화해서 남길거냐 정도의 차이이고, “집요하게 물어서 애매한 부분이 없이 작업할 수 있도록 계획을 명확히 한다”가 설계사상인 듯. \n기존의 plan모드가 “말씀하신대로 하려고 하는데, 작업을 하기 전에 이런것들은 미리 결정해 주셔야 합니다.” 정도의 느낌이라면, 이 스킬들은 “니가 이게 왜 필요한데?” 부터 묻는다는게 가장 큰 차이점이랄까. 지금은 정말 웬만큼 직선적인 - 아이콘 정렬 틀어졌어 같은 - 이슈가 아니면 이 스킬들로 미리 내가 하고싶은 일이 뭔지 정말 더 명확하게 한 뒤 구현으로 들어가도록 시킨다.\n\n장점만 있는건 아니다. 단점이라면 꽤나 집요하게(세션당 보통 12개 이상 묻는 것 같다) 질문을 하는거라, 그중에 “답정너”에 가까운 쓸데없는 질문까지 한다 싶으면 \n“앞으로는 내 결정에 따라 크게 결과가 바뀌는 것이 아니면 질문에서 제외해줘. 명백해보이는 결정에 대한 확인 차원으로 질문하는건 피해줬으면 해.” 정도로 가이드를 준다. 나는 나름 효과를 본 방법."
+        },
+        "id": "53e57c2c-a5b6-4402-8573-da1240e97e8d",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "### /wayfinder\n이름이 명확하다. 당장 해야 할일이 거창하고, 어렴풋한 목표치 같은 것만 있고 실제로 어떻게 해야 할지는 전혀 떠오르지 않을 때 쓰라고 만들어 둔 스킬이다. \n개념적으로는 저 어렴풋한 목표치를 먼저 명확한 기대결과/목표로 정리하는 작업을 하고, 지금 상태(시작상태)에서 그 목표지점으로 가기 위해 무슨 작업들이 필요한지를 잘게 나눠서 실행계획을 세워준다. \n특히 좋았던것은 “이건 실제 들여다 봐야 알 것 같다”는 아이템들을 'fog'라는 상태로 지정해놔서, 하다보면 작업/node들이 증식하는 경험을 한다. 점차 fog가 걷히고, 목적지에 도착을 했다면, 정말 다 끝난게 맞는지 확인하고 합의하는 식으로 마무리한다.\n\n명확하게 “이게 목표였고, 이걸 해냈어”라는 지점까지 가는걸 도와주는 스킬이라 유용하다. 다만 이것도 단점이라면 위의 /grill~ 스킬들과 마찬가지로 질문이 좀 집요하고, 기존 작업방식보다 토큰소모량이 좀 된다는 점.\n\n장점은, SW 엔지니어링에만 적용되는건 아니고, 일반적으로 살면서 맞닥뜨리는 문제들에 대한 해결방법까지 조언해줄 수 있는 스킬이라는 점이다. Matt Pocock 본인은 이 스킬을 이용해서 정원 만드는 과정을 해결했다고."
+        },
+        "id": "ece3d771-ddbf-4685-98cf-fda8d3d6327a",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://zcnivmo2jq7whzuf"
+            ],
+            "src": "",
+            "alt": "Wayfinder Map Sample",
+            "caption": "Wayfinder에서 Map을 작성한 샘플",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "736099c9-f1cd-4fd0-87e8-3020d2cae6de",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://youtu.be/F3lL98Pj90o?si=5DN0LKD3yFOyffoV",
+            "video": [],
+            "poster": [],
+            "caption": "/wayfinder 스킬을 어떻게 써야하는지 설명해주는 영상.",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "907c56cc-59ef-4fc8-bcd6-d8546067b38a",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "text": "### 정리하자면\n이게 만병통치약은 아니겠지만, 나 자신도 기존에 비해서는 훨씬 명확하달까 -  commit message만으로 해결 안되는 기준/판단근거같은 것들은 명확하게 관리하면서 작업할 수 있어서 좋았다. \n앞으로도 지켜보면서 테스트해볼 가치는 충분한 듯."
+        },
+        "id": "924201f2-8885-43be-b7a6-fcebfc0dee3a",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Date: 2026-08-16
+
+----
+
+Tags: Skills, Vibe Coding, Matt Pocock, AI Skills
+
+----
+
+Uuid: bnlaeail1cqerz90
