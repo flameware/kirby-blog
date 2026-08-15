@@ -6,14 +6,29 @@ main a:visited {
     color: var(--color-link)
 }
 
-.blog-heading {
-    padding: var(--big-gap-desktop) 0 var(--big-gap-desktop) 0;
+/* 글 머리: 제목과 작성일은 하나의 정보 단위다.
+   그룹 바깥은 넓게, 안쪽은 좁게 띄워 한 덩어리로 읽히게 한다.
+   아래쪽은 위쪽의 절반만 띄워 글 머리를 본문 쪽으로 붙인다. */
+.post-header {
+    padding: var(--big-gap-desktop) 0 40px 0;
+}
+
+/* 시맨틱만 h1으로 올리고 크기는 기존 h2 그대로 둔다 */
+.post-title {
+    font-size: var(--text-h2);
     margin: 0;
 }
 
-.date {
+.post-date {
+    display: block;
     font-size: var(--text-sm);
-    padding: var(--big-gap-desktop) 0 0 0;
+    margin: 12px 0 0 0;
+}
+
+/* 첫 heading은 템플릿이 제목으로 가져가므로,
+   이 클래스는 본문 중간 소제목에만 남는다. */
+.blog-heading {
+    padding: var(--big-gap-desktop) 0 var(--big-gap-desktop) 0;
     margin: 0;
 }
 
@@ -49,12 +64,20 @@ figcaption {
 @media (max-width: 480px) {
 /* Styles for small phones */
 
-.blog-heading {
-    padding: 0 0 var(--big-gap-mobile) 0;
+.post-header {
+    padding: var(--big-gap-mobile) 0 24px 0;
 }
 
-.date {
-    padding: var(--big-gap-mobile) 0 0 0;
+.post-title {
+    font-size: var(--text-h2-mobile);
+}
+
+.post-date {
+    margin: 8px 0 0 0;
+}
+
+.blog-heading {
+    padding: 0 0 var(--big-gap-mobile) 0;
 }
 
 blockquote {
