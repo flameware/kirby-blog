@@ -2,6 +2,16 @@
     padding: var(--big-gap-desktop) 0 var(--big-gap-desktop) 0;
 }
 
+/* 소개 문장은 소제목이 아니라 인사말이라 h2 체계 바깥에 있다.
+   h2/h3가 본문 소제목용으로 재배치되면서(ADR-0007) 크기를 여기서 붙든다.
+   이 h3를 문단으로 바꾸는 건 홈의 아웃라인 정리와 함께 볼 일이다 (#11). */
+.home-intro h3 {
+    font-size: var(--text-h3);
+    line-height: 1.4;
+    padding: var(--big-gap-desktop) 0 0 0;
+    margin: 0;
+}
+
 .home-bloglist {
     list-style: none;
     padding: var(--big-gap-desktop) 0 var(--big-gap-desktop) 0;
@@ -77,6 +87,11 @@
 /* Styles for small phones */
 .home-intro {
     padding: 0 0 var(--big-gap-mobile) 0;
+}
+
+.home-intro h3 {
+    font-size: var(--text-h3-mobile);
+    padding: var(--big-gap-mobile) 0 0 0;
 }
 
 .home-bloglist {

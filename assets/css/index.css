@@ -54,19 +54,23 @@ h1 {
     margin: 0;
 }
 
+/* 본문 소제목. 제목(.post-title)이 h1을 쓰므로 소제목은 h2에서 시작한다.
+   크기는 태그 이름이 아니라 역할을 따른다 — 소제목은 --text-h3, 그 아래는 본문 크기다.
+   근거: docs/adr/0007-heading-levels.md */
 h2 {
-    font-size: var(--text-h2);
-    font-weight: 700;
-    line-height: 1.4;
-    margin: 0;
-}
-
-h3 {
     font-size: var(--text-h3);
     font-weight: 700;
     line-height: 1.4;
     padding: var(--big-gap-desktop) 0 0 0;
     margin: 0;
+}
+
+/* 소제목 아래 단계. 크기는 본문과 같고 굵기로만 구분한다. */
+h3 {
+    font-size: var(--text-base);
+    font-weight: 700;
+    line-height: 1.8;
+    margin: 1.33em 0;
 }
 
 ::selection {
@@ -288,15 +292,16 @@ h1 {
     line-height: 1.4;
 }
 h2 {
-    font-size: var(--text-h2-mobile);
-    line-height: 1.4;
-}
-
-h3 {
     font-size: var(--text-h3-mobile);
     line-height: 1.4;
     padding: var(--big-gap-mobile) 0 0 0;
     margin: 0;
+}
+
+h3 {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    margin: 1.33em 0;
 }
 
 .footer-menu {
