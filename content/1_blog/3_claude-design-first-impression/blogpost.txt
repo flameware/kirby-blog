@@ -7,15 +7,6 @@ Blocks:
 [
     {
         "content": {
-            "level": "h2",
-            "text": "Claude Design 첫 느낌"
-        },
-        "id": "a56ed086-f375-4c35-af80-7288aeadee64",
-        "isHidden": false,
-        "type": "heading"
-    },
-    {
-        "content": {
             "text": "Opus 4.7이랑 같이 나온다고 소문만 무성했던 Claude Design이 주말새 오픈했다.\nClaude Code를 쓰는 입장에서 (지금까지) 디자인을 뽑아낼 때 가장 많이 썼던 방식은 \n\n1. Figma plugin을 이용해서 HTML+CSS로 디자인부터 뽑아낸 뒤\n2. 이걸 Figma로 컨버팅해서 수정\n이었는데, 불편한점들도 꽤 있고 디자인에 친화적인 워크플로우는 아니었던 터라 나온다니 기대하고 있었다"
         },
         "id": "3ac8c671-4b8b-4066-8f09-9e18772e25c7",

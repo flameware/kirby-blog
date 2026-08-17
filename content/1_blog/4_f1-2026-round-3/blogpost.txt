@@ -7,15 +7,6 @@ Blocks:
 [
     {
         "content": {
-            "level": "h2",
-            "text": "F1 2026 - Round 3를 마친 시점 리뷰"
-        },
-        "id": "43a19d51-dde3-465e-b9e8-774f3a9cdcf7",
-        "isHidden": false,
-        "type": "heading"
-    },
-    {
-        "content": {
             "text": "### 어째 계속 F1 얘기다\n- 이러려고 블로그를 판건 아닌데.. 요새 쓸만한게 별로 없다보니 뭐.."
         },
         "id": "17b047a3-cf68-462b-8200-74332b3273df",

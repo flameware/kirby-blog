@@ -6,27 +6,10 @@ main a:visited {
     color: var(--color-link)
 }
 
-/* 글 머리: 제목과 작성일은 하나의 정보 단위다.
-   그룹 바깥은 넓게, 안쪽은 좁게 띄워 한 덩어리로 읽히게 한다.
-   아래쪽은 위쪽의 절반만 띄워 글 머리를 본문 쪽으로 붙인다. */
-.post-header {
-    padding: var(--big-gap-desktop) 0 40px 0;
-}
+/* 글 머리(.post-header / .post-title / .post-date)는 project와 공용이므로
+   assets/css/index.css에 있다. 템플릿별 CSS는 한쪽만 로드되기 때문이다. */
 
-/* 시맨틱만 h1으로 올리고 크기는 기존 h2 그대로 둔다 */
-.post-title {
-    font-size: var(--text-h2);
-    margin: 0;
-}
-
-.post-date {
-    display: block;
-    font-size: var(--text-sm);
-    margin: 12px 0 0 0;
-}
-
-/* 첫 heading은 템플릿이 제목으로 가져가므로,
-   이 클래스는 본문 중간 소제목에만 남는다. */
+/* 제목은 title 필드가 맡으므로, heading 블록은 본문 소제목 전용이다. */
 .blog-heading {
     padding: var(--big-gap-desktop) 0 var(--big-gap-desktop) 0;
     margin: 0;
@@ -63,18 +46,6 @@ figcaption {
 /* Mobile phones (portrait) */
 @media (max-width: 480px) {
 /* Styles for small phones */
-
-.post-header {
-    padding: var(--big-gap-mobile) 0 24px 0;
-}
-
-.post-title {
-    font-size: var(--text-h2-mobile);
-}
-
-.post-date {
-    margin: 8px 0 0 0;
-}
 
 .blog-heading {
     padding: 0 0 var(--big-gap-mobile) 0;

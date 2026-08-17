@@ -9,15 +9,6 @@ Blocks:
 [
     {
         "content": {
-            "level": "h2",
-            "text": "Claude Code를 사용해서 Framer 작업하기"
-        },
-        "id": "d09d3eaf-6dc0-486b-a194-95e4780d8af8",
-        "isHidden": false,
-        "type": "heading"
-    },
-    {
-        "content": {
             "text": "### 들어가며\n저번 글 쓴지도 오래됐는데, 그 동안 푹 쉬고 있었다. 책도 읽고, 공부도 하고, 월드컵도 보고, ... 암튼.\n\nFramer 3.0이 런칭된지도 한 달정도 지난것 같은데, 대충 아 agent 들어왔구나 정도로만 생각하고 있다가 지난주에 런칭 비디오를 시간내서 볼 수 있었다."
         },
         "id": "18dec3ba-d17c-49c4-a5b2-548f597a18d2",

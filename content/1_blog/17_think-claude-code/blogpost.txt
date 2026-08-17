@@ -1,19 +1,10 @@
-Title: think-claude-code
+Title: 단상 - Claude Code
 
 ----
 
 Blocks:
 
 [
-    {
-        "content": {
-            "level": "h2",
-            "text": "단상 - Claude Code"
-        },
-        "id": "e2d9a29e-1f54-4dd2-8577-c5bcc5d3ca63",
-        "isHidden": false,
-        "type": "heading"
-    },
     {
         "content": {
             "location": "kirby",

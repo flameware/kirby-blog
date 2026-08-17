@@ -7,15 +7,6 @@ Blocks:
 [
     {
         "content": {
-            "level": "h2",
-            "text": "Drummer - Eloy Casagrande"
-        },
-        "id": "c89bae92-1288-4647-a696-871841d07d86",
-        "isHidden": false,
-        "type": "heading"
-    },
-    {
-        "content": {
             "text": "신동 - 신동(神童, child prodigy)은 기술적으로 특정 분야에서 성인 전문가 수준의 의미 있는 작업을 만들어내는 10세 미만의 어린이를 말한다. 이 용어는 특정 분야에서 비범한 재능을 가진 젊은 사람들을 설명하는 데 더 넓게 적용되기도 한다.",
             "citation": "Wikipedia"
         },

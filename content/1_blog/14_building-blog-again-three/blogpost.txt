@@ -1,19 +1,10 @@
-Title: Building Blog Again Three
+Title: 블로그를 또 새로 만들기 (마지막)
 
 ----
 
 Blocks:
 
 [
-    {
-        "content": {
-            "level": "h2",
-            "text": "블로그를 또 새로 만들기 (마지막)"
-        },
-        "id": "30e0b9f8-b4a3-4c04-b3bb-a4edfe06c8b4",
-        "isHidden": false,
-        "type": "heading"
-    },
     {
         "content": {
             "text": "### 대략의 계획\n시작하기 전에 마음속에 몇 가지 요구사항은 갖고 있었다.\n- 서체는 Serif 한글 서체 중에서 선택하자 -> 결론적으로 지금은 [고운 바탕](https://fonts.google.com/specimen/Gowun+Batang)을 사용.\n- 블로그 뿐 아니라, 기존에 갖고있던/운영하던 홈페이지 도메인을 이용하자.\n- 기존 홈페이지에는 작업물만 모아뒀는데, 이걸 그냥 블로그+작업물 저장소 개념으로 확장하는 것으로 결정했다. 자연스럽게 기존에 호스팅을 위해 이용하던 [blot.im](https://blot.im)은 해지하기로. (blot은 좋은 서비스니 가볍게 뭘 만들 필요가 있는분들은 확인해 보세요)"

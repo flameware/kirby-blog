@@ -6,11 +6,7 @@
             ?>
             <li class="blog-item">
                 <a href="<?= $blogpost->url() ?>">
-                    <?php foreach ($blogpost->blocks()->toBlocks() as $block) { ?>
-                        <?php if ($block->type() === "heading"): ?>
-                                <p><?= $block->content()->text() ?></p>
-                        <?php endif ?>
-                    <?php } ?>
+                    <p><?= $blogpost->title()->esc() ?></p>
                 </a>
                 <small class="blog-date"><?= $blogpost->date() ?></small>
             </li>

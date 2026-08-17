@@ -1,6 +1,10 @@
 title: Post
 
 fields:
+  title:
+    label: 제목
+    type: text
+    required: true
   blocks:
     type: blocks
     pretty: true

@@ -7,15 +7,6 @@ Blocks:
 [
     {
         "content": {
-            "level": "h2",
-            "text": "Drummer - Danny Carey"
-        },
-        "id": "27a8f302-2a1a-427f-b94a-882d034bcd70",
-        "isHidden": false,
-        "type": "heading"
-    },
-    {
-        "content": {
             "text": "<strong><em>This isn’t a song, this is a Mathematical Equation</em></strong>",
             "citation": "Mike Portnoy, in Drumeo"
         },

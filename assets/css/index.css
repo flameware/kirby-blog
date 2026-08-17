@@ -168,6 +168,27 @@ a:hover {
     border-radius: 1rem;
 }
 
+/* 글 머리 (blogpost, project 공용)
+   제목과 작성일은 하나의 정보 단위다.
+   그룹 바깥은 넓게, 안쪽은 좁게 띄워 한 덩어리로 읽히게 한다.
+   아래쪽은 위쪽의 절반만 띄워 글 머리를 본문 쪽으로 붙인다. */
+.post-header {
+    padding: var(--big-gap-desktop) 0 40px 0;
+}
+
+/* 시맨틱만 h1으로 올리고 크기는 기존 h2 그대로 둔다 */
+.post-title {
+    font-size: var(--text-h2);
+    margin: 0;
+}
+
+/* 작성일은 글에만 있다. 프로젝트는 작성일을 갖지 않는다. */
+.post-date {
+    display: block;
+    font-size: var(--text-sm);
+    margin: 12px 0 0 0;
+}
+
 /* 이전/다음 내비게이션 (blogpost, project 공용) */
 .postnav {
     display: flex;
@@ -280,6 +301,18 @@ h3 {
 
 .footer-menu {
     visibility: visible;
+}
+
+.post-header {
+    padding: var(--big-gap-mobile) 0 24px 0;
+}
+
+.post-title {
+    font-size: var(--text-h2-mobile);
+}
+
+.post-date {
+    margin: 8px 0 0 0;
 }
 
 .postnav {
