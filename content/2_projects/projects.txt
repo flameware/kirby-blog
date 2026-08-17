@@ -2,4 +2,8 @@ Title: Projects
 
 ----
 
+Description: 손성기의 개인 프로젝트 목록. Processing과 3D 프린팅 등으로 만든 이미지 중심의 작업들을 모아 둔다.
+
+----
+
 Uuid: vfd4etd92mtuym5g

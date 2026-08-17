@@ -2,4 +2,8 @@ Title: Blog
 
 ----
 
+Description: 손성기가 쓴 글 목록. UX·프로덕트 디자인, 헤비메탈, F1과 NBA, 건축, 그리고 그때그때의 관심사를 최신순으로 모아 둔다.
+
+----
+
 Uuid: tfg7xbreqeifo2h9

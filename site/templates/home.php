@@ -1,4 +1,4 @@
-<?php snippet('header', data: ['title'=>'Massive Void | 손성기']) ?>
+<?php snippet('header') ?>
 
     <main class="main">
         <div class="home-intro">

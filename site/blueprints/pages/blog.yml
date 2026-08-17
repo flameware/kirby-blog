@@ -1,6 +1,17 @@
 title: Blog
 
 sections:
+  meta:
+    type: fields
+    fields:
+      description:
+        label: 요약
+        help: 검색 결과와 공유 카드에 쓴다. 비워 두면 사이트 기본 요약을 쓴다.
+        type: textarea
+        size: small
+        maxlength: 160
+        buttons: false
+
   drafts:
     type: pages
     template: blogpost

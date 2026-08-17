@@ -1,6 +1,21 @@
 title: Site
 
 sections:
+  meta:
+    type: fields
+    fields:
+      displayTitle:
+        label: 표시 이름
+        help: 홈의 <title>에 쓴다.
+        type: text
+      description:
+        label: 기본 요약
+        help: 자기 요약이 없는 페이지가 물려받는다.
+        type: textarea
+        size: small
+        maxlength: 160
+        buttons: false
+
   unlisted:
     type: pages
     status: unlisted
