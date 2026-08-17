@@ -52,7 +52,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **kirby-uniform** (`mzur/kirby-uniform ^5.6`): Form handling with spam guards
 - **kirby3-redirects** (`bnomei/kirby3-redirects ^5.1`): URL redirect management via Panel
 - **kirby-form** / **kirby-flash**: Additional form/flash utilities
-- **seo** (`site/plugins/seo`, local): Page methods `metaTitle()`, `metaDescription()`, `metaExcerpt()`, `metaType()` used by `header.php`. See `docs/adr/0005-page-metadata.md`.
+- **seo** (`site/plugins/seo`, local): Page methods `metaTitle()`, `metaDescription()`, `metaExcerpt()`, `metaType()`, `metaImageFile()`, `metaCard()` used by `header.php`. See `docs/adr/0005-page-metadata.md` and `docs/adr/0006-social-card.md`.
 
 **Adding a hand-written plugin — add the `.gitignore` exception in the same commit.** `.gitignore` has `/site/plugins/*` to keep out the kirby-plugin packages Composer installs there, so a new local plugin is invisible to git by default. Every hand-written plugin needs an explicit `!/site/plugins/<name>` line.
 
@@ -81,6 +81,7 @@ Dev dependency: `laravel/pint` (PHP code formatter)
 - **Blocks-based content**: Blog posts use the Kirby block editor. Templates render with `$page->blocks()->toBlocks()`. Custom block snippets live in `site/snippets/blocks/`.
 - **Auto CSS loading**: `css("@auto")` in `header.php` loads a template-matching CSS file automatically (e.g. `blogpost.php` → `assets/css/templates/blogpost.css`).
 - **Page metadata**: Templates call `snippet('header')` with no arguments. `header.php` derives `<title>`, `meta description`, and Open Graph tags from the page itself via the `seo` plugin's page methods — never pass a title in.
+- **Social card**: `metaCard()` crops the body's first image block to 1200×630 jpg, falling back to `assets/og-default.png`. Use `thumb()`, not `crop()`, when the output format matters — `crop()` silently discards a `format` option. See `docs/adr/0006-social-card.md`.
 - **Navigation**: Built dynamically from `$site->children()->listed()`. Mobile hamburger menu toggled via vanilla JS in `header.php`.
 - **Content listing**: Home page shows 5 latest blog posts and 4 latest projects via `->children()->listed()->limit(N)`.
 - **Tags**: Stored as comma-separated strings, split with `->tags()->split()`.

@@ -17,6 +17,27 @@ const SEO_DESCRIPTION_LENGTH = 160;
 /** 요약을 자동 추출할 때 본문으로 인정하는 블록 타입. */
 const SEO_PROSE_BLOCKS = ["markdown", "text"];
 
+/** 소셜 카드 규격. summary_large_image가 기대하는 1.91:1. */
+const SEO_CARD_WIDTH = 1200;
+const SEO_CARD_HEIGHT = 630;
+
+/**
+ * 카드의 원본으로 삼을 확장자. svg 같은 벡터는 GD가 다루지 못해 제외한다.
+ *
+ * 결과물은 확장자와 무관하게 늘 jpg다(SEO_CARD_OUTPUT) — avif·webp는
+ * 크롤러 지원이 고르지 않고, jpg는 어디서나 렌더된다.
+ */
+const SEO_CARD_FORMATS = ["jpg", "jpeg", "png", "webp", "avif", "gif"];
+const SEO_CARD_OUTPUT = "jpg";
+
+/**
+ * 이미지가 없는 페이지가 물려받는 기본 카드. 1200×630으로 만들어 둔다.
+ *
+ * 둘 다 없으면 og:image를 아예 내보내지 않는다 — 없는 파일을 가리키는
+ * 태그보다 태그가 없는 편이 낫다.
+ */
+const SEO_CARD_FALLBACKS = ["assets/og-default.png", "assets/og-default.jpg"];
+
 App::plugin("massivevoid/seo", [
     "pageMethods" => [
         /**
@@ -83,6 +104,95 @@ App::plugin("massivevoid/seo", [
             }
 
             return null;
+        },
+
+        /**
+         * 카드에 쓸 원본 이미지. 없으면 null.
+         *
+         * 본문 첫 image 블록을 먼저 본다. 블록은 파일을 uuid로 참조하므로
+         * 이미지가 다른 페이지에 저장돼 있어도 찾아낸다 — about-mclaren이
+         * 그런 경우다. 블록에 없으면 페이지가 가진 첫 이미지를 쓴다(프로젝트).
+         */
+        "metaImageFile" => function (): ?\Kirby\Cms\File {
+            foreach ($this->blocks()->toBlocks() as $block) {
+                if ($block->type() !== "image") {
+                    continue;
+                }
+
+                if ($file = $block->image()->toFile()) {
+                    return $file;
+                }
+            }
+
+            return $this->image();
+        },
+
+        /**
+         * 소셜 카드. url·width·height·alt를 담은 배열이거나 null.
+         *
+         * 원본을 1.91:1로 잘라 쓰고, 쓸 이미지가 없으면 기본 카드로 메운다.
+         * 기본 카드 파일마저 없으면 null — 없는 파일을 가리키는 og:image를
+         * 내보내는 것보다 태그가 없는 편이 낫다.
+         */
+        "metaCard" => function (): ?array {
+            $file = $this->metaImageFile();
+
+            if (
+                $file !== null &&
+                in_array($file->extension(), SEO_CARD_FORMATS, true) === true
+            ) {
+                /**
+                 * 썸네일 생성은 서버의 GD가 원본 포맷을 읽을 수 있어야 한다.
+                 * avif가 대표적으로 위험하다 — 못 읽으면 예외가 나는데,
+                 * 그게 header.php에서 터지면 페이지 전체가 500이 된다.
+                 * 카드 하나 때문에 글을 못 읽게 되는 것보다 기본 카드가 낫다.
+                 */
+                try {
+                    /**
+                     * crop()이 아니라 thumb()을 쓴다 — crop()은 options에서
+                     * quality와 crop만 읽고 format을 버린다(FileModifications).
+                     * 그러면 avif 원본이 avif 카드로 나가고, 크롤러가 못 읽는다.
+                     */
+                    $card = $file->thumb([
+                        "width" => SEO_CARD_WIDTH,
+                        "height" => SEO_CARD_HEIGHT,
+                        "crop" => true,
+                        "format" => SEO_CARD_OUTPUT,
+                    ]);
+
+                    return [
+                        "url" => $card->url(),
+                        "width" => $card->width(),
+                        "height" => $card->height(),
+                        // 대체 텍스트에는 사이트 접미사를 붙이지 않는다
+                        "alt" => $file->alt()->or($this->title())->value(),
+                    ];
+                } catch (\Throwable) {
+                    // 아래 기본 카드로 내려간다
+                }
+            }
+
+            foreach (SEO_CARD_FALLBACKS as $path) {
+                $root = kirby()->root("index") . "/" . $path;
+
+                if (file_exists($root) === true) {
+                    $fallback = ["path" => $path, "root" => $root];
+                    break;
+                }
+            }
+
+            if (isset($fallback) !== true) {
+                return null;
+            }
+
+            [$width, $height] = getimagesize($fallback["root"]);
+
+            return [
+                "url" => url($fallback["path"]),
+                "width" => $width,
+                "height" => $height,
+                "alt" => $this->site()->title()->value(),
+            ];
         },
 
         /**
