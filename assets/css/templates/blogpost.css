@@ -9,11 +9,9 @@ main a:visited {
 /* 글 머리(.post-header / .post-title / .post-date)는 project와 공용이므로
    assets/css/index.css에 있다. 템플릿별 CSS는 한쪽만 로드되기 때문이다. */
 
-/* 제목은 title 필드가 맡으므로, heading 블록은 본문 소제목 전용이다. */
-.blog-heading {
-    padding: var(--big-gap-desktop) 0 var(--big-gap-desktop) 0;
-    margin: 0;
-}
+/* heading 블록(.blog-heading)은 본문 소제목 전용이고 h2로 렌더된다.
+   markdown의 ##와 같은 것을 뜻하므로 크기·여백도 h2 규칙 하나를 그대로 쓴다.
+   여기에 따로 padding을 주면 같은 소제목이 입력 경로에 따라 달라 보인다. */
 
 blockquote {
     padding: 10px 10px 10px var(--big-gap-desktop);
@@ -46,10 +44,6 @@ figcaption {
 /* Mobile phones (portrait) */
 @media (max-width: 480px) {
 /* Styles for small phones */
-
-.blog-heading {
-    padding: 0 0 var(--big-gap-mobile) 0;
-}
 
 blockquote {
     padding: 4px 4px 4px var(--big-gap-mobile);

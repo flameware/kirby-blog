@@ -1,4 +1,4 @@
-Title: Circles with Random Feelings
+Title: Circles with random feelings
 
 ----
 
@@ -7,7 +7,7 @@ Blocks:
 [
     {
         "content": {
-            "text": "### Circles with random feelings\n간단한 원들로 해 보는 반복 테스트.\n색상은 [Colour Hunt](https://colorhunt.co/palette/273278)에서 가져왔습니다."
+            "text": "간단한 원들로 해 보는 반복 테스트.\n색상은 [Colour Hunt](https://colorhunt.co/palette/273278)에서 가져왔습니다."
         },
         "id": "a17ad577-a2c5-4476-80ad-1baa69a89d0c",
         "isHidden": false,

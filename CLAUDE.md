@@ -82,6 +82,7 @@ Dev dependency: `laravel/pint` (PHP code formatter)
 - **Auto CSS loading**: `css("@auto")` in `header.php` loads a template-matching CSS file automatically (e.g. `blogpost.php` → `assets/css/templates/blogpost.css`).
 - **Page metadata**: Templates call `snippet('header')` with no arguments. `header.php` derives `<title>`, `meta description`, and Open Graph tags from the page itself via the `seo` plugin's page methods — never pass a title in.
 - **Social card**: `metaCard()` crops the body's first image block to 1200×630 jpg, falling back to `assets/og-default.png`. Use `thumb()`, not `crop()`, when the output format matters — `crop()` silently discards a `format` option. See `docs/adr/0006-social-card.md`.
+- **Heading levels**: The title is the page's only `<h1>` and never appears in the body. Body subheads start at `##`, so `#` is never written in content. `h2`/`h3` in `index.css` are mapped one notch down from their tag names — `h2` carries the `--text-h3` size, `h3` is body size + bold. Change the mapping, not the token values: `--text-h2` is what `.post-title` uses. See `docs/adr/0007-heading-levels.md`.
 - **Navigation**: Built dynamically from `$site->children()->listed()`. Mobile hamburger menu toggled via vanilla JS in `header.php`.
 - **Content listing**: Home page shows 5 latest blog posts and 4 latest projects via `->children()->listed()->limit(N)`.
 - **Tags**: Stored as comma-separated strings, split with `->tags()->split()`.
