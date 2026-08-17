@@ -7,6 +7,7 @@
  */
 $metaTitle = $page->metaTitle();
 $metaDescription = $page->metaDescription();
+$metaCard = $page->metaCard();
 ?>
 <html lang="ko">
 <head>
@@ -26,7 +27,15 @@ $metaDescription = $page->metaDescription();
     <meta property="og:type" content="<?= $page->metaType() ?>">
     <meta property="og:site_name" content="<?= esc($site->title()) ?>">
     <meta property="og:locale" content="ko_KR">
-    <meta name="twitter:card" content="summary">
+    <?php if ($metaCard !== null): ?>
+    <meta property="og:image" content="<?= $metaCard["url"] ?>">
+    <meta property="og:image:width" content="<?= $metaCard["width"] ?>">
+    <meta property="og:image:height" content="<?= $metaCard["height"] ?>">
+    <meta property="og:image:alt" content="<?= esc($metaCard["alt"]) ?>">
+    <?php endif ?>
+    <meta name="twitter:card" content="<?= $metaCard !== null
+      ? "summary_large_image"
+      : "summary" ?>">
     <link rel="icon" href="<?= url(
       "assets/favicon.svg",
     ) ?>" type="image/svg+xml">
