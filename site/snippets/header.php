@@ -53,34 +53,6 @@ $metaCard = $page->metaCard();
     <?= css(url: "assets/css/index.css") ?>
     <?= css(url: "@auto") ?>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const submenu = document.querySelector('.submenu');
-
-            if (mobileToggle && submenu) {
-                mobileToggle.addEventListener('click', function() {
-                    mobileToggle.classList.toggle('active');
-                    submenu.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function(event) {
-                    if (!event.target.closest('.mainnav')) {
-                        mobileToggle.classList.remove('active');
-                        submenu.classList.remove('active');
-                    }
-                });
-
-                submenu.addEventListener('click', function(event) {
-                    if (event.target.tagName === 'A') {
-                        mobileToggle.classList.remove('active');
-                        submenu.classList.remove('active');
-                    }
-                });
-            }
-        });
-    </script>
-
     <?php if ($goatcounter = option("analytics.goatcounter")): ?>
     <script data-goatcounter="https://<?= $goatcounter ?>.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
@@ -88,21 +60,22 @@ $metaCard = $page->metaCard();
 
 </head>
 <body>
+    <?php /* 내비게이션. 브랜드와 링크가 한 덩어리로 묶인 island이고, 모바일에서도
+             접히지 않는다. 본문 열 바깥에 있는 것이 핵심이다 — 열 안에 두면 열 폭(46.7vw)과
+             열의 정렬 방식에 끌려다닌다. body가 이미 가운데 정렬하는 flex라, 밖으로 꺼내면
+             폭만 정해도 화면 중앙에 놓인다.
+             근거: docs/adr/0009-navigation-island.md */ ?>
+    <nav class="mainnav">
+        <a class="mainnav-brand" href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a>
+        <ul class="mainnav-links">
+            <?php foreach ($site->children()->listed() as $item): ?>
+            <?php /* 글 상세(blog/어떤-글)에서도 blog가 활성이어야 하므로 자손까지 본다.
+                     aria-current가 곧 CSS 선택자다 — 형광펜과 접근성이 어긋날 수 없다. */ ?>
+            <?php $isCurrent = $page->is($item) || $page->isDescendantOf($item) ?>
+            <li><a href="<?= $item->url() ?>"<?= $isCurrent ? ' aria-current="page"' : "" ?>><?= $item->title() ?></a></li>
+            <?php endforeach ?>
+        </ul>
+    </nav>
     <div class="<?= $page->uri() === "projects"
       ? "projects-container"
       : "container" ?>">
-        <nav class="mainnav">
-            <ul>
-                <li><a href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a></li>
-            </ul>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <ul class="submenu">
-                <?php foreach ($site->children()->listed() as $item) { ?>
-                <li><a href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
-                <?php } ?>
-            </ul>
-        </nav>

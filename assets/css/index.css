@@ -97,64 +97,97 @@ a:hover {
 }
 
 
+/* 위 여백은 .mainnav이 갖는다 — 내비게이션이 이 열 바깥으로 나갔기 때문이다.
+   여기 남겨두면 내비게이션 위 여백에 더해져 두 곳이 같은 간격을 다툰다. */
 .container {
     box-sizing: border-box;
     width: 46.7vw;
-    padding: 5.6vw 0 0 0;
-
 }
 
+/* 내비게이션 — 흐름 안에 있는 island.
+   열 폭을 채우지 않고 내용만큼만 차지한다. 폭이 곧 존재감이라, 좌우로 늘리면
+   둥근 헤더가 될 뿐이다. 그 대가로 브랜드가 좌상단이 아니라 화면 중앙에 온다.
+   근거: docs/adr/0009-navigation-island.md */
 .mainnav {
-    width: 100%;
+    box-sizing: border-box;
+
+    /* 간격은 분기가 아니라 유동값이다 — ADR-0008이 크기에 쓴 방식 그대로다.
+       위쪽 끝값은 투자일지 island의 값이고(브랜드↔링크 28px, 링크 좌우 12px,
+       왼쪽 여백 20px), 아래쪽 끝값은 320px에서 세 링크가 한 줄에 남는 한계다.
+       분기점을 만들면 그 폭에서 간격이 툭 끊긴다. */
+    --island-gap: clamp(6px, 2.4vw, 28px);
+    --island-link-pad: clamp(5px, 1.2vw, 12px);
+    --island-lead: clamp(12px, 1.9vw, 20px);
+
+    /* 내용만큼만 차지한다. body가 가운데 정렬하는 flex라 이것만으로 화면 중앙에 온다.
+       열 안에 있었다면 46.7vw가 폭을 깎았을 것이다(뷰포트 480~620px에서 열이 island보다
+       좁다). 위 여백을 여기서 갖는 것은 열 바깥으로 나오면서 열의 padding-top을
+       물려받지 못하기 때문이고, 값은 열이 쓰던 것과 같다 — 세로 리듬은 그대로다. */
+    width: max-content;
+    margin-top: 5.6vw;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    font-size: var(--text-body);
+    gap: var(--island-gap);
+    /* 오른쪽이 좁은 것은 링크가 자기 패딩을 갖고 있어서다. 브랜드는 갖지 않는다. */
+    padding: 4px 8px 4px var(--island-lead);
+    border: 1px solid var(--color-secondary);
+    /* 알약이 아니라 둥근 상자다. 이 사이트에서 알약은 태그의 것이고, 태그는 26px짜리
+       데이터 조각이다 — 57px짜리 표면이 같은 모양을 쓰면 큰 태그로 읽힌다.
+       투자일지의 island과 같은 16px. */
+    border-radius: 16px;
+    font-size: var(--text-meta);
     line-height: 1.4;
 }
 
-.mainnav ul {
-    list-style: none;
-    padding: 0;
-
+/* 브랜드는 링크보다 한 단 크다. 정체성과 이동 수단은 같은 무게가 아니다. */
+.mainnav-brand {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: var(--text-body);
 }
 
-
-.submenu {
+/* 링크는 브랜드보다 두 눈금 아래다. 한 눈금이 아닌 이유는 대문자 때문이다 —
+   같은 크기에서 대문자는 소문자보다 크게 읽혀서, --text-meta로 두면 브랜드와
+   무게가 같아진다. 대문자 내비게이션을 한 단 작게 놓는 것은 통상의 조판이기도 하다. */
+.mainnav-links {
     display: flex;
-    flex-direction: row;
-    gap: 32px;
-}
-
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
     padding: 0;
+    font-size: var(--text-tag);
 }
 
-.hamburger-line {
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-textcolor);
-    transition: all 0.3s ease;
+/* 패딩이 곧 클릭 영역이다. 세로 44px을 채우고, 가로도 짧은 링크가 44px에 닿게 한다.
+   형광펜은 글자에 붙는 장식이라 패딩을 줘도 모양이 변하지 않는다.
+
+   대문자는 CSS로 준다. 페이지 제목은 패널에서 편집하는 콘텐츠이고 대문자는 이 자리의
+   표현일 뿐이라, 콘텐츠를 고치면 목록·글 머리·<title>까지 같이 대문자가 된다.
+   자간을 조금 벌린 것은 세리프 대문자가 붙어 있으면 낱말이 덩어리로 뭉쳐서다. */
+.mainnav-links a {
+    box-sizing: border-box;
+    /* 44px은 패딩이 아니라 하한으로 준다. 패딩으로 채우면 글자 크기를 바꿀 때마다
+       높이가 따라 움직여서, 모바일에서 44px이 깨지거나 데스크탑에서 island이 부푼다. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 var(--island-link-pad);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
-.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+/* 현재 페이지. hover와 같은 형광펜인 것은 알고 받아들인 것이다 — 두 번째 밑줄
+   어휘를 만드는 값이 커서 아래 한 순간의 혼동보다 비싸다. */
+.mainnav-links a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 1em;
+    text-underline-offset: -1em;
 }
 
 .tags {
@@ -238,51 +271,19 @@ hr {
 @media (max-width: 480px) {
 /* Styles for small phones */
 .container {
-    width: 100vw;
-    padding: 20px;
-}
-
-.mobile-menu-toggle {
-    display: flex;
-    position: relative;
-    z-index: 1001;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--color-background);
-    flex-direction: column;
-    gap: 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-top: 1px solid var(--color-secondary);
-    z-index: 1000;
-}
-
-.submenu.active {
-    display: flex;
-}
-
-.submenu li {
-    border-bottom: 1px solid var(--color-secondary);
-}
-
-.submenu li:last-child {
-    border-bottom: none;
-}
-
-.submenu a {
-    display: block;
-    padding: 16px 20px;
+    /* 100vw가 아니라 100%다. 100vw는 세로 스크롤바 폭을 포함해서,
+       스크롤바가 있으면 열이 화면보다 넓어지고 가로 스크롤이 생긴다. */
     width: 100%;
-    box-sizing: border-box;
+    /* 위쪽만 0이다. 그 여백은 열 바깥에 있는 .mainnav이 갖는다. */
+    padding: 0 20px 20px 20px;
 }
 
+/* 내비게이션의 **폭**에는 모바일 분기가 없다 — 링크가 셋뿐이라 접을 이유가 없고,
+   접으면 island이 아니라 둥근 헤더가 된다. 여기서 바꾸는 것은 위 여백뿐이고,
+   그건 열이 쓰던 20px을 그대로 물려받는 것이다.
+   근거: docs/adr/0009-navigation-island.md */
 .mainnav {
-    position: relative;
+    margin-top: 20px;
 }
 
 /* 크기는 유동 단위가 처리하므로 여기서는 여백만 좁힌다 */

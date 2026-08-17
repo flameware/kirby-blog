@@ -1,16 +1,17 @@
+/* 위 여백은 .mainnav이 갖는다 — 내비게이션이 이 열 바깥으로 나갔기 때문이다. */
 .projects-container {
     box-sizing: border-box;
-    width: 100vw;
+    /* 100vw가 아니라 100%다. 100vw는 세로 스크롤바 폭을 포함해서, 스크롤바가 있으면
+       이 열이 화면보다 15px쯤 넓어지고 페이지에 가로 스크롤이 생긴다. */
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5.6vw 0 0 0;
 }
 
-.projects-container .mainnav{
-    width: 46.7vw;
-}
-
+/* 내비게이션 폭 예외가 여기 있었다. island이 내용만큼만 차지하고 뷰포트 중앙에
+   놓이면서 아무 일도 하지 않는 규칙이 되어 지웠다 — 두 페이지의 내비게이션은
+   이제 정말 같은 규칙이다. footer의 46.7vw는 그대로다. 그건 실제로 폭을 정한다. */
 .projects-container footer{
     width: 46.7vw;
 }
@@ -57,15 +58,10 @@
 /* Mobile phones (portrait) */
 @media (max-width: 480px) {
 /* Styles for small phones */
+/* 폭은 위에서 이미 100%다 — 여기서 다시 적을 것이 없다. */
 .projects-container {
-    width: 100vw;
-    padding: 20px;
-}
-
-.projects-container .mainnav{
-    width: 100%;
-    padding: 0 20px;
-
+    /* 위쪽만 0이다. 그 여백은 열 바깥에 있는 .mainnav이 갖는다. */
+    padding: 0 20px 20px 20px;
 }
 
 .projects-container footer{
