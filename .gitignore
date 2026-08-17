@@ -37,6 +37,9 @@ Icon
 #   (uniform / form / flash / redirects — 서버 post-receive의 composer install이 재생성)
 #   ※ 직접 만든 플러그인을 여기 두면 무시되니, 그때는 !/site/plugins/<이름> 을 아래에 추가할 것
 /site/plugins/*
+!/site/plugins/seo
+# └ 직접 만든 플러그인 (composer 산출물이 아니므로 저장소가 유일한 출처)
+
 # Security
 # ---------------
 # 저장소가 public이므로 서버 구축·배포 절차 문서는 공개하지 않는다
