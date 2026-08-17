@@ -54,6 +54,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **kirby-form** / **kirby-flash**: Additional form/flash utilities
 - **seo** (`site/plugins/seo`, local): Page methods `metaTitle()`, `metaDescription()`, `metaExcerpt()`, `metaType()` used by `header.php`. See `docs/adr/0005-page-metadata.md`.
 
+**Adding a hand-written plugin — add the `.gitignore` exception in the same commit.** `.gitignore` has `/site/plugins/*` to keep out the kirby-plugin packages Composer installs there, so a new local plugin is invisible to git by default. Every hand-written plugin needs an explicit `!/site/plugins/<name>` line.
+
+This fails silently and is expensive to spot. Kirby resolves an unknown `$page->foo()` as a content field lookup, not an error — so a page method from a missing plugin returns an **empty field** instead of throwing. Locally the file exists and everything passes; in production the tag just renders blank. This is exactly how `seo` shipped broken (fixed in `b07659b`): every page went live with an empty `<title>`.
+
+Verify before deploying:
+
+```bash
+git ls-files site/plugins/<name>   # must print the files, not nothing
+```
+
 ## Development Commands
 
 ```bash
