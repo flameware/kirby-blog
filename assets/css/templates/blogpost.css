@@ -34,7 +34,7 @@ figure img {
 }
 
 figcaption {
-    font-size: var(--text-sm);
+    font-size: var(--text-meta);
     text-align: center;
 }
 
