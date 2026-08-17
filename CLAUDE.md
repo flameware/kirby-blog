@@ -34,7 +34,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Content Structure
 
-- **Blog posts** (`content/1_blog/N_slug/blogpost.txt`): Fields are `Title`, `Blocks` (Kirby block editor JSON), `Date`, `Tags`
+- **Blog posts** (`content/1_blog/N_slug/blogpost.txt`): Fields are `Title`, `Blocks` (Kirby block editor JSON), `Date`, `Tags`, `Description` (optional SEO summary)
 - **Projects** (`content/2_projects/N_slug/project.txt`): Image-based project pages
 - Content folders are prefixed with numbers to control sort order and visibility (`1_` = listed)
 - `.png.txt` / `.jpg.txt` sidecar files store Kirby image metadata
@@ -52,6 +52,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **kirby-uniform** (`mzur/kirby-uniform ^5.6`): Form handling with spam guards
 - **kirby3-redirects** (`bnomei/kirby3-redirects ^5.1`): URL redirect management via Panel
 - **kirby-form** / **kirby-flash**: Additional form/flash utilities
+- **seo** (`site/plugins/seo`, local): Page methods `metaTitle()`, `metaDescription()`, `metaExcerpt()`, `metaType()` used by `header.php`. See `docs/adr/0005-page-metadata.md`.
 
 ## Development Commands
 
@@ -69,6 +70,7 @@ Dev dependency: `laravel/pint` (PHP code formatter)
 
 - **Blocks-based content**: Blog posts use the Kirby block editor. Templates render with `$page->blocks()->toBlocks()`. Custom block snippets live in `site/snippets/blocks/`.
 - **Auto CSS loading**: `css("@auto")` in `header.php` loads a template-matching CSS file automatically (e.g. `blogpost.php` → `assets/css/templates/blogpost.css`).
+- **Page metadata**: Templates call `snippet('header')` with no arguments. `header.php` derives `<title>`, `meta description`, and Open Graph tags from the page itself via the `seo` plugin's page methods — never pass a title in.
 - **Navigation**: Built dynamically from `$site->children()->listed()`. Mobile hamburger menu toggled via vanilla JS in `header.php`.
 - **Content listing**: Home page shows 5 latest blog posts and 4 latest projects via `->children()->listed()->limit(N)`.
 - **Tags**: Stored as comma-separated strings, split with `->tags()->split()`.

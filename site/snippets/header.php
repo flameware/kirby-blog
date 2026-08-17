@@ -1,9 +1,32 @@
-<html lang="en">
+<?php
+/**
+ * 문서 머리
+ *
+ * 제목과 요약은 템플릿이 넘기지 않는다. 페이지가 스스로 답한다.
+ * 근거: docs/adr/0005-page-metadata.md
+ */
+$metaTitle = $page->metaTitle();
+$metaDescription = $page->metaDescription();
+?>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow" />
-    <title><?= $title ?></title>
+    <title><?= esc($metaTitle) ?></title>
+    <?php if ($metaDescription !== ""): ?>
+    <meta name="description" content="<?= esc($metaDescription) ?>">
+    <?php endif ?>
+
+    <meta property="og:title" content="<?= esc($metaTitle) ?>">
+    <?php if ($metaDescription !== ""): ?>
+    <meta property="og:description" content="<?= esc($metaDescription) ?>">
+    <?php endif ?>
+    <meta property="og:url" content="<?= $page->url() ?>">
+    <meta property="og:type" content="<?= $page->metaType() ?>">
+    <meta property="og:site_name" content="<?= esc($site->title()) ?>">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary">
     <link rel="icon" href="<?= url(
       "assets/favicon.svg",
     ) ?>" type="image/svg+xml">

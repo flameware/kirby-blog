@@ -2,6 +2,8 @@ Title: Massive Void
 ----
 DisplayTitle: Massive Void | 손성기
 ----
+Description: 손성기의 글과 개인작업을 모은 공간. UX·프로덕트 디자인, 헤비메탈과 건축, F1과 NBA, 그 밖의 다양한 것에 대해 씁니다.
+----
 Twitter:
 ----
 Instagram:
