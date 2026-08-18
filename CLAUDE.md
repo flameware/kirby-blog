@@ -43,9 +43,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - `assets/css/index.css`: Global styles, CSS custom properties (design tokens), nav, shared components
 - `assets/css/templates/*.css`: Per-template stylesheets (auto-loaded via `css("@auto")` in header)
-- Responsive: desktop at `46.7vw` container width; mobile breakpoint at `480px` with hamburger nav
+- Responsive: the content column has no breakpoint — `--column` is one fluid value (`min(100% - 40px, max(46.7vw, 360px + 16.7vw))`) that is full-width-minus-20px gutters on phones and `46.7vw` from 1200px up. The `480px` media query is left for grid columns and spacing only. See `docs/adr/0012-fluid-column-width.md`.
 - Font: **Gowun Batang** (Korean serif) from Google Fonts
-- Design tokens: `--color-background`, `--color-highlight` (yellow), `--color-textcolor`, `--color-secondary`, `--color-link` (orange)
+- Design tokens: `--color-background`, `--color-highlight` (yellow), `--color-textcolor`, `--color-secondary`, `--color-link` (orange), `--column` (content column width)
 
 ### Plugins
 
@@ -127,6 +127,7 @@ The server still sends **no `Cache-Control` header**. Now that URLs track conten
 - **Heading levels**: The title is the page's only `<h1>` and never appears in the body. Body subheads start at `##`, so `#` is never written in content. `h2` carries `--text-subhead`; `h3` is body size + bold. See `docs/adr/0007-heading-levels.md`.
 - **Every screen has an `<h1>`**: `home`, `blog`, `projects`, `about` don't draw a title, so they render one as `<h1 class="visually-hidden">` — `$page->title()`, except home which uses `$site->title()`. Never hide it with `display:none`/`visibility:hidden`; that removes it from the accessibility tree too. See `docs/adr/0011-page-title-outline.md`.
 - **Type scale**: Every size comes from one fluid unit — `--fluid: clamp(1rem, 0.893rem + 0.476vw, 1.25rem)` (16px at 360px wide → 20px at 1200px). The five tokens are `--fluid` times a rung of a 1.125 ladder, and they are named for their **role**, matching `CONTEXT.md`'s vocabulary: `--text-tag`, `--text-meta` (작성일), `--text-body`, `--text-subhead`, `--text-title`. There is no `html { font-size }` rule and no mobile-only size token — never add a breakpoint to change a size, change the multiplier. See `docs/adr/0008-type-scale.md`.
+- **Column width**: One token, `--column`, sets the content column everywhere (`.container`, and the footer on `/projects`). Gutters live in the width, not in `padding` — the column is already inset, so never add left/right padding on top of it. Never add a breakpoint to change the width; move an end value instead. See `docs/adr/0012-fluid-column-width.md`.
 - **Navigation**: Built dynamically from `$site->children()->listed()`. A rounded island that sits **outside** the content column, as a direct child of `body`; it takes only the width of its contents and never collapses — there is no hamburger and no toggle script. See `docs/adr/0009-navigation-island.md`.
 - **Content listing**: Home page shows 5 latest blog posts and 4 latest projects via `->children()->listed()->limit(N)`.
 - **Tags**: Stored as comma-separated strings, split with `->tags()->split()`.

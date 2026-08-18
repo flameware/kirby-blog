@@ -23,6 +23,15 @@
   --text-subhead: calc(var(--fluid) * 1.602);   /* 25.6px → 32.0px */
   --text-title:   calc(var(--fluid) * 1.802);   /* 28.8px → 36.0px */
 
+  /* 본문 열의 폭. 크기와 같은 원칙으로 분기점 없이 화면 폭을 따라 연속으로 변한다.
+     세 구간이 자연스럽게 이어진다 — 480px 아래에서는 좌우 20px을 뺀 화면 전체,
+     1200px 위에서는 46.7vw, 그 사이는 둘을 잇는 직선이다.
+     `360px + 16.7vw`는 그 직선이고, 480.2px에서 `100% - 40px`과,
+     1200px에서 `46.7vw`와 정확히 만나므로 min/max만으로 세 구간이 붙는다.
+     100vw가 아니라 100%인 것은 100vw가 세로 스크롤바 폭을 포함해서다.
+     근거: docs/adr/0012-fluid-column-width.md */
+  --column: min(100% - 40px, max(46.7vw, 360px + 16.7vw));
+
   /* Spacing */
   --big-gap-desktop: 80px;
   --big-gap-mobile: 40px;
@@ -127,7 +136,7 @@ a:hover {
    여기 남겨두면 내비게이션 위 여백에 더해져 두 곳이 같은 간격을 다툰다. */
 .container {
     box-sizing: border-box;
-    width: 46.7vw;
+    width: var(--column);
 }
 
 /* 내비게이션 — 흐름 안에 있는 island.
@@ -296,12 +305,10 @@ hr {
 /* Mobile phones (portrait) */
 @media (max-width: 480px) {
 /* Styles for small phones */
+/* 폭도 좌우 여백도 --column이 갖는다 — 여기 남는 것은 아래 여백뿐이다.
+   위쪽 여백이 없는 것은 그 자리를 열 바깥에 있는 .mainnav이 갖기 때문이다. */
 .container {
-    /* 100vw가 아니라 100%다. 100vw는 세로 스크롤바 폭을 포함해서,
-       스크롤바가 있으면 열이 화면보다 넓어지고 가로 스크롤이 생긴다. */
-    width: 100%;
-    /* 위쪽만 0이다. 그 여백은 열 바깥에 있는 .mainnav이 갖는다. */
-    padding: 0 20px 20px 20px;
+    padding-bottom: 20px;
 }
 
 /* 내비게이션의 **폭**에는 모바일 분기가 없다 — 링크가 셋뿐이라 접을 이유가 없고,
@@ -333,27 +340,4 @@ h2 {
     padding: var(--big-gap-mobile) 0 0 0;
 }
 
-}
-
-
-/* Mobile phones (landscape) and small tablets */
-@media (min-width: 481px) and (max-width: 768px) {
-/* Styles for larger phones in landscape */
-}
-
-/* Common mobile-first approach */
-@media (min-width: 320px) {
-/* Base mobile styles (smallest phones) */
-}
-
-@media (min-width: 375px) {
-/* iPhone SE, iPhone 12/13/14 mini */
-}
-
-@media (min-width: 414px) {
-/* iPhone 6/7/8 Plus, iPhone 11 Pro Max */
-}
-
-@media (min-width: 430px) {
-/* iPhone 14 Pro Max and similar large phones */
 }
