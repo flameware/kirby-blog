@@ -82,6 +82,22 @@ h3 {
     margin: 1.33em 0;
 }
 
+/* 화면에 그리지 않고 아웃라인에만 남기는 제목. 목록·소개 화면은 제목을 보여주지
+   않는 디자인이지만 문서에는 최상위 제목이 있어야 해서, h1을 여기에 숨겨 둔다.
+   display:none이나 visibility:hidden은 스크린리더에서도 사라지므로 쓸 수 없다.
+   근거: docs/adr/0011-page-title-outline.md */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
 ::selection {
     color: var(--color-textcolor);
     background: var(--color-highlight);
