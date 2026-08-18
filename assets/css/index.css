@@ -29,6 +29,16 @@
 }
 
 /* 공통영역 */
+
+/* iOS Safari의 자동 텍스트 크기 조정(font boosting)을 끈다. 켜져 있으면 좁은 화면에서
+   본문 블록만 제멋대로 부풀어, ADR-0008이 정한 유동 단위가 무의미해진다.
+   normalize.css도 같은 선언을 갖고 있지만 그건 CDN에서 오는 파일이라,
+   우리 타입 스케일이 남의 서버가 살아 있는지에 기대게 둘 수 없다. */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     font-size: var(--text-body);
     background: var(--color-background);
