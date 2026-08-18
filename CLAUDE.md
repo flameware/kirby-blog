@@ -116,7 +116,7 @@ curl -s https://massivevoid.com/ | grep -o 'assets/css[^"]*'
 
 Stylesheet URLs carry `?v=<filemtime>`, added by the `assets` plugin's `css` component, so a CSS change reaches readers on their next request. Without it a stale stylesheet can survive for days in iOS Safari — an already-open tab restores from memory and never revalidates. See `docs/adr/0010-asset-cache-busting.md`.
 
-The server still sends **no `Cache-Control` header**. Now that URLs track content, a long `max-age` would be safe — that's an Apache change, outside this repo.
+`Cache-Control` comes from the tracked `.htaccess`, in three tiers keyed on whether the URL tracks the content: HTML is `no-cache`, `?v=` assets and `/media/**` are `max-age=31536000, immutable`, version-less `/assets/**` gets a revocable `max-age=86400`. Never put `immutable` on a URL that doesn't change with its content. A `.htaccess` syntax error is a site-wide 500 and `apachectl configtest` doesn't read the file — verify with `curl -I` right after deploying. See `docs/adr/0013-cache-control-tiers.md`.
 
 ## Key Patterns
 
