@@ -24,9 +24,13 @@ figure {
     margin: 0;
 }
 
+/* 높이는 폭에서 나온다. 26.3vw로 못박혀 있었는데 그건 열이 46.7vw로 고정이던 시절의
+   16:9였다 — 열이 화면 폭을 따라 변하면 그 값은 더 이상 비율이 아니다.
+   근거: docs/adr/0012-fluid-column-width.md */
 figure iframe {
     width: 100%;
-    height: 26.3vw;
+    height: auto;
+    aspect-ratio: 16 / 9;
 }
 
 figure img {
@@ -50,32 +54,4 @@ blockquote {
     margin: 0;
 }
 
-figure iframe {
-    width: 100%;
-    height: 56.25vw;
-}
-
-}
-
-
-/* Mobile phones (landscape) and small tablets */
-@media (min-width: 481px) and (max-width: 768px) {
-/* Styles for larger phones in landscape */
-}
-
-/* Common mobile-first approach */
-@media (min-width: 320px) {
-/* Base mobile styles (smallest phones) */
-}
-
-@media (min-width: 375px) {
-/* iPhone SE, iPhone 12/13/14 mini */
-}
-
-@media (min-width: 414px) {
-/* iPhone 6/7/8 Plus, iPhone 11 Pro Max */
-}
-
-@media (min-width: 430px) {
-/* iPhone 14 Pro Max and similar large phones */
 }
