@@ -53,6 +53,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **kirby3-redirects** (`bnomei/kirby3-redirects ^5.1`): URL redirect management via Panel
 - **kirby-form** / **kirby-flash**: Additional form/flash utilities
 - **seo** (`site/plugins/seo`, local): Page methods `metaTitle()`, `metaDescription()`, `metaExcerpt()`, `metaType()`, `metaImageFile()`, `metaCard()` used by `header.php`. See `docs/adr/0005-page-metadata.md` and `docs/adr/0006-social-card.md`.
+- **assets** (`site/plugins/assets`, local): Overrides Kirby's `css` component to append `?v=<filemtime>` to stylesheet URLs. See `docs/adr/0010-asset-cache-busting.md`.
+
+**Kirby only reads `api`, `routes`, and `hooks` from `site/config/config.php`** (`AppPlugins::extensionsFromOptions()`). Every other extension — `components`, `pageMethods`, `blueprints` — must be registered from a plugin. Putting `components` in the config file is **silently ignored**: no error, no warning, the default component just keeps running.
 
 **Adding a hand-written plugin — add the `.gitignore` exception in the same commit.** `.gitignore` has `/site/plugins/*` to keep out the kirby-plugin packages Composer installs there, so a new local plugin is invisible to git by default. Every hand-written plugin needs an explicit `!/site/plugins/<name>` line.
 
@@ -76,6 +79,45 @@ PHP requirement: `~8.2 || ~8.3 || ~8.4 || ~8.5`
 
 Dev dependency: `laravel/pint` (PHP code formatter)
 
+## Deployment
+
+**This repository is public.** Never write the deploy host, bare repo path, hook internals, web root, or credentials into a tracked file — that's why `.gitignore` excludes the setup docs. Read the actual addresses from `git remote -v` at the time you need them.
+
+### `origin` has two push URLs
+
+`origin` fetches from GitHub but **pushes to both GitHub and the deploy server**. One `git push` reaches both.
+
+```bash
+git remote -v   # fetch: GitHub · push: GitHub + deploy server
+```
+
+Consequences, in order of how often they bite:
+
+- **Pushing `main` deploys.** A server-side receive hook checks out `main` and runs `composer install`. You'll see `>>> Deploying main` … `>>> Done` in the push output — that's the deploy log, read it. Only `main` deploys; pushing a feature branch is safe and touches nothing live.
+- **`gh pr merge --delete-branch` only cleans GitHub.** The branch stays on the deploy server and accumulates. Use `git push origin --delete <branch>` instead — it reaches both.
+- **A failed deploy shows up as `remote:` output, not a failed push.** The push can succeed while the server-side steps error.
+
+### Deploying
+
+```bash
+gh pr merge <n> --merge         # merge on GitHub
+git checkout main && git pull   # fast-forward local main
+git push origin main            # deploy — watch the remote: output
+git push origin --delete <branch>   # clean up both remotes
+```
+
+Then verify against the live site rather than trusting the push:
+
+```bash
+curl -s https://massivevoid.com/ | grep -o 'assets/css[^"]*'
+```
+
+### Cache
+
+Stylesheet URLs carry `?v=<filemtime>`, added by the `assets` plugin's `css` component, so a CSS change reaches readers on their next request. Without it a stale stylesheet can survive for days in iOS Safari — an already-open tab restores from memory and never revalidates. See `docs/adr/0010-asset-cache-busting.md`.
+
+The server still sends **no `Cache-Control` header**. Now that URLs track content, a long `max-age` would be safe — that's an Apache change, outside this repo.
+
 ## Key Patterns
 
 - **Blocks-based content**: Blog posts use the Kirby block editor. Templates render with `$page->blocks()->toBlocks()`. Custom block snippets live in `site/snippets/blocks/`.
@@ -84,7 +126,7 @@ Dev dependency: `laravel/pint` (PHP code formatter)
 - **Social card**: `metaCard()` crops the body's first image block to 1200×630 jpg, falling back to `assets/og-default.png`. Use `thumb()`, not `crop()`, when the output format matters — `crop()` silently discards a `format` option. See `docs/adr/0006-social-card.md`.
 - **Heading levels**: The title is the page's only `<h1>` and never appears in the body. Body subheads start at `##`, so `#` is never written in content. `h2` carries `--text-subhead`; `h3` is body size + bold. See `docs/adr/0007-heading-levels.md`.
 - **Type scale**: Every size comes from one fluid unit — `--fluid: clamp(1rem, 0.893rem + 0.476vw, 1.25rem)` (16px at 360px wide → 20px at 1200px). The five tokens are `--fluid` times a rung of a 1.125 ladder, and they are named for their **role**, matching `CONTEXT.md`'s vocabulary: `--text-tag`, `--text-meta` (작성일), `--text-body`, `--text-subhead`, `--text-title`. There is no `html { font-size }` rule and no mobile-only size token — never add a breakpoint to change a size, change the multiplier. See `docs/adr/0008-type-scale.md`.
-- **Navigation**: Built dynamically from `$site->children()->listed()`. Mobile hamburger menu toggled via vanilla JS in `header.php`.
+- **Navigation**: Built dynamically from `$site->children()->listed()`. A rounded island that sits **outside** the content column, as a direct child of `body`; it takes only the width of its contents and never collapses — there is no hamburger and no toggle script. See `docs/adr/0009-navigation-island.md`.
 - **Content listing**: Home page shows 5 latest blog posts and 4 latest projects via `->children()->listed()->limit(N)`.
 - **Tags**: Stored as comma-separated strings, split with `->tags()->split()`.
 - **Sitemap**: Available via `site/snippets/sitemap.php`.
