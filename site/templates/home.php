@@ -19,7 +19,7 @@
             ?>
             <li class="home-blog-item">
                 <a href="<?= $blogpost->url() ?>">
-                    <p><?= $blogpost->title()->esc() ?></p>
+                    <span><?= $blogpost->title()->esc() ?></span>
                 </a>
                 <small class="home-blog-date"><?= $blogpost->date() ?></small>
             </li>
@@ -39,7 +39,7 @@
                 <a href="<?= $project->url() ?>">
                     <figure>
                         <?= $project->image() ?>
-                        <figcaption><?= $project->title() ?></figcaption>
+                        <figcaption><span><?= $project->title() ?></span></figcaption>
                     </figure>
                 </a>
             </li>

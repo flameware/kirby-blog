@@ -72,7 +72,7 @@ $metaCard = $page->metaCard();
             <?php /* 글 상세(blog/어떤-글)에서도 blog가 활성이어야 하므로 자손까지 본다.
                      aria-current가 곧 CSS 선택자다 — 형광펜과 접근성이 어긋날 수 없다. */ ?>
             <?php $isCurrent = $page->is($item) || $page->isDescendantOf($item) ?>
-            <li><a href="<?= $item->url() ?>"<?= $isCurrent ? ' aria-current="page"' : "" ?>><?= $item->title() ?></a></li>
+            <li><a href="<?= $item->url() ?>"<?= $isCurrent ? ' aria-current="page"' : "" ?>><span><?= $item->title() ?></span></a></li>
             <?php endforeach ?>
         </ul>
     </nav>

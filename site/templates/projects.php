@@ -10,7 +10,7 @@
                 <a href="<?= $project->url() ?>" class="contrast">
                     <figure>
                         <?= $project->image() ?>
-                        <figcaption><?= $project->title() ?></figcaption>
+                        <figcaption><span><?= $project->title() ?></span></figcaption>
                     </figure>
                 </a>
             </li>

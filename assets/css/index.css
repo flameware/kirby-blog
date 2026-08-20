@@ -124,11 +124,43 @@ a:visited {
 
 a:hover {
     color: var(--color-textcolor);
-    text-decoration: underline;
-    text-decoration-color: var(--color-highlight);
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: 1em;
-    text-underline-offset: -1em;
+}
+
+/* 형광펜 — 글자를 감싸는 인라인 상자에 붙는 배경이다.
+   예전에는 1em짜리 두꺼운 밑줄이었다. 밑줄은 글자 상자 안에 갇혀 있어 좌우로 삐져나올 수도,
+   기울어질 수도 없다. 마커펜은 글자보다 넓게 지나가고 수평에서 조금 어긋나므로 배경으로 바꿨다.
+
+   그 대가로 "마커가 붙을 인라인 상자"가 필요해졌다. flex 링크(내비게이션·목록)의 글자는
+   익명 인라인 상자라 배경을 걸 대상이 없고, 링크 자체에 걸면 44px 클릭 영역이 통째로 칠해진다.
+   그래서 마크업에서 글자를 <span>으로 감싼다 — 클릭 영역은 <a>가, 마커는 <span>이 갖는다.
+   본문 블록의 인라인 링크는 Kirby가 만들어 span이 없으므로 링크 자체가 마커 상자다.
+   이미지만 감싼 링크는 글자가 없어 칠할 것이 없다.
+   근거: docs/adr/0014-highlight-marker.md */
+a:hover:not(:has(span, img)),
+a:hover span,
+.mainnav-links a[aria-current="page"] span {
+    /* 삐져나온 만큼 음수 마진으로 되돌린다 — 마커는 넓어지고 레이아웃은 밀리지 않는다.
+       px이 아니라 em인 것은 형광펜이 글자에 붙는 장식이어서다. 글자가 커지면 획도 굵어진다. */
+    padding-inline: 0.35em;
+    margin-inline: -0.35em;
+
+    /* 기울기는 transform이 아니라 그라디언트의 각도로 만든다. transform은 인라인 요소에
+       듣지 않아 절대배치가 필요하고, 그러면 줄바꿈되는 본문 링크에서 마커 하나가 두 줄에
+       비스듬히 걸친다. 색 경계만 비스듬한 방식이라 각도를 키우면 위아래 끝이 잘려 보인다 —
+       1도 남짓이 상한이다. 오른쪽 끝이 올라가는 것은 오른손으로 그은 획의 방향이다.
+
+       띠는 1.6em 타일 안의 가운데 1.1em이다. 타일에 여유가 없으면 기울일 자리가 없다. */
+    background-image: linear-gradient(179deg,
+        transparent 15.6%,
+        var(--color-highlight) 15.6%,
+        var(--color-highlight) 84.4%,
+        transparent 84.4%);
+    background-size: 100% 1.6em;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    /* 줄바꿈된 링크에서 줄마다 다시 그어 준다. 없으면 마커가 두 줄에 한 번만 걸린다. */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 }
 
 
@@ -195,7 +227,7 @@ a:hover {
 }
 
 /* 패딩이 곧 클릭 영역이다. 세로 44px을 채우고, 가로도 짧은 링크가 44px에 닿게 한다.
-   형광펜은 글자에 붙는 장식이라 패딩을 줘도 모양이 변하지 않는다.
+   패딩을 줘도 형광펜 모양이 변하지 않는 것은 마커가 <a>가 아니라 그 안의 <span>에 붙기 때문이다.
 
    대문자는 CSS로 준다. 페이지 제목은 패널에서 편집하는 콘텐츠이고 대문자는 이 자리의
    표현일 뿐이라, 콘텐츠를 고치면 목록·글 머리·<title>까지 같이 대문자가 된다.
@@ -213,16 +245,6 @@ a:hover {
     white-space: nowrap;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-}
-
-/* 현재 페이지. hover와 같은 형광펜인 것은 알고 받아들인 것이다 — 두 번째 밑줄
-   어휘를 만드는 값이 커서 아래 한 순간의 혼동보다 비싸다. */
-.mainnav-links a[aria-current="page"] {
-    text-decoration: underline;
-    text-decoration-color: var(--color-highlight);
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: 1em;
-    text-underline-offset: -1em;
 }
 
 .tags {

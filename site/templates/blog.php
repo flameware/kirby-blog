@@ -10,7 +10,7 @@
             ?>
             <li class="blog-item">
                 <a href="<?= $blogpost->url() ?>">
-                    <p><?= $blogpost->title()->esc() ?></p>
+                    <span><?= $blogpost->title()->esc() ?></span>
                 </a>
                 <small class="blog-date"><?= $blogpost->date() ?></small>
             </li>
