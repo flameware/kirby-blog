@@ -297,6 +297,69 @@ a:hover span,
     margin-left: auto;
 }
 
+/* 그림 (이미지·갤러리·영상 블록 공용)
+
+   블록은 템플릿의 소유가 아니다 — blogpost와 project가 같은 블록을 그리므로
+   규칙은 여기 한 벌만 둔다. 템플릿 CSS는 한쪽만 로드되기 때문에, 이것을 템플릿으로
+   복제하면 같은 블록이 화면에 따라 다르게 보인다. 실제로 그렇게 어긋나 있었다 —
+   캡션이 blogpost에서는 --text-meta, project에서는 --text-tag였다. */
+figure {
+    padding: 56px 0 0 0;
+    margin: 0;
+}
+
+/* 높이는 폭에서 나온다. 26.3vw로 못박혀 있었는데 그건 열이 46.7vw로 고정이던 시절의
+   16:9였다 — 열이 화면 폭을 따라 변하면 그 값은 더 이상 비율이 아니다.
+   근거: docs/adr/0012-fluid-column-width.md */
+figure iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+figure img {
+    width: 100%;
+    display: block;
+}
+
+figcaption {
+    font-size: var(--text-meta);
+    text-align: center;
+}
+
+/* 갤러리 — 필자가 본문 안에서 직접 고른 이미지 한 덩어리이고, 캡션 하나를 공유한다.
+
+   나란히 놓는 것이 갤러리가 이미지 블록에게서 버는 유일한 값이다. 세로로 쌓으면
+   이미지 블록을 연달아 넣은 것과 화면에서 구별되지 않고, 그러면 묶었다는 사실이
+   아무 흔적도 남기지 않는다.
+
+   flex와 flex:1이면 개수를 세지 않아도 n장이 저절로 n등분된다 — 기본 스니펫의
+   <ul>/<li>를 그대로 두고 CSS만으로 "열 수 = 이미지 개수"가 나온다. 장수 상한은
+   두지 않는다: 여섯 장을 넣으면 못 알아보게 작아지지만, 그건 넣는 즉시 눈에 보이는
+   실패라 조용히 망가지지 않는다.
+
+   높이는 맞추지 않는다. 여기 실리는 이미지의 상당수가 스크린샷이고, object-fit으로
+   높이를 맞추는 것은 곧 내용을 잘라내는 것이다. 아랫변이 어긋나도 캡션 한 줄이
+   아래를 가로질러 덩어리를 닫는다.
+
+   안쪽 1rem은 바깥 56px의 1/3이 조금 넘는다 — 글 머리와 같은 원리로,
+   안쪽을 좁히고 바깥을 넓혀 여러 장이 하나로 읽히게 한다. */
+figure ul {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+figure li {
+    flex: 1;
+    /* flex 항목의 기본 min-width는 auto라, 이게 없으면 이미지가 원본 폭 아래로
+       줄지 못해 갤러리가 본문 열을 넘어간다. */
+    min-width: 0;
+}
+
 hr {
     border: none;
     border-top: .1em dashed var(--color-secondary);
@@ -360,6 +423,19 @@ h2 {
 
 .postnav {
     padding: var(--big-gap-mobile) 0 0 0;
+}
+
+/* 갤러리만 1열로 접는다.
+
+   이 저장소는 분기점을 두지 않는 것이 원칙이다(ADR-0008, 0012). 그 원칙이 말하는
+   것은 clamp()로 연속으로 변할 수 있는 양 — 글자 크기와 열 폭 — 에 계단을 만들지
+   말라는 것이다. 열 수는 정수라 2.4열이 존재하지 않으므로 애초에 그 원칙의 대상이
+   아니다. 지우기 전에 이 문단을 읽는다.
+
+   접는 이유: 360px 화면에서 2열이면 한 장이 160px이고, 그 크기에서는 나란히 놓는
+   의미 자체가 사라진다. 세로로 쌓여도 gap이 1rem이라 바깥 56px과 구별된다. */
+figure ul {
+    flex-direction: column;
 }
 
 }

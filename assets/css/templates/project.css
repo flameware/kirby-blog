@@ -9,6 +9,12 @@ main a:visited {
 
 
 
+/* figure / figcaption / 갤러리(figure ul)는 블록 스니펫이 그리는 것이라
+   blogpost와 공용이다. 그래서 assets/css/index.css에 한 벌만 있다. */
+
+/* 작업 이미지 — 폴더에 든 이미지를 필자가 고르지 않아도 전부 깔아주는 영역이다.
+   본문 안에서 필자가 직접 고른 묶음인 "갤러리"(figure ul)와는 다른 것이다.
+   클래스 이름이 아직 project-gallery인 것은 역사적 이유다. */
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -20,22 +26,4 @@ main a:visited {
 
 .project-gallery img {
     width: 100%;
-}
-
-figure {
-    padding: 56px 0 0 0;
-    margin: 0;
-}
-
-/* 높이는 폭에서 나온다. 26.3vw로 못박혀 있었는데 그건 열이 46.7vw로 고정이던 시절의
-   16:9였다 — 열이 화면 폭을 따라 변하면 그 값은 더 이상 비율이 아니다.
-   근거: docs/adr/0012-fluid-column-width.md */
-figure iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-}
-
-figcaption {
-    font-size: var(--text-tag);
 }
