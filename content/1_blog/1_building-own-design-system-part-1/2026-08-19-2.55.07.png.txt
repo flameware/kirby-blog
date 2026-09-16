@@ -1,0 +1,5 @@
+Uuid: mdlice9bmrknbobk
+
+----
+
+Template: blocks/image

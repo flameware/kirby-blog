@@ -1,0 +1,212 @@
+Title:
+
+은전 한 닢 - LLM으로 디자인시스템 만들기 part 1
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "location": "web",
+            "image": [],
+            "src": "https://i.namu.wiki/i/18CKmudBjWwXnah0lODfQ4U4VF81NeRoUIAqqu-ijYILE4eb6S0jhySIPz2zARKMttDXJ9NF3H-35651MLpaquEqruUEpNjZTPw2HE5QLYhD9mhmqlUq8uPre0wX0_ZCD5RX10Hcyi21S6VQ5jIECA.webp",
+            "alt": "무슨 생각으로 이런일을 벌이셨어요",
+            "caption": "",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "99dbb199-af86-45ea-856b-99057f2986fe",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "## 무슨 생각으로 이런 일을 벌이셨어요?\n이런 저런 이유로 개인프로젝트도 몇개 만들어보고 했지만, 계속 눈에 밟힌게 바로 디자인시스템이다.\n\n나름 업계에서 일해오면서 꾸준히 스터디하면서 트렌드 잘 따라왔다고 생각한다.\n틈틈이 공부해서 디자인 시스템이 어떻게 구성되고, 어떻게 구축/관리되어야 하고 등등 지식은 어느 정도 있었지만 실제로 내가 만들고 운영해 본 적은 없었기 때문일까, 늘 뭔가 아쉬운 영역으로 머릿속에 남아있었다.\nLLM 도움 받아서 개발작업들을 하기 쉬워졌으니만큼, 그 때 그때 써먹을 내 디자인시스템이 있으면 좋겠다는 생각으로, 마침 시간도 많았고, 시작해보았다."
+        },
+        "id": "bd2f8fa0-d2cd-4a20-bfb0-f4d113bfe7ad",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "image": [],
+            "src": "https://i.namu.wiki/i/1ylASOnC2y3ztC-O-sNoxorf87rJ_0Z1bvRIsKNtycCsd1v8S7bmHTvXA2x8KFwYS914e-55t2OLokzPWcJfXg.webp",
+            "alt": "은전 한 닢",
+            "caption": "이게 내 은전 한닢인가 보다.",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "de927800-c463-45d2-8f44-2fa8bab9a028",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "## 시작하면서, 몇 가지 선택\n전통적인 방식처럼 밑바닥부터, 토큰을 하나 하나 골라가면서 (특히 컬러값을 일일이 pick하면서) 진행할 생각은 애시당초 없었다. 좋은 오픈소스 베이스로 한 벌을 만들고, 내 취향이나 필요에 맞게 고쳐나가겠다는 생각이었다.\n다만 한가지, 컬러값은 필요에 따라 바꿀 필요가 있으니 그 부분을 강조해서 프롬프트를 짰던 것 같다.\n대강 이런 내용이다.\n> 이 프로젝트는 개인 사용 목적으로 shadcn ui에 기반한 코드형태의 디자인 시스템을 만들고, storybook으로 형태를 시각화/preview하고, figma에서 활용할 수 있도록 figma에 library를 구축하고 싶어. 어떻게 진행해야 좋을 지 도와줘.\n\n이런일에는 딱 적합한 /wayfinder 스킬을 썼다. 궁금하신 분은 [이 글](https://massivevoid.com/blog/matt-pocock-skills)을 보고 오시면 된다.\n\n여러가지 고민이 있었지만 핵심 결정사항은\n- 코드가 원본. Figma는 상태를 반영하는 창일 뿐이다.\n- Storybook이 문서역할\n- Figma Library 구축 필요\n\n세 축이었다. 그리고 이 중 하나가 재앙을 불러오는데..."
+        },
+        "id": "22ccec1e-faa8-4c20-a371-9e5c6bd7bd9e",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "images": [
+                "file://mdlice9bmrknbobk",
+                "file://xndiaqhp9vhyjtvy"
+            ],
+            "caption": "첫 시작단계에서의 grilling 세션 대화.",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "262267dc-92c4-46bf-86bf-49a2fefe0cf1",
+        "isHidden": false,
+        "type": "gallery"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://1j9lm7jn7whaufg3"
+            ],
+            "src": "",
+            "alt": "Color Ramp Generator",
+            "caption": "Color Ramp 및 Brand Color 세팅을 위한 툴 프로토타이핑. \"딸깍\"의 산물이다.",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "2b92c025-3c11-487f-b34a-3383b65fd071",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "## 생각과 달랐던 것, 그리고 실수들.\nshadcn/ui라는 de-facto standard를 갖다가 쓰는거다보니 금방 끝날 줄 알았다. 웬걸. 크게 세 tier로 그룹을 나눠서 순차적으로 진행해야만 했고, 이때만 해도 pro tier를 쓰고 있었는데 지금까지 했던 그 어떤 작업보다 토큰 소모속도가 빨랐고, 한 작업을 시켰을 때 대기해야 하는 시간도 길었다.\n내가 했던 실수들은 다음과 같았다.\n1. Figma Sync를 매 수정마다 진행했다. 나중에 깨달았지만, Figma와 sync하는 작업에서 MCP구조가 비효율적인지, json타입으로 원하는 작업을 변환할 때 미친듯한 토큰을 소모하는거였다.\n2. LLM에 끌려다녔다. 작업을 시키고 나서 마무리단계에서 PR 머지할때쯤 \"아 작업범위는 아니긴 한데, 하다보니까 이런 문제가 눈에 보여서. 원하면 이슈로 올려줄께.\"라고 LLM이 말한다. 여기서 이왕이면 다홍치마 병이 여기서 발생하면 돌이킬 수 없다. 난 결국 안 해도 되는 이슈 수십개를 만들고 해결한 뒤에, 실제 화면에 영향을 준건 아무것도 없었다는걸 깨닫고 나서야 이 문제를 깨달았다. 시간은 며칠이 흘러 있었고, 일주일 치 토큰의 절반을 쏟아부었는데 실질적인 변화는 없고, 코드 정합성만 조금 올라갔다.\n3. (이건 나중에 결국 반영하게 되는거긴 하지만) ‘소비처’, 즉 이 디자인시스템을 만들고 적용할 서비스가 있어야 한다고 누누이 LLM은 강조했는데, 씹었다. 빨리 디자인 시스템에 포함된 component를 늘리는게 중요하다고 생각했어서. 근데 이건 나중에 이 시스템이 '잘 만들어 졌는지' 판단할 근거가 없다는 문제를 낳았다. 나중에 또 다룬다."
+        },
+        "id": "41e6d52e-595f-482e-a71b-a07cd5fb0523",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://bpm2kgckpogpdznf"
+            ],
+            "src": "",
+            "alt": "github 이슈 이미지",
+            "caption": "이 때만 해도 금방 끝날 줄 알았지...",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "858fb8fb-a629-459a-9f12-f6d4129eceb7",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "## 그래도, 중간 결과물.\n다른 프로젝트들에 비하면 정말 많은 시간과 노력과 삽질과 토큰과... 많은 일들이 있었지만 결과물 자체는 영 어중간했다. 직접 살펴보자."
+        },
+        "id": "d9b363a2-859e-458a-ac46-589c9405b2cc",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://4b42inygano0qost"
+            ],
+            "src": "",
+            "alt": "Storybook 이미지",
+            "caption": "Storybook의 'Button' 명세. 뭔가 어색하지?",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "4a01fbea-e237-4c0b-b4ca-f342780415a6",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://ftdifwtbbyoasyqo"
+            ],
+            "src": "",
+            "alt": "Figma Library 스크린샷",
+            "caption": "이게 라이브러리..? Component 만 나열된 썰렁한 Figma화면.",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "e4c848fd-7f60-4873-8a2c-bc0aab845196",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://kfv1pfvdx9viayr9"
+            ],
+            "src": "",
+            "alt": "고개를 젓는 김정은",
+            "caption": "쓰읍.. 이건 아닌데",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "aacbd3c6-f488-4953-a1a6-58f9f409c5c8",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "## 쓰읍.. 이게 아닌데\n원래 뭐든 프로젝트 시작하기 전에 조사부터 해야 했는데, 이번에는 너무 의욕이 앞섰고, shadcn을 써 본 경험이 “그정도면 충분하지”라는 생각으로 이어졌다. \n왜 이렇게 마음에 안 들까를 생각하다가 찾아본 Storybook Best Practice들과의 차이는 구성부터 너무 명확했다. 몇 가지만 소개해 보자면, Microsoft의 [Fluent UI](https://storybooks.fluentui.dev/react/?path=/docs/concepts-introduction--docs&globals=storybook_fluentui-react-addon_dir:ltr), GOV.UK의 [디자인시스템](https://govuk-react.github.io/govuk-react/?path=/docs/welcome--docs), IBM의 [Carbon](https://react.carbondesignsystem.com/?path=/docs/getting-started-welcome--welcome)도 있다.\n\n그리고 무엇보다도, 이 디자인시스템이 조합된 화면을 보지 못했다는게 더 큰 허전함과 불확실성을 줬다.\n\n그렇게 며칠이 지나고...\n(다음편에 계속)"
+        },
+        "id": "b4c94a87-cd43-4d3c-8337-a7be0c3416fb",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "kirby",
+            "image": [
+                "file://y0xzs0fcfwdpxff5"
+            ],
+            "src": "",
+            "alt": "gov.uk의 design system",
+            "caption": "내가 생각하는 잘 만들고 잘 구성된 디자인시스템의 예시 - GOV.UK의 것. 구성부터 다르다.",
+            "link": "",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "5ed8d7e0-fbc7-4331-98cf-9382394b0596",
+        "isHidden": false,
+        "type": "image"
+    }
+]
+
+----
+
+Date: 2026-09-17
+
+----
+
+Tags: design system, base ui, shadcn ui, claude code, claude, design
+
+----
+
+Description: 
+
+----
+
+Uuid: x7qqysjh0vne1m9q
