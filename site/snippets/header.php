@@ -53,6 +53,17 @@ $metaCard = $page->metaCard();
     <?= css(url: "assets/css/index.css") ?>
     <?= css(url: "@auto") ?>
 
+    <?php
+    /**
+     * 라이트박스. 이 사이트의 유일한 자체 스크립트다.
+     *
+     * defer라 파싱을 막지 않고 DOM이 완성된 뒤 실행된다. footer가 아니라 여기 있는
+     * 것은 자산을 부르는 자리를 한곳에 모아 두기 위해서다.
+     * 근거: docs/adr/0015-own-javascript.md
+     */
+    ?>
+    <?= js(url: "assets/js/lightbox.js", options: ["defer" => true]) ?>
+
     <?php if ($goatcounter = option("analytics.goatcounter")): ?>
     <script data-goatcounter="https://<?= $goatcounter ?>.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
