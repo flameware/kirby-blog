@@ -24,6 +24,9 @@ Icon
 /site/sessions
 /site/logs
 
+# 정적 빌드 산출물 (php scripts/build-static.php)
+/dist
+
 # Panel 계정 (비밀번호 해시 포함 — 절대 원격 저장소에 올리지 않음)
 /site/accounts
 
