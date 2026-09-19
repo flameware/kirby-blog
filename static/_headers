@@ -1,0 +1,33 @@
+# Cloudflare Pages 응답 헤더 — 예전 .htaccess의 mod_headers 블록을 옮긴 것이다.
+# 근거: docs/adr/0013-cache-control-tiers.md, docs/adr/0016-static-build.md
+#
+# 함정: 한 요청에 규칙이 둘 걸리면 같은 이름의 헤더가 덮어써지지 않고 **쉼표로 이어붙는다.**
+# 그래서 Cache-Control 규칙은 서로 겹치지 않는 경로로만 쓴다 — `/assets/*`로 뭉뚱그리지 않는다.
+#
+# HTML에는 규칙을 두지 않는다. Pages의 기본값이 `public, max-age=0, must-revalidate` + ETag라
+# ADR-0013의 "저장하되 매번 확인한다"와 같고, 검증자까지 붙는다.
+
+/*
+  X-Content-Type-Options: nosniff
+
+# 버전이 붙는 자산 — css()·js() 헬퍼가 언제나 ?v=를 달아 내보낸다
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Kirby 미디어 — 경로에 해시와 시각이 박혀 있다
+/media/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 이름이 고정된 자산 — 회수 가능한 하루. 파일이 늘면 여기에 줄을 더한다
+/assets/favicon.svg
+  Cache-Control: public, max-age=86400
+
+/assets/og-default.png
+  Cache-Control: public, max-age=86400
+
+# *.pages.dev 주소는 같은 사이트의 복제본이다 — 검색에 잡히지 않게 한다
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

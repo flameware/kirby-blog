@@ -24,6 +24,12 @@ Icon
 /site/sessions
 /site/logs
 
+# 정적 빌드 산출물 (php scripts/build-static.php)
+/dist
+
+# wrangler 로컬 캐시 (npx wrangler를 저장소에서 돌리면 생긴다)
+/.wrangler
+
 # Panel 계정 (비밀번호 해시 포함 — 절대 원격 저장소에 올리지 않음)
 /site/accounts
 

@@ -23,7 +23,10 @@
 - **content/**: 플랫 파일 콘텐츠 (YAML 프런트매터 + Kirby Blocks JSON)
 - **assets/**: CSS와 정적 파일 (`favicon.svg`)
 - **media/**: 자동 생성된 썸네일·가공 이미지 — 손대지 않는다
-- **index.php**: 진입점
+- **index.php**: 진입점 (로컬 개발 전용 — 운영에는 PHP가 없다)
+- **scripts/build-static.php**: 정적 빌드. 모든 화면을 그려 `dist/`에 떨군다
+- **static/**: `dist/` 루트로 그대로 복사되는 호스팅 설정 (`_headers`)
+- **.github/workflows/deploy.yml**: 빌드 → Cloudflare Pages 배포
 
 ### 화면과 템플릿
 
@@ -92,6 +95,7 @@ git ls-files site/plugins/<name>   # 파일 목록이 나와야 한다. 아무�
 composer start       # localhost:8000에 PHP 개발 서버
 composer install     # 의존성 설치
 composer update      # 의존성 갱신
+php scripts/build-static.php   # dist/ 에 정적 빌드 — 운영에 나가는 것과 같은 결과물
 ```
 
 PHP 요구 버전: `~8.2 || ~8.3 || ~8.4 || ~8.5`
@@ -100,6 +104,10 @@ PHP 요구 버전: `~8.2 || ~8.3 || ~8.4 || ~8.5`
 관리 화면은 `/panel` — 페이지, 초안, 리다이렉트, 업로드를 다룬다.
 
 ## 배포
+
+> **전환 중이다 (ADR-0016).** 운영은 Cloudflare Pages의 정적 사이트로 옮겨 간다. `main`에 들어오면 GitHub Actions가 `scripts/build-static.php`를 돌려 배포하고, PR에는 미리보기 주소가 붙는다. 아래의 "push URL이 두 개" 구조는 Lightsail을 끄는 날 `git remote set-url --delete --push origin <배포 서버 URL>`과 함께 이 절에서 지운다.
+>
+> 정적 빌드의 함정: **운영에서 요청 시점에 도는 PHP는 없다.** 컨트롤러에서 요청을 읽는 코드, 폼, 세션, `config.php`의 새 라우트는 빌드 스크립트가 모르면 배포되지 않는다 — 파일로 떨굴 라우트는 `build-static.php`의 목록에 더한다.
 
 **이 저장소는 공개되어 있다.** 배포 호스트, 베어 저장소 경로, 훅 내부, 웹 루트, 자격 증명을 추적되는 파일에 절대 쓰지 않는다 — 셋업 문서가 `.gitignore`에 있는 이유다. 실제 주소는 필요한 시점에 `git remote -v`에서 읽는다.
 
@@ -145,7 +153,8 @@ curl -s https://massivevoid.com/ | grep -o 'assets/css[^"]*'
 - 링크 hover·현재 화면 표시(형광펜) → `0014`
 - 이미지를 눌러 크게 보기·자체 JS → `0015`
 - 내비게이션 → `0009`
-- 캐시·에셋 URL·`.htaccess` → `0010`, `0013`
+- 캐시·에셋 URL·`_headers` → `0010`, `0013`, `0016`
+- 정적 빌드·배포·Cloudflare Pages → `0016`
 - 이웃 글 → `0002`
 - 정규 호스트 → `0003`
 - 분석 → `0001`
