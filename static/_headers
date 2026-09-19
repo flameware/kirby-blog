@@ -4,8 +4,8 @@
 # 함정: 한 요청에 규칙이 둘 걸리면 같은 이름의 헤더가 덮어써지지 않고 **쉼표로 이어붙는다.**
 # 그래서 Cache-Control 규칙은 서로 겹치지 않는 경로로만 쓴다 — `/assets/*`로 뭉뚱그리지 않는다.
 #
-# HTML에는 규칙을 두지 않는다. Pages의 기본값이 `public, max-age=0, must-revalidate` + ETag라
-# ADR-0013의 "저장하되 매번 확인한다"와 같고, 검증자까지 붙는다.
+# HTML에는 규칙을 두지 않는다. Pages의 기본값이 `public, max-age=0, must-revalidate`라
+# ADR-0013의 "저장하되 매번 확인한다"와 같다. HTML에는 ETag가 붙지 않는다 — 자산에만 붙는다.
 
 /*
   X-Content-Type-Options: nosniff
