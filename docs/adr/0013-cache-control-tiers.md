@@ -2,7 +2,9 @@
 
 - **상태:** 채택
 - **날짜:** 2026-08-18
-- **관련:** [ADR-0010](0010-asset-cache-busting.md)
+- **관련:** [ADR-0010](0010-asset-cache-busting.md), [ADR-0016](0016-static-build.md)
+
+> **2026-09 갱신:** 운영이 정적 사이트로 옮겨 가며 `.htaccess`가 없어졌다. 계층(아래 표)은 그대로이고, 헤더를 붙이는 자리가 `static/_headers`로 바뀌었다. 경로로 가르는 방식과 HTML의 값은 ADR-0016을 본다. 아래의 `.htaccess`·Apache 이야기는 당시의 기록이다.
 
 ## 맥락
 

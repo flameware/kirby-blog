@@ -105,42 +105,33 @@ PHP 요구 버전: `~8.2 || ~8.3 || ~8.4 || ~8.5`
 
 ## 배포
 
-> **전환 중이다 (ADR-0016).** 운영은 Cloudflare Pages의 정적 사이트로 옮겨 간다. `main`에 들어오면 GitHub Actions가 `scripts/build-static.php`를 돌려 배포하고, PR에는 미리보기 주소가 붙는다. 아래의 "push URL이 두 개" 구조는 Lightsail을 끄는 날 `git remote set-url --delete --push origin <배포 서버 URL>`과 함께 이 절에서 지운다.
->
-> 정적 빌드의 함정: **운영에서 요청 시점에 도는 PHP는 없다.** 컨트롤러에서 요청을 읽는 코드, 폼, 세션, `config.php`의 새 라우트는 빌드 스크립트가 모르면 배포되지 않는다 — 파일로 떨굴 라우트는 `build-static.php`의 목록에 더한다.
+운영은 Cloudflare Pages의 정적 사이트다 (ADR-0016). `main`에 들어오면 GitHub Actions(`.github/workflows/deploy.yml`)가 `scripts/build-static.php`를 돌려 `dist/`를 올리고, PR마다 미리보기 주소가 붙는다. `git push`는 GitHub에만 닿는다.
 
-**이 저장소는 공개되어 있다.** 배포 호스트, 베어 저장소 경로, 훅 내부, 웹 루트, 자격 증명을 추적되는 파일에 절대 쓰지 않는다 — 셋업 문서가 `.gitignore`에 있는 이유다. 실제 주소는 필요한 시점에 `git remote -v`에서 읽는다.
+**이 저장소는 공개되어 있다.** 계정 ID, API 토큰, DNS 레코드 값을 추적되는 파일에 절대 쓰지 않는다. 토큰은 저장소 시크릿에만 있다.
 
-### `origin`에는 push URL이 두 개다
+### 정적 빌드의 함정
 
-`origin`은 GitHub에서 fetch하지만 **GitHub와 배포 서버 양쪽으로 push한다.** `git push` 한 번이 둘 다에 닿는다.
-
-```bash
-git remote -v   # fetch: GitHub · push: GitHub + 배포 서버
-```
-
-자주 무는 순서대로:
-
-- **`main`을 push하면 배포된다.** 서버 쪽 receive 훅이 `main`을 체크아웃하고 `composer install`을 돌린다. push 출력에 `>>> Deploying main` … `>>> Done`이 보이는데, 그게 배포 로그다 — 읽는다. `main`만 배포되고, 기능 브랜치를 push하는 건 안전하며 운영에 아무 영향이 없다
-- **`gh pr merge --delete-branch`는 GitHub만 치운다.** 브랜치가 배포 서버에 남아 쌓인다. 대신 `git push origin --delete <branch>`를 쓴다 — 양쪽에 닿는다
-- **배포 실패는 push 실패가 아니라 `remote:` 출력으로 나타난다.** 서버 쪽 단계가 에러를 내도 push 자체는 성공할 수 있다
+- **운영에서 요청 시점에 도는 PHP는 없다.** 컨트롤러에서 요청을 읽는 코드, 폼, 세션은 동작하지 않는다. `config.php`에 파일을 내보내는 라우트를 더하면 `build-static.php`의 라우트 목록에도 더한다 — 빌드 스크립트가 모르면 배포되지 않는다
+- **미디어는 빌드가 그린 HTML에서 찾은 것만 나간다.** HTML에 주소가 찍히지 않는 파일은 `dist/`에 없다
+- **캐시 수명은 `static/_headers`가 정한다.** 한 요청에 규칙이 둘 걸리면 헤더가 쉼표로 이어붙는다 — 경로가 겹치는 규칙을 쓰지 않는다. `assets/` 아래 이름이 고정된 파일을 새로 두면 여기에 줄을 더한다
+- **`?v=`와 `lastmod`는 파일의 마지막 커밋 시각이다.** 워크플로가 체크아웃 뒤 수정시각을 git 이력으로 되돌린다. 로컬 빌드와 운영 빌드의 `?v=`가 다른 것은 그래서 정상이다
 
 ### 절차
 
 ```bash
-gh pr merge <n> --merge         # GitHub에서 머지
-git checkout main && git pull   # 로컬 main을 fast-forward
-git push origin main            # 배포 — remote: 출력을 지켜본다
-git push origin --delete <branch>   # 양쪽 원격에서 브랜치 정리
+gh pr merge <n> --merge --delete-branch   # main에 들어가면 워크플로가 배포한다
+gh run watch                              # 배포 워크플로를 지켜본다
 ```
 
-push를 믿지 말고 실제 사이트로 확인한다:
+로컬에서 운영과 같은 결과물을 보려면 `php scripts/build-static.php` 후 `dist/`를 연다.
+
+워크플로의 성공을 믿지 말고 실제 사이트로 확인한다:
 
 ```bash
 curl -s https://massivevoid.com/ | grep -o 'assets/css[^"]*'
+curl -sI https://massivevoid.com/blog | head -1                          # 200 — 308이면 canonical 전체가 리다이렉트다
+curl -sI "https://massivevoid.com/assets/css/index.css?v=1" | grep -i cache-control   # immutable 하나만
 ```
-
-캐시 수명은 추적되는 `.htaccess`가 정한다. **`.htaccess` 문법 오류는 사이트 전체 500이고 `apachectl configtest`는 이 파일을 읽지 않는다** — 배포 직후 `curl -I`로 확인한다. 규칙의 이유는 ADR-0010, 0013.
 
 ## 어느 ADR을 언제 읽는가
 
