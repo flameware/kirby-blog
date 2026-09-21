@@ -56,6 +56,8 @@ HTML은 Pages 기본값(`max-age=0, must-revalidate`)을 그대로 쓴다. 검�
 
 `about.php`의 폼은 HTML 주석 안에 있지만 **그 안의 PHP는 계속 실행된다** — 그릴 때마다 CSRF 토큰을 굽는다. 정적 빌드에서는 그 토큰이 빌드마다 바뀌어, 내용이 그대로여도 `about.html`만은 매번 다른 파일이 된다. 받을 서버가 없으니 폼이 되살아날 길도 없다. 템플릿의 폼 블록과 `site/controllers/about.php`를 지우면 해결되지만, 이 전환의 범위 밖이라 손대지 않았다.
 
+> **2026-09 갱신 (#28):** 폼 블록과 컨트롤러를 지우고 uniform·form·flash도 `composer remove`로 걷어냈다. 두 번 빌드한 `dist/`가 파일 하나까지 같아졌다. 이 절과 "결과"의 의존성 줄은 당시의 기록이다.
+
 ## 결과
 
 - **월 서버 비용이 0이 된다.** Route 53 호스팅 영역도 Cloudflare DNS로 옮기면서 없어진다.

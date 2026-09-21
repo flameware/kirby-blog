@@ -468,13 +468,6 @@ hr {
     visibility: hidden;
 }
 
-
-/* Uniform Plugin */
-.uniform__potty {
-    position: absolute;
-    left: -9999px;
-}
-
 /* 미디어 쿼리 */
 
 /* Mobile phones (portrait) */
