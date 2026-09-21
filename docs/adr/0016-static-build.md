@@ -63,6 +63,8 @@ HTML은 Pages 기본값(`max-age=0, must-revalidate`)을 그대로 쓴다. 검�
 - **월 서버 비용이 0이 된다.** Route 53 호스팅 영역도 Cloudflare DNS로 옮기면서 없어진다.
 - **`.htaccess`는 지웠다.** 로컬 `composer start`는 PHP 내장 서버라 원래부터 읽지 않았다. 캐시 계층은 `static/_headers`로 옮겼다.
 - **PR마다 미리보기 주소가 생긴다.** 예전에는 `main`에 넣어야만 실제 환경에서 볼 수 있었다.
-- **kirby3-redirects는 정적 사이트에서 동작하지 않는다.** 지금 등록된 리다이렉트가 없어 잃는 것은 없다. 필요해지면 `static/_redirects`에 쓴다. (2026-09 갱신 (#29): `composer remove`로 걷어냈다.)
+- **kirby3-redirects는 정적 사이트에서 동작하지 않는다.** 지금 등록된 리다이렉트가 없어 잃는 것은 없다. 필요해지면 `static/_redirects`에 쓴다.
 - **uniform·form·flash 의존성이 남아 있다.** 위의 폼을 지우면 쓰는 곳이 없어진다. 별개 작업으로 남긴다.
 - **배포 확인은 여전히 실제 사이트로 한다.** `curl -I`로 보는 네 종류의 헤더(ADR-0013의 표)는 전환 직후 한 번 다시 확인한다.
+
+> **2026-09 갱신 (#29):** kirby3-redirects도 `composer remove`로 걷어내고 패널의 리다이렉트 탭을 지웠다. 리다이렉트가 필요해지면 `static/_redirects`에 쓴다. 위의 kirby3-redirects 줄은 당시의 기록이다.
