@@ -42,13 +42,11 @@ $metaCard = $page->metaCard();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="canonical" href="<?= $page->url() ?>">
 
-    <style>
-     @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
-    </style>
-    <!--
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
-    </style> -->
+    <?php /* 본문 글꼴을 CSS보다 먼저 받기 시작한다. @font-face는 index.css에 있고,
+             이 주소는 거기 적힌 파일과 정확히 같아야 한 번만 받는다. 글꼴은 CORS 모드로
+             받으므로 같은 도메인이어도 crossorigin이 없으면 preload가 버려진다.
+             근거: docs/adr/0017-suit-typeface.md */ ?>
+    <link rel="preload" href="<?= url("assets/fonts/suit-2.0.5/SUIT-Regular.woff2") ?>" as="font" type="font/woff2" crossorigin>
 
     <?= css(url: "assets/css/index.css") ?>
     <?= css(url: "@auto") ?>
