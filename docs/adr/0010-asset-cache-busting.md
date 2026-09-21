@@ -2,7 +2,9 @@
 
 - **상태:** 채택
 - **날짜:** 2026-08-18
-- **관련:** [ADR-0008](0008-type-scale.md), [ADR-0013](0013-cache-control-tiers.md)
+- **관련:** [ADR-0008](0008-type-scale.md), [ADR-0013](0013-cache-control-tiers.md), [ADR-0016](0016-static-build.md)
+
+> **2026-09 갱신 (#29):** 운영이 정적 사이트로 옮겨 가며 `.htaccess`가 없어졌다. `?v=`는 그대로 달리고, 값은 파일의 마지막 커밋 시각이 됐다. 캐시 헤더는 이제 `static/_headers`가 준다 — ADR-0016을 본다. 아래의 `.htaccess`·Apache 이야기는 당시의 기록이다.
 
 ## 맥락
 

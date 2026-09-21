@@ -57,7 +57,6 @@
 
 ### 플러그인
 
-- **kirby3-redirects** (`bnomei/kirby3-redirects ^5.1`): 패널에서 리다이렉트 관리
 - **seo** (`site/plugins/seo`, 직접 만듦): `header.php`가 쓰는 페이지 메서드 `metaTitle()`, `metaDescription()`, `metaExcerpt()`, `metaType()`, `metaImageFile()`, `metaCard()`
 - **assets** (`site/plugins/assets`, 직접 만듦): Kirby의 `css` 컴포넌트를 덮어써서 스타일시트 URL에 `?v=<filemtime>`을 붙인다
 
