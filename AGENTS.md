@@ -57,7 +57,6 @@
 
 ### 플러그인
 
-- **kirby3-redirects** (`bnomei/kirby3-redirects ^5.1`): 패널에서 리다이렉트 관리
 - **seo** (`site/plugins/seo`, 직접 만듦): `header.php`가 쓰는 페이지 메서드 `metaTitle()`, `metaDescription()`, `metaExcerpt()`, `metaType()`, `metaImageFile()`, `metaCard()`
 - **assets** (`site/plugins/assets`, 직접 만듦): Kirby의 `css` 컴포넌트를 덮어써서 스타일시트 URL에 `?v=<filemtime>`을 붙인다
 
@@ -99,7 +98,7 @@ php scripts/build-static.php   # dist/ 에 정적 빌드 — 운영에 나가는
 PHP 요구 버전: `~8.2 || ~8.3 || ~8.4 || ~8.5`
 개발 의존성: `laravel/pint` (PHP 포매터)
 
-관리 화면은 `/panel` — 페이지, 초안, 리다이렉트, 업로드를 다룬다.
+관리 화면은 `/panel` — 페이지, 초안, 업로드를 다룬다.
 
 ## 배포
 
