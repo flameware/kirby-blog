@@ -21,7 +21,7 @@
   - `snippets/`: 재사용 조각 (`header.php`, `footer.php`, `blocks/heading.php`, `sitemap.php`)
   - `plugins/`: Kirby 플러그인
 - **content/**: 플랫 파일 콘텐츠 (YAML 프런트매터 + Kirby Blocks JSON)
-- **assets/**: CSS와 정적 파일 (`favicon.svg`)
+- **assets/**: CSS와 정적 파일 (`favicon.svg`, `fonts/` — 직접 올린 글꼴)
 - **media/**: 자동 생성된 썸네일·가공 이미지 — 손대지 않는다
 - **index.php**: 진입점 (로컬 개발 전용 — 운영에는 PHP가 없다)
 - **scripts/build-static.php**: 정적 빌드. 모든 화면을 그려 `dist/`에 떨군다
@@ -149,6 +149,7 @@ curl -s https://massivevoid.com/ | grep -o 'assets/css[^"]*'
 - 페이지 제목·메타 태그·OG 태그 → `0004`, `0005`, `0011`
 - 공유 카드 이미지 → `0006`
 - 글자 크기·소제목 단계 → `0007`, `0008`
+- 글꼴·글꼴 파일 → `0017`
 - 본문 열 폭·반응형 분기 → `0012`
 - 링크 hover·현재 화면 표시(형광펜) → `0014`
 - 이미지를 눌러 크게 보기·자체 JS → `0015`
