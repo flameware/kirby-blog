@@ -40,7 +40,7 @@ Icon
 /kirby
 /vendor
 # └ getkirby/composer-installer가 site/plugins에 푸는 kirby-plugin 패키지들
-#   (uniform / form / flash / redirects — 서버 post-receive의 composer install이 재생성)
+#   (uniform / form / flash / redirects — CI의 composer install이 재생성)
 #   ※ 직접 만든 플러그인을 여기 두면 무시되니, 그때는 !/site/plugins/<이름> 을 아래에 추가할 것
 /site/plugins/*
 !/site/plugins/seo
@@ -50,7 +50,7 @@ Icon
 # Security
 # ---------------
 # 저장소가 public이므로 서버 구축·배포 절차 문서는 공개하지 않는다
-# (bare repo 경로, post-receive 훅, sudo 권한 스크립트, 웹 루트 경로 포함)
+# (예전 Lightsail 운영의 문서 — bare repo 경로, post-receive 훅, 웹 루트 경로 포함)
 *.pem
 lightsail-setup.md
 kirby-deploy-sync-manual.md

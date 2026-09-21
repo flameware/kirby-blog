@@ -40,10 +40,10 @@ function assetVersionedUrl(App $kirby, string $url): string
  * 여기 걸어두면 템플릿의 `@auto`까지 한곳에서 처리된다 —
  * 헬퍼가 `@auto`를 실제 경로로 바꾼 **다음**에 이 컴포넌트를 부르기 때문이다.
  *
- * js가 css만큼 중요한 이유는 .htaccess의 캐시 계층 때문이다 — /assets/ 아래 파일은
- * `?v=`가 없으면 24시간 캐시에 갇히고, 붙으면 1년 immutable 계층으로 올라간다.
- * 버스터 없이 내보낸 스크립트는 고쳐도 하루 동안 낡은 것이 돈다.
- * 근거: docs/adr/0013-cache-control-tiers.md
+ * js가 css만큼 중요한 이유는 static/_headers의 캐시 계층 때문이다 — /assets/css/·/assets/js/
+ * 아래 파일은 1년 immutable로 나간다. 주소가 내용을 따라가지 않으면
+ * 고친 스크립트가 캐시에서 1년 동안 낡은 채로 돈다.
+ * 근거: docs/adr/0013-cache-control-tiers.md, docs/adr/0016-static-build.md
  *
  * config.php가 아니라 플러그인인 것은 Kirby가 설정에서 읽는 확장이
  * api·routes·hooks 셋뿐이라서다. components는 플러그인으로만 등록된다.

@@ -15,6 +15,8 @@ Google Search Console이 "Alternate page with proper canonical tag" 알림을 �
 
 결과적으로 사이트 전체가 www에 복제되었고, **그 복제본이 스스로를 정본이라 선언**했다. 구글은 이를 거부하고 apex를 정본으로 골랐다(= "Duplicate, Google chose different canonical than user"). 덤으로 호스트별 설정 파일(`config.massivevoid.com.php`)이 www에는 로드되지 않아, www 쪽에서는 `panel => false`도 애널리틱스 설정도 적용되지 않고 있었다.
 
+> **2026-09 갱신:** 운영이 Cloudflare Pages로 옮겨 가며(ADR-0016) 1차 방어선은 Apache vhost가 아니라 Cloudflare의 www → apex 301 Redirect Rule이다. 인증서도 Cloudflare가 두 호스트 모두 발급한다. 2차 방어선(`url` 옵션)은 빌드 때 그대로 쓰인다. 아래의 Apache·certbot 이야기와 복구 위저드(`scripts/fix-canonical-host.sh`, 지웠다)는 당시의 기록이다.
+
 ## 결정
 
 **정본 호스트는 `https://massivevoid.com` 하나이며, 이를 서버와 애플리케이션 두 곳에서 각각 강제한다.**
