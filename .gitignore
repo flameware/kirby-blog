@@ -52,8 +52,5 @@ Icon
 # 저장소가 public이므로 키 파일은 어떤 경우에도 올리지 않는다
 *.pem
 
-
-./claude
-
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 /graft/
