@@ -144,6 +144,7 @@ curl -sI "https://massivevoid.com/assets/css/index.css?v=1" | grep -i cache-cont
 - 내비게이션 → `0009`
 - 캐시·에셋 URL·`_headers` → `0010`, `0013`, `0016`
 - 정적 빌드·배포·Cloudflare Pages → `0016`
+- DNS·메일·HSTS → `0016`
 - 이웃 글 → `0002`
 - 정규 호스트 → `0003`
 - 분석 → `0001`
