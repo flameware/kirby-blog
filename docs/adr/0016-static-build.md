@@ -68,3 +68,8 @@ HTML은 Pages 기본값(`max-age=0, must-revalidate`)을 그대로 쓴다. 검�
 - **배포 확인은 여전히 실제 사이트로 한다.** `curl -I`로 보는 네 종류의 헤더(ADR-0013의 표)는 전환 직후 한 번 다시 확인한다.
 
 > **2026-09 갱신 (#29):** kirby3-redirects도 `composer remove`로 걷어내고 패널의 리다이렉트 탭을 지웠다. 리다이렉트가 필요해지면 `static/_redirects`에 쓴다. 위의 kirby3-redirects 줄은 당시의 기록이다.
+
+> **2026-09 갱신 (#39):** 저장소 밖, Cloudflare에만 있는 설정 둘을 여기 적어 둔다.
+>
+> - **이 도메인은 메일을 쓰지 않는다.** DNS를 옮길 때 AWS SES 수신 MX가 딸려 왔는데 SPF도 DMARC도 없어, 누구나 이 도메인 이름으로 위장 발송할 수 있었다. MX를 지우고 SPF는 모든 발송을 거부(`-all`), DMARC는 `p=reject`로 두었다. 메일을 쓰게 되면 이 둘부터 고친다 — 그대로 두면 보낸 메일이 전부 거부된다.
+> - **HSTS는 대시보드(SSL/TLS → Edge Certificates)에서 켠다. `_headers`가 아니다.** www는 Pages에 닿기 전에 엣지에서 apex로 리다이렉트되므로 `_headers`로는 www 응답에 헤더가 붙지 않는다. 12개월, 하위 도메인 포함, preload는 하지 않는다 — preload는 되돌리는 데 몇 달이 걸린다.
