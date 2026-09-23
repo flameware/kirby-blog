@@ -57,6 +57,17 @@ jobs:
 
       - run: composer install --no-dev --prefer-dist --no-interaction --no-progress
 
+      # 굽는 썸네일 캐시. 본문 이미지마다 크기 계단을 WebP로 굽느라(ADR-0018) 빈 media/에서
+      # 빌드하면 로컬에서도 1분이 걸리고, 이미 구운 것이 있으면 1초가 안 걸린다.
+      # 썸네일 경로는 원본의 해시·수정시각·옵션으로 정해지므로(소금 고정, 수정시각 복원)
+      # 지난번 것을 그대로 써도 틀린 파일이 나갈 수 없다. 쓰이지 않는 옛 썸네일이 남아도
+      # 빌드는 HTML이 가리키는 것만 dist/로 옮긴다.
+      - uses: actions/cache@v4
+        with:
+          path: media
+          key: media-${{ hashFiles('content/**', 'site/snippets/image.php') }}
+          restore-keys: media-
+
       - run: php scripts/build-static.php
 
       - uses: cloudflare/wrangler-action@v3

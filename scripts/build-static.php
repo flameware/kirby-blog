@@ -9,7 +9,8 @@
  *   php scripts/build-static.php            # dist/ 에 빌드
  *   php scripts/build-static.php out-dir    # 다른 폴더에 빌드
  *
- * 하는 일은 넷이다.
+ * 하는 일은 넷이다. 그 앞에 0번 확인을 한 번 한다.
+ *   0. 덮어쓴 블록 스니펫의 업스트림이 그대로인지 확인한다
  *   1. 운영 설정으로 Kirby를 띄운다 (정본 주소, 애널리틱스)
  *   2. 발행된 모든 화면 + 설정의 라우트(sitemap.xml) + 404를 그린다
  *   3. 그린 HTML이 가리키는 /media/ 파일을 실제로 만들어 옮긴다
@@ -26,6 +27,38 @@ $root = dirname(__DIR__);
 $dist = $root . "/" . trim($argv[1] ?? "dist", "/");
 
 require $root . "/kirby/bootstrap.php";
+
+/**
+ * 0. 덮어쓴 블록 스니펫
+ *
+ * `site/snippets/blocks/`의 파일은 Kirby 기본 스니펫을 덮어쓴 것이다. 덮어쓴 순간부터
+ * 업스트림의 수정이 우리에게 오지 않는데, 그걸 알려 주는 곳이 따로 없다. 그래서 파일마다
+ * 복사해 온 업스트림 파일의 sha1을 `@upstream <경로> <해시>`로 적어 두고, 여기서
+ * 대조한다. Kirby를 올려 업스트림이 바뀌면 빌드가 멈추고 배포되지 않는다.
+ *
+ * 근거: docs/adr/0018-responsive-images.md
+ */
+$drifted = [];
+
+foreach (glob($root . "/site/snippets/blocks/*.php") as $snippet) {
+    $name = substr($snippet, strlen($root) + 1);
+
+    if (preg_match('/@upstream\s+(\S+)\s+([0-9a-f]{40})/', file_get_contents($snippet), $upstream) !== 1) {
+        $drifted[] = "{$name}: @upstream 표시가 없다";
+        continue;
+    }
+
+    $hash = is_file($root . "/" . $upstream[1]) ? sha1_file($root . "/" . $upstream[1]) : null;
+
+    if ($hash !== $upstream[2]) {
+        $drifted[] = "{$name}: {$upstream[1]}이(가) 바뀌었다 (지금 " . ($hash ?? "파일 없음") . ")";
+    }
+}
+
+if ($drifted !== []) {
+    fwrite(STDERR, "덮어쓴 블록 스니펫이 업스트림과 어긋났다. 업스트림의 바뀐 부분을 옮기고 해시를 새로 적는다:\n  " . implode("\n  ", $drifted) . "\n");
+    exit(1);
+}
 
 /**
  * 1. 운영 설정

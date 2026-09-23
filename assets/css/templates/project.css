@@ -26,4 +26,6 @@ main a:visited {
 
 .project-gallery img {
     width: 100%;
+    /* width·height 속성이 붙어 있다 — index.css의 figure img와 같은 이유 */
+    height: auto;
 }

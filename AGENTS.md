@@ -18,7 +18,8 @@
 - **site/**: 이 프로젝트의 파일
   - `templates/`: 페이지 종류마다 하나씩 있는 PHP 템플릿
   - `blueprints/`: 콘텐츠 필드와 패널 UI를 정의하는 YAML
-  - `snippets/`: 재사용 조각 (`header.php`, `footer.php`, `blocks/heading.php`, `sitemap.php`)
+  - `snippets/`: 재사용 조각 (`header.php`, `footer.php`, `image.php`, `sitemap.php`)
+  - `snippets/blocks/`: Kirby 기본 블록 스니펫을 덮어쓴 것 (`heading.php`, `image.php`, `gallery.php`)
   - `plugins/`: Kirby 플러그인
 - **content/**: 플랫 파일 콘텐츠 (YAML 프런트매터 + Kirby Blocks JSON)
 - **assets/**: CSS와 정적 파일 (`favicon.svg`, `fonts/` — 직접 올린 글꼴)
@@ -46,6 +47,7 @@
 - 폴더 앞의 숫자가 정렬 순서와 노출을 결정한다 (`1_` = 목록에 나옴)
 - `.png.txt` / `.jpg.txt` 사이드카 파일에 이미지 메타데이터가 들어간다
 - 본문은 블록 에디터로 쓰고 템플릿에서 `$page->blocks()->toBlocks()`로 그린다. 블록 스니펫은 `site/snippets/blocks/`에 둔다
+- 본문 이미지(이미지 블록·갤러리·작업 이미지)는 `snippet('image', ...)` 하나로 그린다. `<?= $image ?>`로 찍으면 원본이 그대로 나가고 라이트박스용 `data-full`도 빠진다
 - 태그는 콤마로 이어붙인 문자열이고 `->tags()->split()`으로 나눈다
 - 홈은 최신 글 5개와 프로젝트 4개를 `->children()->listed()->limit(N)`으로 보여준다
 - 사이트맵은 `site/snippets/sitemap.php`
@@ -78,6 +80,10 @@
 git ls-files site/plugins/<name>   # 파일 목록이 나와야 한다. 아무것도 안 나오면 안 된다
 ```
 
+### 블록 스니펫을 덮어쓰면 `@upstream` 해시를 단다
+
+`site/snippets/blocks/`의 파일은 머리 주석에 `@upstream <업스트림 경로> <sha1>`이 있어야 한다. `scripts/build-static.php`가 빌드 전에 대조해서, 표시가 없거나 업스트림 파일이 바뀌었으면 **빌드를 멈춘다** — 그러면 배포도 안 된다. Kirby를 올리다가 여기서 멈추면 업스트림의 바뀐 부분을 우리 스니펫에 옮기고 `shasum <업스트림 경로>`의 새 값을 적는다. 해시만 고쳐서 넘기지 않는다.
+
 ### 되풀이되는 실수들
 
 - **`metaCard()`가 `header.php`가 부르는 메서드다.** `metaImageFile()`이 아니다
@@ -85,6 +91,7 @@ git ls-files site/plugins/<name>   # 파일 목록이 나와야 한다. 아무�
 - **`--column` 위에 좌우 `padding`을 얹지 않는다.** 여백은 이미 폭 안에 들어 있다
 - **형광펜 규칙은 `index.css` 한 곳에만 둔다.** 템플릿 CSS로 복제하지 않는다
 - **출력 형식이 중요하면 `crop()`이 아니라 `thumb()`을 쓴다.** `crop()`은 `format` 옵션을 말없이 버린다
+- **`--column`을 고치면 `site/snippets/image.php`의 `sizes`도 고친다.** 같은 열 폭 공식이 두 곳에 있다. 한쪽만 고치면 화면은 멀쩡하고 받는 파일 크기만 틀어진다
 
 ## 개발
 
@@ -140,7 +147,8 @@ curl -sI "https://massivevoid.com/assets/css/index.css?v=1" | grep -i cache-cont
 - 글꼴·글꼴 파일 → `0017`
 - 본문 열 폭·반응형 분기 → `0012`
 - 링크 hover·현재 화면 표시(형광펜) → `0014`
-- 이미지를 눌러 크게 보기·자체 JS → `0015`
+- 이미지를 눌러 크게 보기·자체 JS → `0015`, `0018`
+- 본문 이미지 크기·`srcset`·썸네일 형식 → `0018`
 - 내비게이션 → `0009`
 - 캐시·에셋 URL·`_headers` → `0010`, `0013`, `0016`
 - 정적 빌드·배포·Cloudflare Pages → `0016`
