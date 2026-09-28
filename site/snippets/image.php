@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 본문 이미지 한 장
+ * 이미지 한 장
  *
- * 이미지 블록·갤러리·작업 이미지가 함께 쓴다. 원본을 그대로 내보내면 4132px짜리를
- * 받아 706px로 그리게 된다. 본문에는 열 폭에 맞춰 줄인 WebP를 `srcset`으로 내주고,
- * 원본은 라이트박스가 볼 것으로 `data-full`에 따로 적는다.
+ * 이미지 블록·갤러리·작업 이미지·프로젝트 카드가 함께 쓴다. 원본을 그대로 내보내면
+ * 4132px짜리를 받아 706px로 그리게 된다. 그려질 폭에 맞춰 줄인 WebP를 `srcset`으로
+ * 내주고, 원본은 라이트박스가 볼 것으로 `data-full`에 따로 적는다.
  *
  * 원본 주소가 속성으로 HTML 안에 있어야 하는 이유: 정적 빌드는 HTML에 찍힌 `/media/`
  * 주소만 배포한다. 스크립트가 주소를 조립해 부르면 그 파일은 `dist/`에 없다.
@@ -16,10 +16,15 @@
  * @var int $columns 본문 열 안에 나란히 놓이는 장수 (갤러리·작업 이미지)
  * @var bool $stack 좁은 화면에서 한 열로 쌓이는가 (갤러리)
  * @var \Kirby\Content\Field|string|null $alt
+ * @var string|null $sizes 넘기면 본문 열 공식 대신 쓴다. 본문 열 밖에 그려지는 것 (프로젝트 카드)
+ * @var bool $full 라이트박스가 볼 원본을 `data-full`에 적는가. 링크 안의 이미지는 라이트박스가 무시한다 (ADR-0015)
+ * @var string $loading "lazy" | "eager". 첫 화면 안에 그려지는 것만 eager
  */
 
 $columns ??= 1;
 $stack   ??= false;
+$full    ??= true;
+$loading ??= "lazy";
 $alt       = (string)($alt ?? $image->alt());
 
 /**
@@ -62,7 +67,7 @@ $part = fn (string $column) => $columns === 1
     ? "calc({$column})"
     : "calc(({$column} - {$gap}px) / {$columns})";
 
-$sizes = implode(", ", [
+$sizes ??= implode(", ", [
     "(max-width: 480px) " . ($stack ? "calc(100vw - 40px)" : $part("100vw - 40px")),
     "(max-width: 1200px) " . $part("360px + 16.7vw"),
     $part("46.7vw"),
@@ -85,7 +90,7 @@ echo Html::img($src, [
     "width"     => $image->width(),
     "height"    => $image->height(),
     "alt"       => $alt,
-    "loading"   => "lazy",
+    "loading"   => $loading,
     "decoding"  => "async",
-    "data-full" => $image->url(),
+    "data-full" => $full === true ? $image->url() : null,
 ]);

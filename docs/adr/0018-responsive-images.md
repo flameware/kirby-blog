@@ -14,7 +14,7 @@
 
 ### 1. 이미지 스니펫 하나가 세 경로를 모두 그린다
 
-`site/snippets/image.php`. 이미지 블록, 갤러리 블록, 프로젝트의 작업 이미지가 이것을 부른다. 내보내는 `<img>`에는 다음이 붙는다.
+`site/snippets/image.php`. 이미지 블록, 갤러리 블록, 프로젝트의 작업 이미지가 이것을 부른다. 목록 화면의 프로젝트 카드도 이것을 부른다([#43](https://github.com/flameware/kirby-blog/issues/43)) — 그리드 공식을 `sizes`로 넘기고 `data-full`은 끈다. 내보내는 `<img>`에는 다음이 붙는다.
 
 - `srcset` — WebP로 줄인 크기 계단
 - `sizes` — 본문 열 폭 공식(`--column`)을 옮겨 적은 것. 갤러리와 작업 이미지는 열을 n등분한 값
@@ -88,3 +88,5 @@ WebP보다 작다. GD의 AVIF 인코딩은 느려서 계단 네 개 × 135장이
 ## 범위 밖
 
 목록 화면(홈·`/projects`)의 프로젝트 카드 썸네일. `$project->image()`로 원본이 그대로 나가지만 본문이 아니고, 크기 공식이 목록 그리드를 따라야 해서 따로 다룬다.
+
+> 이후: [#43](https://github.com/flameware/kirby-blog/issues/43)에서 프로젝트 카드도 이 스니펫으로 옮겼다. §1 참고.

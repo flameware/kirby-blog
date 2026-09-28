@@ -47,7 +47,7 @@
 - 폴더 앞의 숫자가 정렬 순서와 노출을 결정한다 (`1_` = 목록에 나옴)
 - `.png.txt` / `.jpg.txt` 사이드카 파일에 이미지 메타데이터가 들어간다
 - 본문은 블록 에디터로 쓰고 템플릿에서 `$page->blocks()->toBlocks()`로 그린다. 블록 스니펫은 `site/snippets/blocks/`에 둔다
-- 본문 이미지(이미지 블록·갤러리·작업 이미지)는 `snippet('image', ...)` 하나로 그린다. `<?= $image ?>`로 찍으면 원본이 그대로 나가고 라이트박스용 `data-full`도 빠진다
+- 본문 이미지(이미지 블록·갤러리·작업 이미지)와 프로젝트 카드는 `snippet('image', ...)` 하나로 그린다. `<?= $image ?>`로 찍으면 원본이 그대로 나가고 라이트박스용 `data-full`도 빠진다
 - 태그는 콤마로 이어붙인 문자열이고 `->tags()->split()`으로 나눈다
 - 홈은 최신 글 5개와 프로젝트 4개를 `->children()->listed()->limit(N)`으로 보여준다
 - 사이트맵은 `site/snippets/sitemap.php`
@@ -92,6 +92,7 @@ git ls-files site/plugins/<name>   # 파일 목록이 나와야 한다. 아무�
 - **형광펜 규칙은 `index.css` 한 곳에만 둔다.** 템플릿 CSS로 복제하지 않는다
 - **출력 형식이 중요하면 `crop()`이 아니라 `thumb()`을 쓴다.** `crop()`은 `format` 옵션을 말없이 버린다
 - **`--column`을 고치면 `site/snippets/image.php`의 `sizes`도 고친다.** 같은 열 폭 공식이 두 곳에 있다. 한쪽만 고치면 화면은 멀쩡하고 받는 파일 크기만 틀어진다
+- **`/projects` 그리드의 여백·열 수를 고치면 `site/templates/projects.php`의 카드 `sizes`도 고친다.** `projects.css`의 그리드 값을 옮겨 적은 공식이다. 틀어지는 방식은 `--column`과 같다
 
 ## 개발
 

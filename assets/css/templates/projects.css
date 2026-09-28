@@ -20,6 +20,8 @@
 }
 
 
+/* 좌우 여백·열 수·간격을 고치면 site/templates/projects.php의 카드 `sizes`도 고친다.
+   받을 이미지 파일을 고르는 공식이 거기 이 값들로 적혀 있다. 480px 이하 규칙도 같다. */
 .projects {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

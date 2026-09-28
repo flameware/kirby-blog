@@ -46,7 +46,10 @@
             <li>
                 <a href="<?= $project->url() ?>">
                     <figure>
-                        <?= $project->image() ?>
+                        <?php if ($image = $project->image()) {
+                            // 본문 열 안 2열, 480px 이하에서 한 열로 쌓인다(home.css)
+                            snippet('image', ['image' => $image, 'columns' => 2, 'stack' => true, 'full' => false]);
+                        } ?>
                         <figcaption><span><?= $project->title() ?></span></figcaption>
                     </figure>
                 </a>
