@@ -9,8 +9,10 @@ Blocks:
 [
     {
         "content": {
-            "location": "web",
-            "image": [],
+            "location": "kirby",
+            "image": [
+                "file://wcybuk87rjpjembf"
+            ],
             "src": "https://i.namu.wiki/i/18CKmudBjWwXnah0lODfQ4U4VF81NeRoUIAqqu-ijYILE4eb6S0jhySIPz2zARKMttDXJ9NF3H-35651MLpaquEqruUEpNjZTPw2HE5QLYhD9mhmqlUq8uPre0wX0_ZCD5RX10Hcyi21S6VQ5jIECA.webp",
             "alt": "무슨 생각으로 이런일을 벌이셨어요",
             "caption": "",
