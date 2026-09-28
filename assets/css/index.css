@@ -348,6 +348,16 @@ figure img {
     display: block;
 }
 
+/* 크기 속성이 없는 것은 이미지 블록의 바깥 주소 이미지뿐이다(스니펫을 거치지 않는다).
+   이것이 깨지면 width: 100% 아래에서 열 폭만 한 정사각형 빈 박스가 그려졌다
+   (글 화면에서 Chrome·Safari 모두 확인. 최소 재현 페이지에서는 재현되지 않아 원인은
+   특정하지 못했다). 늘리지 않고 제 크기로 두면 깨졌을 때 대체 텍스트 한 줄로 줄어든다.
+   대가로 열보다 작은 바깥 이미지는 늘어나지 않는다. */
+figure img:not([width]) {
+    width: auto;
+    max-width: 100%;
+}
+
 figcaption {
     font-size: var(--text-meta);
     text-align: center;
