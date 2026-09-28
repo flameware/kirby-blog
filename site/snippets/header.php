@@ -53,14 +53,15 @@ $metaCard = $page->metaCard();
 
     <?php
     /**
-     * 라이트박스. 이 사이트의 유일한 자체 스크립트다.
+     * 자체 스크립트. 라이트박스와, 내비게이션이 위에 붙었는지 알리는 것 둘이다.
      *
      * defer라 파싱을 막지 않고 DOM이 완성된 뒤 실행된다. footer가 아니라 여기 있는
      * 것은 자산을 부르는 자리를 한곳에 모아 두기 위해서다.
-     * 근거: docs/adr/0015-own-javascript.md
+     * 근거: docs/adr/0015-own-javascript.md, docs/adr/0019-navigation-column-header.md
      */
     ?>
     <?= js(url: "assets/js/lightbox.js", options: ["defer" => true]) ?>
+    <?= js(url: "assets/js/nav.js", options: ["defer" => true]) ?>
 
     <?php if ($goatcounter = option("analytics.goatcounter")): ?>
     <script data-goatcounter="https://<?= $goatcounter ?>.goatcounter.com/count"
@@ -69,11 +70,11 @@ $metaCard = $page->metaCard();
 
 </head>
 <body>
-    <?php /* 내비게이션. 브랜드와 링크가 한 덩어리로 묶인 island이고, 모바일에서도
-             접히지 않는다. 본문 열 바깥에 있는 것이 핵심이다 — 열 안에 두면 열 폭(46.7vw)과
-             열의 정렬 방식에 끌려다닌다. body가 이미 가운데 정렬하는 flex라, 밖으로 꺼내면
-             폭만 정해도 화면 중앙에 놓인다.
-             근거: docs/adr/0009-navigation-island.md */ ?>
+    <?php /* 내비게이션. 브랜드는 본문 열 왼쪽 끝, 링크는 오른쪽 끝에 맞추고, 스크롤하면
+             화면 위에 붙는다. 모바일에서도 접히지 않는다. 요소는 열(.container) 바깥의
+             body 직계 자식이다 — 화면 전폭이어야 붙었을 때 배경과 선이 좌우 끝까지 가고,
+             /projects처럼 열이 없는 화면에서도 같은 규칙으로 그려진다.
+             근거: docs/adr/0019-navigation-column-header.md */ ?>
     <nav class="mainnav">
         <a class="mainnav-brand" href="<?= $site->url() ?>"><strong><?= $site->title() ?></strong></a>
         <ul class="mainnav-links">

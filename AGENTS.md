@@ -151,7 +151,7 @@ curl -sI "https://massivevoid.com/assets/css/index.css?v=1" | grep -i cache-cont
 - 링크 hover·현재 화면 표시(형광펜) → `0014`
 - 이미지를 눌러 크게 보기·자체 JS → `0015`, `0018`
 - 본문 이미지 크기·`srcset`·썸네일 형식 → `0018`
-- 내비게이션 → `0009`
+- 내비게이션 → `0019` (island 시절의 기록은 `0009`)
 - 캐시·에셋 URL·`_headers` → `0010`, `0013`, `0016`
 - 정적 빌드·배포·Cloudflare Pages → `0016`
 - DNS·메일·HSTS → `0016`

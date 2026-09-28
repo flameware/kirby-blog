@@ -1,6 +1,6 @@
 # ADR-0009: 내비게이션은 열 바깥에 떠 있는 island이고, 모바일에서도 접히지 않는다
 
-- **상태:** 채택
+- **상태:** 대체됨 — [ADR-0019](0019-navigation-column-header.md)
 - **날짜:** 2026-08-18
 - **관련:** [ADR-0008](0008-type-scale.md), [ADR-0014](0014-highlight-marker.md)
 

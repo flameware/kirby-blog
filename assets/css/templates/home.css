@@ -1,3 +1,5 @@
+/* 인사말 위아래 여백은 이 상자 하나가 갖는다. 안쪽 문단은 여백을 갖지 않는다 —
+   예전엔 둘 다 위 여백을 가져서 데스크탑에서만 160px로 겹쳤다. */
 .home-intro {
     padding: var(--big-gap-desktop) 0 var(--big-gap-desktop) 0;
 }
@@ -13,7 +15,6 @@
     /* 크고 굵은 짧은 문장이라 어절이 쪼개지는 것이 가장 눈에 띈다.
        띄어쓰기에서만 접는다. */
     word-break: keep-all;
-    padding: var(--big-gap-desktop) 0 0 0;
     margin: 0;
 }
 
@@ -96,11 +97,7 @@
 @media (max-width: 480px) {
 /* Styles for small phones */
 .home-intro {
-    padding: 0 0 var(--big-gap-mobile) 0;
-}
-
-.home-intro p {
-    padding: var(--big-gap-mobile) 0 0 0;
+    padding: var(--big-gap-mobile) 0 var(--big-gap-mobile) 0;
 }
 
 .home-bloglist {
