@@ -62,6 +62,8 @@
 }
 
 
+/* 열 수(2열, 480px 이하 1열)를 고치면 site/templates/home.php의 카드
+   snippet('image') 호출의 columns·stack도 고친다. 받을 파일을 고르는 값이다. */
 .home-projectlist {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
