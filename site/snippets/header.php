@@ -62,6 +62,15 @@ $metaCard = $page->metaCard();
     ?>
     <?= js(url: "assets/js/lightbox.js", options: ["defer" => true]) ?>
 
+    <?php /* PROTOTYPE — 버린다. 내비게이션 시안 전환. 로컬 개발 서버(php -S)에서만 나간다 —
+             정적 빌드는 CLI라 여기 걸리지 않는다. 인라인 스크립트는 첫 페인트 전에 시안을 걸어
+             깜빡임을 막는다. */ ?>
+    <?php if (PHP_SAPI === "cli-server"): ?>
+    <script>try{document.documentElement.dataset.nav=localStorage.getItem("proto-nav")??"a";if(localStorage.getItem("proto-sticky")==="1")document.documentElement.setAttribute("data-sticky","")}catch(e){}</script>
+    <link rel="stylesheet" href="<?= url("assets/prototype/nav-variants.css") ?>?t=<?= time() ?>">
+    <script src="<?= url("assets/prototype/nav-variants.js") ?>?t=<?= time() ?>" defer></script>
+    <?php endif ?>
+
     <?php if ($goatcounter = option("analytics.goatcounter")): ?>
     <script data-goatcounter="https://<?= $goatcounter ?>.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>

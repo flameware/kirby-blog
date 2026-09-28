@@ -1,0 +1,179 @@
+/* PROTOTYPE — 버린다. prototype/nav-variants 브랜치에만 있다.
+   질문: island 대신 어떤 내비게이션 형태가 이 블로그에 어울리는가.
+   세 시안은 같은 마크업(.mainnav)에 <html data-nav>를 걸어 CSS로만 갈라 그린다.
+   조판(대문자 --text-tag 링크, --text-body 브랜드)은 C의 브랜드 크기를 빼고 전부 공통이다. */
+
+/* ── 공통: 섬의 표면을 걷어낸다 ─────────────────────────── */
+html[data-nav="a"] .mainnav,
+html[data-nav="b"] .mainnav,
+html[data-nav="c"] .mainnav {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+}
+
+/* 링크 바깥쪽 패딩만큼 목록을 밀어내 글자 끝이 열 가장자리에 닿게 한다. */
+html[data-nav="a"] .mainnav-links,
+html[data-nav="b"] .mainnav-links {
+    margin-right: calc(-1 * var(--island-link-pad));
+}
+
+/* 폭 예산. 열 안에 들어오면 320px에서 쓸 수 있는 폭이 280px로 줄어 island보다 좁다.
+   분기 없이 하한만 낮춘다: 링크 사이 4→0px, 자간 0.06→0.02em, 링크 좌우 5→3px.
+   전부 480px 언저리에서 원래 값으로 돌아온다. */
+html[data-nav="a"] .mainnav,
+html[data-nav="b"] .mainnav {
+    --island-link-pad: clamp(3px, 1.2vw - 1px, 12px);
+}
+html[data-nav="a"] .mainnav-links,
+html[data-nav="b"] .mainnav-links {
+    gap: clamp(0px, 1.25vw - 4px, 4px);
+}
+html[data-nav="a"] .mainnav-links a,
+html[data-nav="b"] .mainnav-links a {
+    letter-spacing: clamp(0.02em, 0.3vw - 0.7px, 0.06em);
+}
+
+/* ── A. 열 정렬 텍스트 헤더 ──────────────────────────────── */
+html[data-nav="a"] .mainnav {
+    width: var(--column);
+    justify-content: space-between;
+}
+
+/* ── B. 전체폭 바 + 아래 가는 선, 내용은 열 가장자리에 맞춘다 ─ */
+html[data-nav="b"] .mainnav {
+    width: 100%;
+    margin-top: 0;
+    justify-content: space-between;
+    /* 100%는 body 폭이다. 좌우 패딩으로 내용을 --column 안에 가둔다. */
+    padding: 12px calc((100% - var(--column)) / 2);
+    border-bottom: 1px solid var(--color-secondary);
+}
+
+/* ── C. 마스트헤드: 브랜드 위, 링크 아래 한 줄, 열 폭 가는 선 ── */
+html[data-nav="c"] .mainnav {
+    width: var(--column);
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-secondary);
+}
+
+html[data-nav="c"] .mainnav-brand {
+    font-size: var(--text-subhead);
+    line-height: 1.3;
+}
+
+/* ── sticky 스위치 (형태와 직교) ─────────────────────────── */
+html[data-sticky] .mainnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-background);
+    /* 열 폭짜리 시안도 스크롤되는 본문을 좌우로 가리도록 배경만 화면 끝까지 늘린다. */
+    box-shadow: 0 0 0 100vmax var(--color-background);
+    clip-path: inset(0 -100vmax);
+}
+
+/* island은 흐름 안에서 margin-top을 가지므로 sticky일 때 위에 붙이면 여백이 사라진다.
+   떠 있는 모양을 유지하도록 조금 띄운다. */
+html[data-sticky]:not([data-nav]) .mainnav,
+html[data-sticky][data-nav="0"] .mainnav {
+    top: 12px;
+    box-shadow: none;
+    clip-path: none;
+}
+
+@media (max-width: 480px) {
+    html[data-nav="b"] .mainnav {
+        margin-top: 0;
+        padding-block: 4px;
+    }
+}
+
+/* ── 전환 패널: 디자인의 일부가 아니라는 게 한눈에 보이게 ──── */
+.proto-bar {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: #111;
+    color: #fff;
+    border-radius: 999px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    font: 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+    white-space: nowrap;
+}
+
+.proto-bar button {
+    all: unset;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 999px;
+}
+
+.proto-bar button:hover { background: #333; }
+.proto-bar button[aria-pressed="true"] { background: #fff; color: #111; }
+.proto-bar .proto-label { min-width: 11em; text-align: center; }
+.proto-bar .proto-sep { width: 1px; height: 18px; background: #444; }
+.proto-bar .proto-state { color: #8f8; font-size: 11px; }
+.proto-bar label { display: flex; gap: 4px; align-items: center; cursor: pointer; }
+
+@media (max-width: 480px) {
+    .proto-bar .proto-label, .proto-bar .proto-state { display: none; }
+}
+
+/* ── sticky 세부: 세로 여백과 붙었을 때의 선 ───────────────────
+   여백은 늘 넣되 그만큼 margin-top에서 빼서, 스크롤 전 글자 위치가 변하지 않게 한다.
+   붙는 순간에만 여백을 바꾸면 높이가 변해 본문이 튄다. */
+html[data-sticky] .mainnav { --nav-top: 5.6vw; --sticky-pad: 0px; }
+html[data-sticky][data-sticky-pad="8"] .mainnav { --sticky-pad: 8px; }
+html[data-sticky][data-sticky-pad="12"] .mainnav { --sticky-pad: 12px; }
+html[data-sticky]:is([data-nav="a"], [data-nav="c"]) .mainnav {
+    margin-top: calc(var(--nav-top) - var(--sticky-pad));
+    padding-top: var(--sticky-pad);
+}
+html[data-sticky]:is([data-nav="a"], [data-nav="c"]) .mainnav { padding-bottom: var(--sticky-pad); }
+html[data-sticky][data-nav="c"] .mainnav { padding-bottom: calc(8px + var(--sticky-pad)); }
+html[data-sticky][data-nav="b"] .mainnav { padding-block: calc(12px + var(--sticky-pad)); margin-top: calc(-1 * var(--sticky-pad)); }
+
+/* 선은 위에 붙었을 때만. 레이아웃에 영향이 없도록 가상 요소로 긋는다. */
+html[data-sticky] .mainnav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background: var(--color-secondary);
+    display: none;
+}
+html[data-sticky][data-stuck][data-sticky-line="column"] .mainnav::after {
+    display: block;
+    left: 0;
+    right: 0;
+}
+html[data-sticky][data-stuck][data-sticky-line="full"] .mainnav::after {
+    display: block;
+    left: -100vmax;
+    right: -100vmax;
+}
+/* B와 C는 원래 아래 선이 있으므로 붙었을 때 선을 겹쳐 긋지 않는다 — 선 옵션은 A와 island용이다. */
+html[data-sticky]:is([data-nav="b"], [data-nav="c"]) .mainnav::after { display: none; }
+
+.proto-bar select {
+    font: inherit;
+    background: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 2px 4px;
+}
+.proto-bar select:disabled { opacity: 0.35; }
+
+@media (max-width: 480px) {
+    html[data-sticky] .mainnav { --nav-top: 20px; }
+}
