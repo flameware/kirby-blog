@@ -63,10 +63,10 @@ if ($drifted !== []) {
 /**
  * 1. 운영 설정
  *
- * Kirby는 호스트 이름으로 `config.massivevoid.com.php`를 고르는데, CLI에는 호스트가 없다.
- * 그래서 그 파일을 직접 읽어 넘긴다 — 운영 설정의 출처는 여전히 한 곳이다.
+ * 운영에는 요청 시점의 PHP가 없으므로 Kirby가 설정 파일을 호스트로 고를 일도 없다.
+ * `production.php`는 자동 로드 패턴에 걸리지 않는 이름이라 여기서만 경로로 읽는다.
  */
-$production = require $root . "/site/config/config.massivevoid.com.php";
+$production = require $root . "/site/config/production.php";
 
 $kirby = new App([
     "roots" => ["index" => $root],
