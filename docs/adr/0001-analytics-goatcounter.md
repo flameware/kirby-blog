@@ -24,7 +24,9 @@ GA 콘솔에 속성만 만들어두고 태그 설치를 안 한 상태였을 가
 
 **GoatCounter**(호스팅, 사이트 코드 `massivevoid`)를 쓴다. GA4는 채택하지 않는다.
 
-스크립트는 **운영 도메인에서만** 출력한다. 사이트 코드를 `site/config/config.massivevoid.com.php`의 `analytics.goatcounter` 옵션에 두고, `site/snippets/header.php`가 그 옵션이 있을 때만 태그를 렌더한다. 이 저장소가 이미 `panel => false`에 쓰고 있는 호스트별 설정 패턴과 동일하다.
+스크립트는 **운영 도메인에서만** 출력한다. 사이트 코드를 운영 설정 파일 `site/config/production.php`의 `analytics.goatcounter` 옵션에 두고, `site/snippets/header.php`가 그 옵션이 있을 때만 태그를 렌더한다. 이 저장소가 이미 `panel => false`에 쓰고 있는 호스트별 설정 패턴과 동일하다.
+
+> **2026-09 갱신 (#38):** 운영이 정적 빌드로 옮겨 가며(ADR-0016) 호스트별 설정 패턴은 없어졌다. 운영 설정 파일은 `config.massivevoid.com.php`에서 `site/config/production.php`로 이름을 바꿨고, 호스트가 아니라 빌드 스크립트가 경로로 읽는다. `panel => false`도 뺐다. 위 문장의 "호스트별 설정 패턴"과 `panel => false`는 당시의 기록이다. 옵션을 운영 설정 파일에 둔다는 결정은 그대로다.
 
 방문자 고지는 `about` 페이지 마지막 블록 두 문장으로 갈음한다.
 
