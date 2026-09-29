@@ -33,6 +33,9 @@ Icon
 # Panel 계정 (비밀번호 해시 포함 — 절대 원격 저장소에 올리지 않음)
 /site/accounts
 
+# 블로그 초안 (Panel의 Draft 상태 글 — 발행 전까지 로컬에만 둔다)
+/content/1_blog/_drafts
+
 # 환경설정 / 비밀값
 /.env
 
