@@ -1,0 +1,5 @@
+Uuid: kkt3jicjardym3kz
+
+----
+
+Template: blocks/image
