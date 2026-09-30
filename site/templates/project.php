@@ -31,11 +31,13 @@
             <?php snippet('image', ['image' => $image, 'columns' => 2]) ?>
         <?php } ?>
         </div>
+        <?php if ($tags = $page->tags()->split()): ?>
         <ul class="tags">
-            <?php foreach ($page->tags()->split() as $category): ?>
+            <?php foreach ($tags as $category): ?>
             <li><?= $category ?></li>
             <?php endforeach ?>
         </ul>
+        <?php endif ?>
         <?php snippet('postnav') ?>
 
     </main>
