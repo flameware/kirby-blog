@@ -1,0 +1,150 @@
+/* PROTOTYPE — 버린다. prototype/tag-variants 브랜치에만 있다.
+   질문: 글 끝 태그를 어떤 모양으로 보여줄 것인가. 나중에 태그가 링크가 될 수 있으므로
+   형광펜 hover(ADR-0014)와 어울려야 한다.
+   시안은 html[data-tags]로 갈린다. "링크로 보기"는 html[data-tag-links]이고, 그때는
+   JS가 각 태그를 <a href="#"><span>…</span></a>로 감싸 형광펜이 붙을 상자를 만든다. */
+
+/* ── 공통: 링크가 되었을 때 ───────────────────────────────────
+   blogpost.css의 main a가 주황이라, 태그 링크가 본문 링크와 같은 색으로 튄다.
+   태그는 내비게이션·목록처럼 형광펜으로만 반응하는 링크로 둔다. */
+html[data-tags] .tags a,
+html[data-tags] .tags a:visited {
+    color: inherit;
+}
+
+/* ── 0 현재 — 진한 알약 (간격 문제 그대로) ─────────────────────── */
+/* index.css 그대로. 비교 기준. */
+
+/* ── A — # 붙인 텍스트 ───────────────────────────────────────────
+   배경도 테두리도 없다. #이 "이건 분류다"를 말하고, 간격만으로 낱말을 가른다.
+   링크가 되면 형광펜이 곧바로 붙는다 — 사이트의 다른 링크와 같은 문법. */
+html[data-tags="a"] .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2em 1.1em;
+    color: var(--color-textcolor);
+    font-size: var(--text-meta);
+    margin: 2.5em 0 0;
+}
+html[data-tags="a"] .tags li {
+    display: block;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+}
+html[data-tags="a"] .tags li::before {
+    content: "#";
+    color: var(--color-secondary);
+    margin-right: 0.1em;
+    /* 링크가 되면 #은 형광펜 밖에 남는다 — 마커는 낱말에만. */
+}
+
+/* ── B — 구분선 아래 라벨 + 쉼표로 이은 한 줄 ─────────────────────
+   목록이 아니라 문장처럼 흐른다. 점선(hr과 같은 것)이 본문과 글 끝 정보를 가르고,
+   "태그" 라벨은 내비게이션과 같은 대문자·자간 문법으로 작게 단다. */
+html[data-tags="b"] .tags {
+    display: block;
+    color: var(--color-textcolor);
+    font-size: var(--text-meta);
+    margin: 3em 0 0;
+    padding-top: 1.2em;
+    border-top: .1em dashed var(--color-secondary);
+}
+html[data-tags="b"] .tags::before {
+    content: "TAGS";
+    display: block;
+    font-size: var(--text-tag);
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    margin-bottom: 0.3em;
+}
+html[data-tags="b"] .tags li {
+    display: inline;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+}
+html[data-tags="b"] .tags li:not(:last-child)::after {
+    content: ",";
+    margin-right: 0.45em;
+}
+
+/* ── C — 옅은 테두리 알약 ─────────────────────────────────────────
+   알약은 남기되 무게를 뺀다. 채움 대신 --color-secondary 선, 글자는 본문색.
+   줄 사이·알약 사이 간격은 gap이 갖는다. 링크가 되면 알약 안의 글자에 형광펜이 붙는다. */
+html[data-tags="c"] .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    color: var(--color-textcolor);
+    font-size: var(--text-tag);
+    margin: 2.5em 0 0;
+}
+html[data-tags="c"] .tags li {
+    display: block;
+    padding: 0.15em 0.8em;
+    background: none;
+    border: 1px solid var(--color-secondary);
+    border-radius: 999px;
+}
+
+/* ── D — 글 머리로 올린다 ─────────────────────────────────────────
+   위치가 다른 시안. 태그를 작성일 옆에 두어, 읽기 전에 무엇에 관한 글인지 보이게 한다.
+   (CONTEXT.md는 지금 "본문 끝에 모아서 보여준다"라고 정의한다 — 이걸 고르면 정의가 바뀐다.)
+   JS가 .tags를 .post-header 안으로 옮긴다. */
+html[data-tags="d"] .post-header .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.9em;
+    color: var(--color-textcolor);
+    font-size: var(--text-meta);
+    margin: 0.4em 0 0;
+    opacity: 0.75;
+}
+html[data-tags="d"] .post-header .tags li {
+    display: block;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+}
+html[data-tags="d"] .post-header .tags li::before {
+    content: "#";
+    margin-right: 0.1em;
+}
+
+/* ── 전환 막대 ─────────────────────────────────────────────────── */
+.proto-bar {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: #111;
+    color: #fff;
+    border-radius: 999px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    font: 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+    white-space: nowrap;
+}
+.proto-bar button {
+    all: unset;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 999px;
+}
+.proto-bar button:hover { background: #333; }
+.proto-bar button[aria-pressed="true"] { background: #fff; color: #111; }
+.proto-bar .proto-label { min-width: 13em; text-align: center; }
+.proto-bar .proto-sep { width: 1px; height: 18px; background: #444; }
+.proto-bar .proto-state { color: #8f8; font-size: 11px; }
+.proto-bar label { display: flex; gap: 4px; align-items: center; cursor: pointer; }
+
+@media (max-width: 480px) {
+    .proto-bar { gap: 2px; padding: 4px 6px; font-size: 12px; }
+    .proto-bar button { padding: 6px 8px; }
+    .proto-bar .proto-label, .proto-bar .proto-state, .proto-bar .proto-sep { display: none; }
+}
