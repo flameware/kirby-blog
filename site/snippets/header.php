@@ -9,6 +9,7 @@ $metaTitle = $page->metaTitle();
 $metaDescription = $page->metaDescription();
 $metaCard = $page->metaCard();
 ?>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">

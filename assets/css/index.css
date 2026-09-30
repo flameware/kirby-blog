@@ -413,6 +413,48 @@ figure li {
     min-width: 0;
 }
 
+/* 표 — 마크다운 블록의 표 문법이 그리는 것이다. 블록 공용이라 여기 한 벌만 둔다.
+
+   선은 인용문·내비게이션과 같은 --color-secondary로, 행 사이 가로선만 긋는다.
+   글자는 본문 크기 그대로다 — 크기는 역할을 따르고, 표 안의 글도 본문이다(ADR-0008).
+   위쪽 정렬이라 긴 값이 여러 줄로 접혀도 항목 이름이 첫 줄 옆에 남는다.
+
+   낱말 중간에서 접지 않는다(keep-all). 표는 칸의 최소 폭을 가장 긴 접을 수 없는
+   조각으로 정하는데, 한국어를 글자마다 접게 두면 그 조각이 한 글자가 되어
+   "연재상/태"처럼 항목 이름이 쪼개진다.
+
+   좁은 화면에서 넘치는 것은 링크만 아무 데서나 접어서 막는다. URL은 접을 곳이 없어
+   열을 밀어낸다. anywhere를 셀 전체에 주면 위의 최소 폭이 다시 한 글자로 줄어든다.
+   가로 스크롤은 table을 display: block으로 바꿔야 해서 열을 꽉 채우지 못하게
+   되므로 두지 않는다 — 열이 아주 많은 표는 쓰지 않는다고 본다. */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+th,
+td {
+    text-align: left;
+    vertical-align: top;
+    padding: .5em 1em .5em 0;
+    border-bottom: 1px solid var(--color-secondary);
+    word-break: keep-all;
+}
+
+td a {
+    overflow-wrap: anywhere;
+}
+
+th:last-child,
+td:last-child {
+    padding-right: 0;
+}
+
+th {
+    font-weight: 700;
+}
+
 /* 라이트박스 — 이미지를 누르면 화면을 덮고 나머지가 물러난 상태다.
 
    본문 열의 폭 제한이 풀리고 원본이 온다. 본문에는 열 폭에 맞춰 줄인 파일이 내려와
