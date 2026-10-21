@@ -14,7 +14,7 @@
 
 ### 디렉터리
 
-- **kirby/**: Kirby CMS 코어 (v5.0.4)
+- **kirby/**: Kirby CMS 코어 (v5.6.0)
 - **site/**: 이 프로젝트의 파일
   - `templates/`: 페이지 종류마다 하나씩 있는 PHP 템플릿
   - `blueprints/`: 콘텐츠 필드와 패널 UI를 정의하는 YAML
