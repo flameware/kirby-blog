@@ -1,0 +1,102 @@
+Title: Outer Loop, Inner Loop - Lauren Tan (Part 1)
+
+----
+
+Blocks:
+
+[
+    {
+        "content": {
+            "images": [
+                "file://1c75vyclzuktnphg"
+            ],
+            "caption": "Matt Pocock과 Lauren Tan",
+            "ratio": "",
+            "crop": "false"
+        },
+        "id": "ddaae859-f5e6-4793-bcb2-210954d41d75",
+        "isHidden": false,
+        "type": "gallery"
+    },
+    {
+        "content": {
+            "text": "## Matt Pocock과 Lauren Tan\n\n[지난번 글](https://massivevoid.com/blog/matt-pocock-skills)에서 소개했던 그 아저씨가 이번에는 인터뷰를 했다. 상대는 Lauren Tan. Matt Pocock과 마찬가지로 pstack이라는 LLM용 스킬 셋을 만든 사람이다.  트위터에서는 @poteto로 더 유명하고, 본인의 커리어도 충분히 튼튼하다. Meta에서 react core팀에 있었고, 지금은 cursor를 거쳐 Space X의 principal engineer 포지션. 한 달에 PR 2,500개를 프로덕션에 머지했다는 트윗으로 꽤나 시끄러웠었다.\n\n영상 자체 - 인터뷰를 했다는걸 안 지는 사실 꽤 됐는데, 이상하게 도입부는 안 끌려서 보다 끊고 보다 끊고 하다가 결국 저녁에 운동할때 흘려 들었다. (사실 앞부분은 다른데서들 많이 했던 얘기고 새로울건 없..).\n듣다보니 중간에 갑자기 귀에 꽂히는 얘기가 나와서 메모해뒀고, 내용을 나도 다 이해한건 아니라서 claude에게 유튜브 링크를 주고 정리시켰다. 내 업무에 그대로 적용할 수 있겠다 싶어서 구조를 짜고, 테스트하기 시작."
+        },
+        "id": "9a3a57ed-b248-46ca-99b6-4c04663232c4",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "location": "web",
+            "url": "https://www.youtube.com/live/MN9dGgmLyso?si=XFbhTXLUIsyrijod",
+            "video": [],
+            "poster": [],
+            "caption": "",
+            "autoplay": "false",
+            "muted": "true",
+            "loop": "false",
+            "controls": "true",
+            "preload": "auto"
+        },
+        "id": "b7b74e50-6571-4617-a40d-630fb42ec7ab",
+        "isHidden": false,
+        "type": "video"
+    },
+    {
+        "content": {
+            "text": "## Outer loop와 Inner loop\n이 양반은 자기 작업방식을 두 겹의 루프로 설명했다.\n\n**Inner loop**는 실제 프로덕트/코드를 작업하는 공간이다. 주어진 목표를 받고, 코드를 고치고, 검증하고, PR을 올린다. pstack이 바로 여기서 쓰는 스킬 모음이다.\n\n**outer loop**는 그 바깥. Slack에 올라오는 버그 제보, 이슈 트래커, 메일, 트위터 멘션 같은 것들. 개발과 직접 연결되어 있지는 않지만 \"다음에 뭘 해야 하는지\"가 전부 여기서 온다. GrokBot을 써서 수집한다고 한다.\n\n문제는 이 둘 사이에 사람이 서 있다는 거. 에이전트는 처음 받은 지시 그 자체만 갖고 일을 하다 보니, 그 사이에 Slack에 올라온 \"아 그거 사실 이렇게 바뀌었어요\" 같은 건 알 수가 없다. 이걸 보완하려면 사람이 그걸 읽고 에이전트한테 다시 날라줘야 하는데, 본인 표현으로는 \"meat proxy\". 고기로 된 전달 레이어. (레딧에서 최근 많이 보는 표현이기도 하다. 본인 업무와 본인 매니저의 사이에 meat proxy가 된 것 같다는 토로들..) 이 양반이 계속 자기한테 묻는 질문이 \"내가 어디서 병목이지? 왜 에이전트가 이걸 나한테 물어봐야 하지?\"라고."
+        },
+        "id": "8e375cf0-ae6f-42b7-8cc8-dbb0accc93f1",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "## Chief of Staff\n그래서 만든 구조가 다음과 같다고 한다.\n\n- outer loop 쪽에는 커넥터 세팅해둔 GrokBot이 Slack, Sentry, Linear 같은 채널을 구독하고 있다가 뭔가 들어오면 컨텍스트를 수집한다.\n- 그걸 받는 게 **코디네이터**. 이게 핵심개념인거 같은데, 코디네이터는 직접 코드를 수정하지 않는다. 들어온 것들을 묶고, 어느 프로젝트 건인지 판단하고, 누구한테 시킬지 정하고, 진행을 추적한다. 주방에서도 총괄하는 셰프는 요리 안 하고 주문 보면서 누가 뭘 하고 있는지 보고 있는 것처럼. 본인은 이걸 Chief of Staff, 즉 비서실장이라고 부른다.\n- 코디네이터가 brief를 만들어서 inner loop의 worker에게 던지고, worker가 만든 PR은 **worker가 아닌 별도의 검증 에이전트**가 앱을 실제로 돌려보고 통과시켜야만 머지된다.\n- 결과물/산출물에 대한 독립적인 에이전트의 검증은 여기서 언급된 것 외에도, 실제로 일 하면서도 뼈저리게 느끼는 경우가 많았다. 꼭(!) LLM의 산출물은 다시 한 번 돌려보자.\n\n그리고 또 하나 재밌었던 점은, 들어오는 신호에 즉시 반응하지 않는다는 거다. 예시로 든 게, React 안티패턴 찾는 에이전트가 상시 돌고 있는데, 발견하면 고치지 않고 문서에 한 줄 메모만 해두게 한다. 며칠에 한 번 그 문서를 보면 \"이거 다 같은 원인이네\"가 보인다고. 성능 리포트 30개가 들어왔을 때 그 때 마다 에이전트를 띄우면 중복 작업만 생기고 공통 원인은 못 본다는 거다. 큐를 하나 끼워넣는 것만으로 패턴이 보이고, 심각도도 자연스레 걸러진다."
+        },
+        "id": "43c0e4a6-0830-45e7-ae21-055eb9305445",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "## 이거 뭔가 통하는게 있는데?\n내가 조직에서 하는 역할은 개발자가 아니고, 디자인을 하다가 지금은 기획자에 가깝다. PR을 올릴 일도 전혀 없다. 근데 생각해보니 일하는 구조는 꽤 비슷했다.\n\n지금(영상 보기 전) 회사에서는 작업공간에 `work-tracker`라는 레포를 하나 만들어 두고, Claude Code 세션에 사내 메일/메신저 받아오는 MCP, GitHub(Enterprise) CLI, 그리고 위키 탐색하는 스킬을 조합해서 `/work sync`라는 커맨드로 그때그때 업무 진행상황을 확인하고 있다. 그러다가 할 일이 생기면 기획서 작업용으로 만들어 둔 `paperwork` 레포로 가서 해당 프로젝트 폴더의 문서들을 열어놓고 Claude랑 같이 처리한다. 산출물은 GitHub/Confluence 코멘트, 메일 초안, 기획서.\n\n영상 보고 나서 이 흐름을 다시 보니, 정확히 내가 meat proxy였다.\n\n1. sync를 내가 돌리고\n2. 출력을 내가 읽어서 \"이거 내가 해야 하는 건가\"를 판단하고\n3. 어느 프로젝트 건인지 내가 기억해내서 폴더를 열고\n4. 그제서야 Claude가 일을 시작한다\n\nwork-tracker가 outer loop, paperwork가 inner loop인 건 이미 그렇게 나눠둔 셈이고, 없는 건 세 가지였다. 사람 대신 돌아가는 트리거, 판단만 하고 일은 안 하는 코디네이터, 그리고 초안을 쓴 세션이 아닌 다른 세션이 하는 검증."
+        },
+        "id": "4b737323-e9ea-4b5f-8df9-73faccdf9dae",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "## 구성\n그래서 Claude한테 생각을 던졌다. 일의 흐름은 비슷한거 같은데 적용할 수 있을까?\nClaude가 PRD를 하나 만들어줬다. \n대략의 흐름을 정리하면\n\n```\n외부 소스 (메일/메신저 · GitHub · Confluence)\n   │  launchd, 30분 간격\n   ▼\nwork-tracker (outer loop)\n  /work sync    → 변경분을 '신호'로 정규화해서 큐(jsonl)에 append. 판단 안 함.\n  /work triage  → Chief of Staff. 신호를 묶고, 프로젝트에 매핑하고,\n                  내가 해야 할 것만 골라서 brief 작성. 초안 안 씀.\n   │  brief\n   ▼\npaperwork (inner loop)\n  /draft   → 프로젝트 문서 읽고 초안 + 근거 + 가정 + 열린 질문\n  /verify  → 별도 세션. 초안을 원본 문서와 대조. 통과/반려만.\n   ▼\n나 → 검토하고 직접 포스팅/발송\n```\n\n정리하는 과정에서 했던 몇 가지 결정들을 옮겨본다.\n\n- **역할은 명확히** - sync는 수집, triage는 판단, draft는 작성.\n- **프로젝트 맵** Lauren Tan이 앱의 기능 지도를 디스크에 적어두는 \"feature map\"이라는 걸 쓰는데, 내 경우엔 프로젝트 지도다. PRD는 별도의 yaml을 작성하라고 했는데, work-tracker에서 관리하는 프로젝트별 markdown에 대충 포함되어 있어서 그대로 유지하기로 했다. \n- **애매하면 멈춰.** triage가 프로젝트를 못 찾거나 요청 의도가 불명확하면 추측하지 않고 brief에 질문만 적고 끝. 아침에 \"초안 8개, 질문 2개\" 이렇게 보고 싶은 거지 추측으로 쓴 초안 10개를 보고 싶은 게 아니다.\n- **발송/게시는 절대 자동화 안 함.** 메일은 초안함 저장까지, 수신자도 비워둔다. 코드는 revert가 되지만 보낸 메일은 안 되니까. 그리고 아직은 내 로컬에서 한 모든 작업들은 push가 일어날 경우를 막으려고 remote를 설정하지도 않았다.\n- **고친 건 기록한다.** 초안을 수정해서 보낼 때마다 뭘 고쳤는지 한 줄씩 남기고, 주 1회 그걸 읽혀서 템플릿이나 검증 체크리스트에 반영할 걸 제안받는 구조다. 영상에서 \"첫 걸음으로 뭘 해야 하냐\"는 질문에 \"과거 대화 로그를 다시 봐라. 네가 반복해서 고쳐준 게 거기 다 있다\"고 답하는데, 그걸 구조에 넣었다.\n\n그리고 단계를 나눴다. 수집된 일 목록(버퍼)를 만들고 → 코디네이터가 brief → 되돌리기 쉬운 코멘트부터 우선 초안 자동화 시켜보고 → 자동 스케줄을 만들고 → 마지막엔 메일과 기획서 작성까지 맡기기. \n영상에서 Lauren Tan이 반복적으로 강조한 게 \"신뢰 없이 병렬화하면 쓰레기만 증폭된다\"였다. 디자인시스템 때 LLM에 끌려다니다 일주일치 토큰 날린 기억이 아직 생생하다."
+        },
+        "id": "f8394056-4655-4415-b9c8-bce9c3360b76",
+        "isHidden": false,
+        "type": "markdown"
+    },
+    {
+        "content": {
+            "text": "## 시작단계에서의 정리\n\nLauren Tan의 셋업을 보면서 \"저건 코드짜는 사람들 얘기지\" 하고 넘기기 쉬운데, 정작 구조에서 코드가 차지하는 부분은 별로 없다. 바깥에서 들어오는 걸 누가 받아서, 누가 판단하고, 누가 만들고, 누가 검증하냐의 문제라 일반적인 문서 업무에도 그대로 겹친다고 생각된다.\n\n이제 Phase 1 시작했다. 아직은 sync단계를 테스트하고 있다. 이번 주 한 주 돌리고 그 log를 보고 판단하자는게 제안이어서, 우선은 따라 볼 생각. 성격상 “아 됐고 잘될거니까 다음 phase 가자”라고 하고 싶었는데, 생각보다 오탐이나 놓치는 시그널들이 조금 있었어서, 천천히 생각하고 진행하는 중.\n\n다음 글은 아마 1주일은 지나야 할 것 같다. 다음주가 phase 2 예정.\n\n(계속)"
+        },
+        "id": "2dddc159-18f0-4b4e-bd2f-0e9beb1636d8",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Date: 2026-10-30
+
+----
+
+Tags: Lauren Tan, pstack, Matt Pocock, Claude Code, Automation
+
+----
+
+Description: 
+
+----
+
+Uuid: ewj6uwmjpoutpyax
