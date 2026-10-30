@@ -29,7 +29,7 @@ Blocks:
     {
         "content": {
             "location": "web",
-            "url": "https://www.youtube.com/live/MN9dGgmLyso?si=XFbhTXLUIsyrijod",
+            "url": "https://www.youtube.com/watch?v=MN9dGgmLyso",
             "video": [],
             "poster": [],
             "caption": "",
