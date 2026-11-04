@@ -207,7 +207,7 @@ Tags: design system, base ui, shadcn ui, claude code, claude, design
 
 ----
 
-Description: 
+Description: shadcn/ui를 기반으로 코드가 원본인 개인 디자인시스템을 LLM과 함께 만들기 시작했다. 수정할 때마다 Figma를 동기화하고 LLM이 늘린 이슈에 끌려다니며 토큰을 쏟았지만, 적용할 소비처 없이 만든 결과물은 어중간했다.
 
 ----
 

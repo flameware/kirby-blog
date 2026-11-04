@@ -44,4 +44,8 @@ Tags: claude code, vibe coding
 
 ----
 
+Description: 2026년 3월 초 기준으로 아이디어에서 PRD와 플랜 모드를 거쳐 배포까지 이어지는 vibe coding 흐름을 단계별로 적었다. Claude Code 중심의 도구 구성과, 원하는 스타일로 디자인을 정확히 다루기 어려운 한계도 짚는다.
+
+----
+
 Uuid: odjmpkd7krh6qwvb

@@ -95,7 +95,7 @@ Tags: Lauren Tan, pstack, Matt Pocock, Claude Code, Automation
 
 ----
 
-Description: 
+Description: Matt Pocock이 Lauren Tan을 인터뷰한 영상에서 outer loop와 inner loop, 코드를 직접 고치지 않는 코디네이터 개념을 짚는다. 이를 기획 업무에 맞게 수집·판단·초안·검증으로 나눈 Claude Code 구조로 옮겨 1단계를 시작했다.
 
 ----
 

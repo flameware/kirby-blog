@@ -117,4 +117,8 @@ Tags: 3d printing, bambu lab, Original Design, Industrial Design, P1S
 
 ----
 
+Description: Bambulab P1S를 집에 들인 지 반년이 넘었다. 공유 모델 중엔 마음에 드는 게 없어 직접 만든 이케아 스탠드용 램프셰이드, 헤드폰 앰프 볼륨 노브, 오리발 모양 맥북 스탠드를 보여 준다.
+
+----
+
 Uuid: a640fdnca6atjvo6

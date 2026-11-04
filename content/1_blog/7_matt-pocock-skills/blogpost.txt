@@ -125,4 +125,8 @@ Tags: Skills, Vibe Coding, Matt Pocock, AI Skills
 
 ----
 
+Description: 바이브 코딩 작업 방식의 변화를 짚고, Matt Pocock의 스킬 중 자주 쓰는 /grill-with-docs, /grill-me, /wayfinder를 써 본 경험을 나눈다. 질문이 집요하고 토큰이 더 들지만 목표와 판단 근거를 분명히 관리할 수 있어 쓸 만했다.
+
+----
+
 Uuid: bnlaeail1cqerz90

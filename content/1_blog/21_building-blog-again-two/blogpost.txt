@@ -108,4 +108,8 @@ Tags:
 
 ----
 
+Description: 블로그 다시 만들기 2편. 콘텐츠를 고칠 때 빌드가 필요 없고 글쓰기가 편한 도구를 찾다가 Manuel Moreale의 블로그를 참고해 Kirby CMS를 골랐다. 비싼 라이선스와 PHP라는 단점, Statamic, WordPress, Ghost와의 비교도 함께 적었다.
+
+----
+
 Uuid: hsqddzlch9bfmmus

@@ -50,4 +50,8 @@ Tags: Formula 1, F1, McLaren, Ron Dennis
 
 ----
 
+Description: F1 팬이 늘며 중계에서 자주 듣는 '맥라렌'이라는 표기가, 매클래런으로 들리는 귀에는 계속 거슬린다는 프로불편러의 푸념이다. 팀의 전통 강호 이미지를 만든 론 데니스 이야기는 다음에 다루겠다고 예고한다.
+
+----
+
 Uuid: bqwwct3wltx8wt3v

@@ -211,4 +211,8 @@ Tags: claude, claude code, framer, design, design x ai
 
 ----
 
+Description: Framer 3.0과 Claude Code를 연동해 포트폴리오 사이트에 영문 로컬라이제이션을 붙이고 푸터를 다시 디자인한 작업기. 세 가지 시안 중 하나를 골라 반응형 디자인과 번역까지 맡겨 봤다.
+
+----
+
 Uuid: blbvbuhnpv7fibik

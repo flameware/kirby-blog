@@ -150,7 +150,7 @@ Tags: Impeccable, claude code, claude, vibe coding, design, product design
 
 ----
 
-Description: 
+Description: Impeccable 스킬로 1년 넘게 혼자 써온 투자일지 웹앱의 리디자인 시안 세 가지를 받아 B안을 라이트 모드로 적용했다. 정보 구성 제안은 기대 이상이었지만, 적용한 뒤 세부에서 튀는 부분을 잡는 데는 시간이 꽤 걸렸다.
 
 ----
 

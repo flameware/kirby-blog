@@ -124,7 +124,7 @@ Tags: design system, claude, claude code, base ui, shadcn ui
 
 ----
 
-Description: 
+Description: shadcn 기반 1세대를 정리하고 Base UI, Tailwind v4, Storybook 문서로 디자인시스템 2세대를 다시 설계했다. 이슈 맵과 서브에이전트 배치 처리로 구현해 개인 프로젝트 두 곳에 적용했고, 고민 없이 쓸 기반이라는 목표를 이뤘다.
 
 ----
 

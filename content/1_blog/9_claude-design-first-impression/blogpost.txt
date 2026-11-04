@@ -260,4 +260,8 @@ Tags: Claude, Anthropic, Claude Code, Claude Design, AI Design
 
 ----
 
+Description: Claude Design 출시 직후 화면 구성과 예제를 훑어보고, 직접 만든 Deep work planner 앱을 와이어프레임으로 재설계해 Claude Code로 옮겨 본 첫인상이다. 코딩툴이 개발자에게 가져온 변화가 디자이너에게도 올 거라고 본다.
+
+----
+
 Uuid: stjmtdhvlycthvmf

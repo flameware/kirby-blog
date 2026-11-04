@@ -152,4 +152,8 @@ Tags: Musician, Drummer, Heavy Metal, Tool
 
 ----
 
+Description: 처음엔 염불 같아 귀에 들어오지 않던 Tool에 빠지게 된 과정을 돌아보고, 드러머 Danny Carey가 특별한 이유를 짚는다. 폴리리듬과 정박을 미세하게 밀고 당기는 그루브, 큰 체격에서 나오는 힘, 겸손한 성격을 연주 영상과 함께 소개한다.
+
+----
+
 Uuid: vpmrnwwteersi3zl

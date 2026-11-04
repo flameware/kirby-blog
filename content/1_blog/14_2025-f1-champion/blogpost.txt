@@ -77,4 +77,8 @@ Tags: formula 1, f1, piastri, vettel
 
 ----
 
+Description: 2025 F1 최종전을 앞두고 노리스, 베르스타펜, 피아스트리의 포인트 경쟁을 따져 본다. 3위에서 마지막 레이스로 뒤집은 2010년의 베텔을 떠올리며 피아스트리의 역전을 응원하는 글이다.
+
+----
+
 Uuid: pcgdbl7liswqtwsk
