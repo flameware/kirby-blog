@@ -1,0 +1,5 @@
+Uuid: uundtg16ikxlupi6
+
+----
+
+Template: blocks/image

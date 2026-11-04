@@ -1,0 +1,5 @@
+Uuid: pri8grakeyitlg1e
+
+----
+
+Template: blocks/image

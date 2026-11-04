@@ -1,0 +1,5 @@
+Uuid: magoguivrpd30m1e
+
+----
+
+Template: blocks/image
